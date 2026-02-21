@@ -5,7 +5,16 @@ import path from "path";
 import { fileURLToPath } from "url";
 import fs from "fs";
 import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+// log utility (extracted from vite.ts to avoid importing vite in production)
+function log(message: string, source = "express") {
+  const formattedTime = new Date().toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+  });
+  console.log(`${formattedTime} [${source}] ${message}`);
+}
 import { MongoDBStorage } from "./db/mongodb-storage";
 import type { IStorage } from "./storage";
 import { createBackupService } from "./backup-service";
@@ -496,9 +505,22 @@ app.post('/api/monitoring/vitals', (req, res) => {
 
     // Setup Vite or static serving
     if (app.get("env") === "development") {
+      const { setupVite } = await import("./vite");
       await setupVite(app, server);
     } else {
-      serveStatic(app);
+      // Production: simple static file serving (inlined to avoid importing vite.ts which depends on 'vite' package)
+      const distPath = path.resolve(import.meta.dirname || __dirname, "public");
+      if (fs.existsSync(distPath)) {
+        app.use(express.static(distPath));
+        app.use("*", (req, res, next) => {
+          if (req.originalUrl.startsWith('/api') || req.originalUrl.startsWith('/uploads')) {
+            return next();
+          }
+          res.sendFile(path.resolve(distPath, "index.html"));
+        });
+      } else {
+        log("No public directory found — running API-only mode");
+      }
     }
 
     // Start server

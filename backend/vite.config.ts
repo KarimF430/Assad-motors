@@ -1,4 +1,3 @@
-import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
@@ -6,8 +5,9 @@ import { dirname, resolve } from "path";
 // Node-compatible __dirname for ESM
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// Production-safe, synchronous Vite config (no dynamic imports)
-export default defineConfig({
+// Production-safe, synchronous Vite config (no static 'vite' import to avoid bundling errors)
+/** @type {import('vite').UserConfig} */
+export default {
   plugins: [react()],
   resolve: {
     alias: {
@@ -27,4 +27,4 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
-});
+};

@@ -4,9 +4,13 @@
  * Schedule: 1:00 PM and 8:00 PM daily
  */
 
-const cron = require('node-cron');
-const fs = require('fs').promises;
-const path = require('path');
+import cron from 'node-cron';
+import { promises as fs } from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 class ScheduledFetcher {
   constructor() {
@@ -17,7 +21,7 @@ class ScheduledFetcher {
     };
     this.cacheFile = path.join(__dirname, '../cache/fetch-cache.json');
     this.logFile = path.join(__dirname, '../logs/scheduler.log');
-    
+
     // Load previous fetch times
     this.loadFetchHistory();
   }
@@ -27,10 +31,10 @@ class ScheduledFetcher {
    */
   async init() {
     console.log('🕐 Initializing Scheduled API Fetcher...');
-    
+
     // Create necessary directories
     await this.ensureDirectories();
-    
+
     // Schedule for 1:00 PM (13:00) - Cron: 0 13 * * *
     cron.schedule('0 13 * * *', async () => {
       await this.executeFetch('afternoon', '1:00 PM');
@@ -49,7 +53,7 @@ class ScheduledFetcher {
 
     console.log('✅ Scheduler initialized successfully');
     console.log('📅 Next fetches scheduled for: 1:00 PM and 8:00 PM IST');
-    
+
     await this.logEvent('Scheduler initialized');
   }
 
@@ -65,7 +69,7 @@ class ScheduledFetcher {
     try {
       this.isRunning = true;
       const startTime = new Date();
-      
+
       console.log(`🚀 Starting scheduled fetch at ${timeLabel} (${startTime.toISOString()})`);
       await this.logEvent(`Starting ${timeSlot} fetch at ${timeLabel}`);
 
@@ -77,20 +81,20 @@ class ScheduledFetcher {
 
       // Perform the actual API fetches
       const results = await this.performAPIFetches();
-      
+
       // Update fetch history
       this.lastFetchTimes[timeSlot] = startTime.toISOString();
       await this.saveFetchHistory();
-      
+
       // Cache the results
       await this.cacheResults(results, timeSlot);
-      
+
       const endTime = new Date();
       const duration = endTime - startTime;
-      
+
       console.log(`✅ Fetch completed successfully in ${duration}ms`);
       await this.logEvent(`${timeSlot} fetch completed successfully. Duration: ${duration}ms. Results: ${JSON.stringify(results.summary)}`);
-      
+
     } catch (error) {
       console.error(`❌ Error during ${timeLabel} fetch:`, error);
       await this.logEvent(`ERROR during ${timeSlot} fetch: ${error.message}`);
@@ -166,7 +170,7 @@ class ScheduledFetcher {
       }
 
       const data = await response.json();
-      
+
       return {
         count: data.length || 0,
         data: data,
@@ -204,7 +208,7 @@ class ScheduledFetcher {
       }
 
       const data = await response.json();
-      
+
       return {
         count: data.length || 0,
         data: data,
@@ -242,7 +246,7 @@ class ScheduledFetcher {
       }
 
       const data = await response.json();
-      
+
       return {
         count: data.length || 0,
         data: data,
@@ -270,7 +274,7 @@ class ScheduledFetcher {
 
     const lastFetchDate = new Date(lastFetch);
     const today = new Date();
-    
+
     return (
       lastFetchDate.getDate() === today.getDate() &&
       lastFetchDate.getMonth() === today.getMonth() &&
@@ -299,7 +303,7 @@ class ScheduledFetcher {
 
       // Merge with existing cache
       const updatedCache = { ...existingCache, ...cacheData };
-      
+
       await fs.writeFile(this.cacheFile, JSON.stringify(updatedCache, null, 2));
       console.log(`💾 Results cached for ${timeSlot}`);
     } catch (error) {
@@ -314,11 +318,11 @@ class ScheduledFetcher {
     try {
       const cacheContent = await fs.readFile(this.cacheFile, 'utf8');
       const cache = JSON.parse(cacheContent);
-      
+
       if (timeSlot) {
         return cache[timeSlot] || null;
       }
-      
+
       return cache;
     } catch (error) {
       console.error('Error reading cache:', error);
@@ -409,4 +413,4 @@ class ScheduledFetcher {
   }
 }
 
-module.exports = ScheduledFetcher;
+export default ScheduledFetcher;

@@ -1,14 +1,22 @@
-import react from "@vitejs/plugin-react";
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
 
 // Node-compatible __dirname for ESM
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// Production-safe, synchronous Vite config (no static 'vite' import to avoid bundling errors)
-/** @type {import('vite').UserConfig} */
+// We use a dynamic import for the react plugin to avoid having it as a static dependency
+// in the production bundle where it's not available.
+const getPlugins = async () => {
+  if (process.env.NODE_ENV === 'development') {
+    const { default: react } = await import("@vitejs/plugin-react");
+    return [react()];
+  }
+  return [];
+};
+
+// Production-safe Vite config
 export default {
-  plugins: [react()],
+  plugins: await getPlugins(),
   resolve: {
     alias: {
       "@": resolve(__dirname, "client", "src"),

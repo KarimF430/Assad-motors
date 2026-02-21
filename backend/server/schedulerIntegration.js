@@ -3,7 +3,13 @@
  * Integrates the scheduled fetcher with the main server
  */
 
-const ScheduledFetcher = require('../services/scheduledFetcher');
+import ScheduledFetcher from '../services/scheduledFetcher.js';
+import { promises as fs } from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 class SchedulerIntegration {
   constructor(app) {
@@ -18,10 +24,10 @@ class SchedulerIntegration {
     try {
       // Initialize the scheduler
       await this.scheduler.init();
-      
+
       // Add API routes for scheduler management
       this.addSchedulerRoutes();
-      
+
       console.log('✅ Scheduler integration completed');
     } catch (error) {
       console.error('❌ Error initializing scheduler:', error);
@@ -54,7 +60,7 @@ class SchedulerIntegration {
       try {
         const { timeSlot } = req.params;
         const cachedData = await this.scheduler.getCachedResults(timeSlot);
-        
+
         res.json({
           success: true,
           data: cachedData,
@@ -90,10 +96,10 @@ class SchedulerIntegration {
         }
 
         console.log(`🔧 Manual trigger requested. Reason: ${reason}`);
-        
+
         // Trigger the fetch
         await this.scheduler.manualTrigger('manual');
-        
+
         res.json({
           success: true,
           message: 'Manual fetch triggered successfully',
@@ -110,17 +116,15 @@ class SchedulerIntegration {
     // Get fetch logs (last 100 entries)
     this.app.get('/api/scheduler/logs', async (req, res) => {
       try {
-        const fs = require('fs').promises;
-        const path = require('path');
         const logFile = path.join(__dirname, '../logs/scheduler.log');
-        
+
         try {
           const logContent = await fs.readFile(logFile, 'utf8');
           const logs = logContent.split('\n')
             .filter(line => line.trim())
             .slice(-100) // Last 100 entries
             .reverse(); // Most recent first
-          
+
           res.json({
             success: true,
             logs: logs,
@@ -150,4 +154,4 @@ class SchedulerIntegration {
   }
 }
 
-module.exports = SchedulerIntegration;
+export default SchedulerIntegration;

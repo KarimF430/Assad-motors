@@ -1,0 +1,174 @@
+========================================
+COPY THIS PROMPT TO CHATGPT/CLAUDE
+========================================
+
+I need accurate, up-to-date specifications for Indian car models in JSON format.
+
+BRAND: Tata Motors
+MODELS: Nexon, Punch, Tiago, Harrier, Safari, Altroz, Tigor
+
+For EACH model, provide complete data in this EXACT JSON structure:
+
+{
+  "brandId": "brand-tata",
+  "name": "[Model Name]",
+  "isPopular": [true/false - based on current sales rankings],
+  "isNew": [true if launched in last 12 months, else false],
+  "popularRank": [1-20 if in top 20 selling cars, else null],
+  "newRank": [1-20 if in top 20 new launches, else null],
+  "bodyType": "[SUV/Sedan/Hatchback/MUV/Minivan]",
+  "subBodyType": "[Compact SUV/Mid-size SUV/Premium Hatchback/etc]",
+  "launchDate": "Launched",
+  "fuelTypes": ["Petrol", "Diesel", "Electric", "CNG", "Hybrid"],
+  "transmissions": ["Manual", "Automatic", "AMT", "DCT", "CVT", "iMT"],
+  "status": "active",
+  "headerSeo": "[Write a 150-200 character SEO-friendly description highlighting key features and USPs]",
+  "pros": "• [Advantage 1]\n• [Advantage 2]\n• [Advantage 3]\n• [Advantage 4]\n• [Advantage 5]\n• [Advantage 6]",
+  "cons": "• [Disadvantage 1]\n• [Disadvantage 2]\n• [Disadvantage 3]\n• [Disadvantage 4]\n• [Disadvantage 5]",
+  "description": "[Write a comprehensive 300-500 word description covering: overview, key features, performance, variants, market position, target audience, and why buyers should consider this car]",
+  "exteriorDesign": "[Write a 150-250 word description covering: design language, grille, headlamps, body lines, wheels, rear design, dimensions, ground clearance, color options]",
+  "comfortConvenience": "[Write a 150-250 word description covering: interior design, dashboard layout, infotainment system, seating comfort, features, technology, storage space, boot capacity]",
+  "engineSummaries": [
+    {
+      "title": "[Capacity like 1.2L/1.5L] [Fuel Type] [Transmission Type]",
+      "summary": "[Write 2-3 sentences describing this engine variant's characteristics, performance, and suitability]",
+      "transmission": "[Full transmission name like '6-Speed Manual' or '7-Speed DCT']",
+      "power": "[Power in PS] @ [RPM]",
+      "torque": "[Torque in Nm] @ [RPM range]",
+      "speed": "[Top speed in km/h]"
+    }
+    // Include ALL available engine-transmission combinations
+  ],
+  "mileageData": [
+    {
+      "engineName": "[Must EXACTLY match the engine title above]",
+      "companyClaimed": "[ARAI certified mileage in XX.X kmpl format]",
+      "cityRealWorld": "[Realistic city mileage range like '12-14 kmpl']",
+      "highwayRealWorld": "[Realistic highway mileage range like '16-18 kmpl']"
+    }
+    // One entry for EACH engine variant
+  ],
+  "faqs": [
+    {
+      "question": "What is the on-road price of [Model Name]?",
+      "answer": "[Provide detailed answer with price range for different variants in Delhi, mention that prices vary by city and variant]"
+    },
+    {
+      "question": "What is the mileage of [Model Name]?",
+      "answer": "[Provide ARAI certified mileage and real-world estimates for different variants]"
+    },
+    {
+      "question": "Is [Model Name] worth buying?",
+      "answer": "[Provide balanced buying recommendation mentioning strengths, ideal buyers, and value proposition]"
+    },
+    {
+      "question": "[Ask about a key feature like sunroof/safety/variants]",
+      "answer": "[Provide detailed answer]"
+    },
+    {
+      "question": "[Ask comparison or technical question]",
+      "answer": "[Provide detailed answer]"
+    }
+  ]
+}
+
+IMPORTANT REQUIREMENTS:
+
+1. DATA ACCURACY:
+   - Use ONLY current 2024-2025 data for Indian market
+   - Prices must be in Indian Rupees (Lakh)
+   - Include ALL engine variants currently available
+   - ARAI certified mileage must be accurate
+   - Real-world mileage should be realistic estimates (10-20% lower than ARAI)
+
+2. COMPLETENESS:
+   - Include ALL available engine-transmission combinations
+   - Each engine must have matching mileage data
+   - Minimum 5 FAQs per model
+   - All text fields must be properly filled
+
+3. FORMAT:
+   - Power: "XXX PS @ XXXX rpm"
+   - Torque: "XXX Nm @ XXXX-XXXX rpm"
+   - Mileage: "XX.X kmpl" (company claimed) or "XX-XX kmpl" (real-world)
+   - Speed: "XXX km/h"
+   - Use bullet points with • symbol
+   - Use \n for line breaks in pros/cons
+
+4. CONTENT QUALITY:
+   - Description: 300-500 words, comprehensive
+   - Design descriptions: 150-250 words each
+   - FAQs: Detailed, helpful answers
+   - Pros/Cons: Specific, factual points
+
+5. INDIAN MARKET SPECIFIC:
+   - Include safety ratings (Global NCAP if available)
+   - Mention service network quality
+   - Include CNG variants if available
+   - Reference Indian road conditions
+   - Use Indian English
+
+RETURN FORMAT:
+Provide as a JSON array with all models:
+
+[
+  { /* Nexon data */ },
+  { /* Punch data */ },
+  { /* Tiago data */ },
+  { /* Harrier data */ },
+  { /* Safari data */ },
+  { /* Altroz data */ },
+  { /* Tigor data */ }
+]
+
+Make sure the JSON is valid and properly formatted. Include all fields for all models.
+
+========================================
+END OF PROMPT
+========================================
+
+AFTER GETTING RESPONSE:
+1. Copy the JSON response
+2. Validate at https://jsonlint.com/
+3. Save as models_data.json
+4. Run: node import-models-from-json.js
+
+========================================
+FOR OTHER BRANDS, REPLACE:
+========================================
+
+BRAND: Maruti Suzuki
+brandId: "brand-maruti-suzuki"
+MODELS: Swift, Dzire, Wagon R, Baleno, Brezza, Ertiga, Grand Vitara, Fronx, Ciaz, Celerio, S-Presso, Ignis
+
+BRAND: Hyundai
+brandId: "brand-hyundai"
+MODELS: Creta, Venue, i20, Nios, Exter, Verna, Alcazar, Tucson, Kona EV
+
+BRAND: Mahindra
+brandId: "brand-mahindra"
+MODELS: Scorpio N, Thar, XUV700, XUV300, Bolero Neo, Bolero, Marazzo
+
+BRAND: Kia
+brandId: "brand-kia"
+MODELS: Seltos, Sonet, Carens, EV6, Carnival
+
+BRAND: Toyota
+brandId: "brand-toyota"
+MODELS: Innova Hycross, Glanza, Urban Cruiser Hyryder, Fortuner, Camry, Hilux, Vellfire, Rumion
+
+BRAND: Honda
+brandId: "brand-honda"
+MODELS: City, Amaze, Elevate, City Hybrid
+
+BRAND: MG Motor
+brandId: "brand-mg"
+MODELS: Hector, Astor, ZS EV, Gloster, Comet EV
+
+BRAND: Renault
+brandId: "brand-renault"
+MODELS: Kiger, Triber, Kwid
+
+BRAND: Nissan
+brandId: "brand-nissan"
+MODELS: Magnite

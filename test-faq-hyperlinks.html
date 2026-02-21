@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Hyperlinks Test - gadizone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .faq-question {
+            background: #f8f9fa;
+            padding: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+        .faq-answer {
+            padding: 15px;
+            color: #666;
+        }
+        .car-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s;
+        }
+        .car-link:hover {
+            color: #1d4ed8;
+            border-bottom-color: #1d4ed8;
+        }
+        .demo-section {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .demo-section h3 {
+            margin-top: 0;
+            color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 FAQ Hyperlinks Demo</h1>
+        <p>This demonstrates how car model names in FAQ answers are automatically converted to hyperlinks.</p>
+        
+        <div class="demo-section">
+            <h3>✨ How It Works</h3>
+            <ul>
+                <li><strong>Automatic Detection:</strong> Car model names are automatically detected in FAQ text</li>
+                <li><strong>Smart Linking:</strong> Models are linked to their respective detail pages</li>
+                <li><strong>Brand Context:</strong> Links are generated based on brand context for accuracy</li>
+                <li><strong>Hover Effects:</strong> Links have hover effects for better UX</li>
+            </ul>
+        </div>
+
+        <h2>📋 Sample Honda Car FAQs</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                Q: What are the upcoming cars from Honda?
+            </div>
+            <div class="faq-answer">
+                Honda is expected to launch <a href="/honda-cars/wr-v" class="car-link">Honda WR-V</a> and <a href="/honda-cars/0-alpha" class="car-link">Honda 0 Alpha</a> in the coming months.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Q: Which is the cheapest Honda car in India?
+            </div>
+            <div class="faq-answer">
+                The cheapest Honda car in India is <a href="/honda-cars/amaze-2nd-gen" class="car-link">Amaze 2nd Gen</a>, priced at Rs. 6.98 Lakh.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Q: Which is the most expensive Honda car in India?
+            </div>
+            <div class="faq-answer">
+                The most expensive Honda car in India is <a href="/honda-cars/city-hybrid-ehev" class="car-link">City Hybrid eHEV</a>, priced at Rs. 19.48 Lakh.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Q: Which is the latest car launched by Honda?
+            </div>
+            <div class="faq-answer">
+                The latest car launched by Honda is <a href="/honda-cars/amaze" class="car-link">Amaze</a> on 04 Dec 2024.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Q: Which are the most popular Honda cars in India?
+            </div>
+            <div class="faq-answer">
+                The most popular Honda cars in India are <a href="/honda-cars/elevate" class="car-link">Elevate</a> (Rs. 13.64 Lakh), <a href="/honda-cars/amaze" class="car-link">Amaze</a> (Rs. 8.92 Lakh) and <a href="/honda-cars/city" class="car-link">City</a> (Rs. 14.73 Lakh).
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h3>🎯 Implementation Features</h3>
+            <ul>
+                <li><strong>URL Generation:</strong> <code>/honda-cars/city</code> format</li>
+                <li><strong>Brand Detection:</strong> Automatically detects brand from context</li>
+                <li><strong>Slug Creation:</strong> Converts model names to URL-friendly slugs</li>
+                <li><strong>Multiple Models:</strong> Handles multiple car names in single answer</li>
+                <li><strong>Case Insensitive:</strong> Works with different text cases</li>
+            </ul>
+        </div>
+
+        <h2>🚀 Next Steps</h2>
+        <p>To see this in action on your gadizone platform:</p>
+        <ol>
+            <li>Navigate to any brand page (e.g., <code>/brands/honda</code>)</li>
+            <li>Scroll down to the FAQ section</li>
+            <li>Expand any FAQ that mentions car model names</li>
+            <li>Click on the blue hyperlinked car names</li>
+            <li>You'll be taken to that car's detail page</li>
+        </ol>
+    </div>
+</body>
+</html>

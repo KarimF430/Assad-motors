@@ -1,0 +1,16 @@
+{
+    "mcpServers": {
+        "killerwhale": {
+            "command": "node",
+            "args": [
+                "--no-warnings",
+                "/path/to/your/backend/dist/mcp-server.js"
+            ],
+            "env": {
+                "MONGODB_URI": "your_mongodb_connection_string_here",
+                "REDIS_URL": "redis://localhost:6379",
+                "NODE_NO_WARNINGS": "1"
+            }
+        }
+    }
+}

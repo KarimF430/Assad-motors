@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" fill="none">
+  <defs>
+    <!-- Gradients for realistic effects -->
+    <radialGradient id="wheelGradient" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#E5E7EB;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#9CA3AF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#374151;stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="tireGradient" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#4B5563;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1F2937;stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="brakeGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FCD34D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F59E0B;stop-opacity:1" />
+    </radialGradient>
+    <linearGradient id="flameGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#DC2626;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#EF4444;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FCD34D;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- MO Letters with 3D effect -->
+  <!-- M Letter -->
+  <g transform="translate(10,20)">
+    <path d="M0 0 L0 60 L12 60 L12 25 L22 45 L32 45 L42 25 L42 60 L54 60 L54 0 L40 0 L27 30 L14 0 Z" 
+          fill="#DC2626" stroke="#B91C1C" stroke-width="2"/>
+    <!-- 3D shadow effect -->
+    <path d="M3 3 L3 63 L15 63 L15 28 L25 48 L35 48 L45 28 L45 63 L57 63 L57 3 L43 3 L30 33 L17 3 Z" 
+          fill="#991B1B" opacity="0.5"/>
+  </g>
+  
+  <!-- O Letter as Wheel -->
+  <g transform="translate(120,35)">
+    <!-- Tire outer -->
+    <circle cx="0" cy="0" r="35" fill="url(#tireGradient)" stroke="#DC2626" stroke-width="3"/>
+    <!-- Tire tread pattern -->
+    <circle cx="0" cy="0" r="32" fill="#1F2937" stroke="#374151" stroke-width="1"/>
+    
+    <!-- Wheel rim -->
+    <circle cx="0" cy="0" r="25" fill="url(#wheelGradient)" stroke="#6B7280" stroke-width="1"/>
+    
+    <!-- Brake disc -->
+    <circle cx="0" cy="0" r="18" fill="url(#brakeGradient)"/>
+    
+    <!-- Wheel spokes (5-spoke design) -->
+    <g stroke="#E5E7EB" stroke-width="3" fill="none">
+      <path d="M0,-15 L0,-25 M12,-9 L20,-15 M12,9 L20,15 M0,15 L0,25 M-12,9 L-20,15 M-12,-9 L-20,-15"/>
+    </g>
+    
+    <!-- Center cap -->
+    <circle cx="0" cy="0" r="5" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1"/>
+    
+    <!-- Tire sidewall details -->
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#4B5563" stroke-width="1" opacity="0.5"/>
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#6B7280" stroke-width="0.5" opacity="0.3"/>
+  </g>
+  
+  <!-- Flame Effect -->
+  <g transform="translate(180,20)">
+    <!-- Main flame -->
+    <path d="M0 40 Q10 20 20 35 Q30 15 40 30 Q50 10 60 25 Q70 5 80 20 Q75 35 65 40 Q70 50 55 45 Q50 55 40 50 Q35 60 25 50 Q15 55 10 45 Q5 50 0 40Z" 
+          fill="url(#flameGradient)" opacity="0.9"/>
+    
+    <!-- Inner flame -->
+    <path d="M10 35 Q15 25 25 30 Q35 20 45 28 Q55 15 65 25 Q60 35 50 38 Q45 45 35 40 Q25 45 20 38 Q15 42 10 35Z" 
+          fill="#FCD34D" opacity="0.8"/>
+    
+    <!-- Flame highlights -->
+    <path d="M15 30 Q20 22 30 28 Q40 18 50 25 Q45 32 35 35 Q25 38 15 30Z" 
+          fill="#FBBF24" opacity="0.6"/>
+  </g>
+  
+  <!-- Tagline -->
+  <text x="20" y="100" font-family="Arial, sans-serif" font-size="16" font-style="italic" font-weight="bold" fill="#374151">Aapka Auto Expert!</text>
+</svg>

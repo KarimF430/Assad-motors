@@ -1,0 +1,37 @@
+# Render Configuration for Backend Only
+services:
+  - type: web
+    name: gadizone-backend
+    env: node
+    plan: starter
+    region: singapore
+    buildCommand: npm install --prefix backend && npm run build --prefix backend
+    startCommand: npm start --prefix backend
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5001
+      - key: MONGODB_URI
+        sync: false  # Set manually in Render dashboard
+      - key: JWT_SECRET
+        generateValue: true
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: SENTRY_DSN
+        sync: false
+      - key: REDIS_URL
+        sync: false
+      - key: FRONTEND_URL
+        value: https://gadizone-frontend.vercel.app
+    healthCheckPath: /api/monitoring/health
+    
+  # Optional: Redis for caching
+  - type: redis
+    name: gadizone-redis
+    plan: starter
+    
+databases:
+  # Optional: If using Render's PostgreSQL instead of MongoDB
+  - name: gadizone-db
+    plan: starter

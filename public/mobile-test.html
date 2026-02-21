@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile API Test - gadizone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #0056b3; }
+        .models-list {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .model-item {
+            padding: 5px;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📱 Mobile API Test</h1>
+        <p>Testing gadizone API connectivity from mobile device</p>
+        
+        <div id="status" class="status info">
+            Ready to test...
+        </div>
+        
+        <button onclick="testConnection()">🔍 Test API Connection</button>
+        <button onclick="testBrands()">🏢 Test Brands API</button>
+        <button onclick="testModels()">🚗 Test Models API</button>
+        <button onclick="clearResults()">🧹 Clear Results</button>
+        
+        <div id="results"></div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://192.168.1.23:5001';
+        
+        function updateStatus(message, type = 'info') {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = `status ${type}`;
+        }
+        
+        function addResult(title, content, type = 'info') {
+            const results = document.getElementById('results');
+            const div = document.createElement('div');
+            div.className = `status ${type}`;
+            div.innerHTML = `<strong>${title}</strong><br>${content}`;
+            results.appendChild(div);
+        }
+        
+        async function testConnection() {
+            updateStatus('Testing basic connection...', 'info');
+            
+            try {
+                const response = await fetch(`${API_BASE}/api/brands`, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    updateStatus('✅ Connection successful!', 'success');
+                    addResult('Connection Test', `Status: ${response.status} ${response.statusText}`, 'success');
+                } else {
+                    updateStatus(`❌ Connection failed: ${response.status}`, 'error');
+                    addResult('Connection Test', `Error: ${response.status} ${response.statusText}`, 'error');
+                }
+            } catch (error) {
+                updateStatus(`❌ Connection error: ${error.message}`, 'error');
+                addResult('Connection Test', `Error: ${error.message}`, 'error');
+            }
+        }
+        
+        async function testBrands() {
+            updateStatus('Testing brands API...', 'info');
+            
+            try {
+                const response = await fetch(`${API_BASE}/api/brands`);
+                
+                if (response.ok) {
+                    const brands = await response.json();
+                    updateStatus(`✅ Found ${brands.length} brands`, 'success');
+                    
+                    const brandNames = brands.slice(0, 10).map(b => b.name).join(', ');
+                    addResult('Brands API', `${brands.length} brands found: ${brandNames}${brands.length > 10 ? '...' : ''}`, 'success');
+                } else {
+                    updateStatus(`❌ Brands API failed: ${response.status}`, 'error');
+                    addResult('Brands API', `Error: ${response.status} ${response.statusText}`, 'error');
+                }
+            } catch (error) {
+                updateStatus(`❌ Brands error: ${error.message}`, 'error');
+                addResult('Brands API', `Error: ${error.message}`, 'error');
+            }
+        }
+        
+        async function testModels() {
+            updateStatus('Testing models API...', 'info');
+            
+            try {
+                // First get brands to find Hyundai
+                const brandsResponse = await fetch(`${API_BASE}/api/brands`);
+                const brands = await brandsResponse.json();
+                const hyundai = brands.find(b => b.name === 'Hyundai');
+                
+                if (!hyundai) {
+                    addResult('Models API', 'Hyundai brand not found', 'error');
+                    return;
+                }
+                
+                // Test frontend models endpoint
+                const modelsResponse = await fetch(`${API_BASE}/api/frontend/brands/${hyundai.id}/models`);
+                
+                if (modelsResponse.ok) {
+                    const data = await modelsResponse.json();
+                    updateStatus(`✅ Found ${data.models.length} models for ${data.brand.name}`, 'success');
+                    
+                    const modelNames = data.models.slice(0, 5).map(m => m.name).join(', ');
+                    addResult('Models API', `${data.models.length} models found for ${data.brand.name}: ${modelNames}${data.models.length > 5 ? '...' : ''}`, 'success');
+                    
+                    // Show models list
+                    const modelsList = document.createElement('div');
+                    modelsList.className = 'models-list';
+                    modelsList.innerHTML = '<strong>All Models:</strong><br>' + 
+                        data.models.map(m => `<div class="model-item">${m.name} - ${m.price}</div>`).join('');
+                    document.getElementById('results').appendChild(modelsList);
+                } else {
+                    updateStatus(`❌ Models API failed: ${modelsResponse.status}`, 'error');
+                    addResult('Models API', `Error: ${modelsResponse.status} ${modelsResponse.statusText}`, 'error');
+                }
+            } catch (error) {
+                updateStatus(`❌ Models error: ${error.message}`, 'error');
+                addResult('Models API', `Error: ${error.message}`, 'error');
+            }
+        }
+        
+        function clearResults() {
+            document.getElementById('results').innerHTML = '';
+            updateStatus('Results cleared', 'info');
+        }
+        
+        // Auto-test on load
+        window.onload = function() {
+            updateStatus('Page loaded. Click buttons to test APIs.', 'info');
+        };
+    </script>
+</body>
+</html>

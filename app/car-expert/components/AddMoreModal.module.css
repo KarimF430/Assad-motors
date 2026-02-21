@@ -1,0 +1,306 @@
+/* ============================================
+   ADD MORE MODAL - SAME UI AS PLANS PAGE
+   ============================================ */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal {
+    background: #f8fafc;
+    width: 100%;
+    max-width: 520px;
+    max-height: 90vh;
+    border-radius: 24px 24px 0 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 20px 16px;
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.closeBtn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: #f1f5f9;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #0f172a;
+    transition: background 0.2s;
+}
+
+.closeBtn:hover {
+    background: #e2e8f0;
+}
+
+/* Cart Summary */
+.cartSummary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: white;
+}
+
+.cartIcon {
+    font-size: 18px;
+}
+
+.cartText {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2563eb;
+}
+
+/* Plans List */
+.plansList {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+/* Plan Card - Same as Plans Page */
+.planCard {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+    position: relative;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.planCard:last-child {
+    margin-bottom: 0;
+}
+
+.planCardAdded {
+    border-color: #10b981;
+    background: #f0fdf4;
+}
+
+/* Badge - Same as Plans Page */
+.badge {
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: #0f172a;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.badgePreferred {
+    background: #f59e0b;
+}
+
+.badgeHurry {
+    background: #db2777;
+}
+
+/* Card Header Row - Same as Plans Page */
+.planHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.planIcon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #f1f5f9;
+}
+
+.planCardAdded .planIcon {
+    background: #d1fae5;
+    border-color: #10b981;
+}
+
+.planInfo {
+    flex: 1;
+    margin-left: 14px;
+}
+
+.planTitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 2px;
+}
+
+.planDetail {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.planPrice {
+    text-align: right;
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+}
+
+/* Detail Box - Same as Plans Page */
+.detailBox {
+    background: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 12px;
+}
+
+.planDesc {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+/* Action Button - Same as Plans Page */
+.actionBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.addBtn {
+    background: #2563eb;
+    color: white;
+    border: none;
+}
+
+.addBtn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 16px -4px rgba(37, 99, 235, 0.25);
+}
+
+.removeBtn {
+    background: #f0fdf4;
+    color: #059669;
+    border: 1px solid #10b981;
+}
+
+.removeBtn:hover {
+    background: #d1fae5;
+}
+
+/* Footer */
+.footer {
+    padding: 16px 20px;
+    background: white;
+    border-top: 1px solid #e2e8f0;
+}
+
+.doneBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.doneBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.3);
+}
+
+.doneAmount {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Desktop */
+@media (min-width: 640px) {
+    .overlay {
+        align-items: center;
+    }
+
+    .modal {
+        border-radius: 24px;
+        max-height: 85vh;
+    }
+}

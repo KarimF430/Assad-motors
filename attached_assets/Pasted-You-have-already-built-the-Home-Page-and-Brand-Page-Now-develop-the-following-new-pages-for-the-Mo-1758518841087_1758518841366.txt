@@ -1,0 +1,249 @@
+You have already built the Home Page and Brand Page.
+Now, develop the following new pages for the gadizone Web project:
+
+Product Page (detailed requirements given below)
+
+Variant Page (inspired by CarWale style & logic)
+
+Price Breakup Page
+
+EMI Page
+
+News Page
+
+🔎 Product Page – Detailed Structure & Functionality
+1. Top Ribbon (Sticky Navigation Bar)
+
+Sticks to the top when the user scrolls down.
+
+Displays clickable section names (anchors).
+
+The section currently in viewport should be highlighted in the ribbon.
+
+2. Hero Section (Car Box Image)
+
+Large hero PNG image of the car.
+
+Scroll interaction:
+
+Scroll → cycles through model gallery images.
+
+Click → opens full gallery viewer.
+
+Share button → copy/share web link.
+
+Below hero image:
+
+Brand & Model name in large, bold font.
+
+Heart button (wishlist/save car).
+
+Rating stars below model name.
+
+SEO description text for the model.
+
+3. Pricing Section
+
+Prominent starting & ending price in large highlighted font.
+
+On the right side → "Get on Road Price" button → links to Price Breakup Page.
+
+4. Variants & City Selector
+
+Two side-by-side boxes:
+
+Left: Dropdown for choosing variant.
+
+Right: Dropdown for choosing city.
+
+5. EMI Box
+
+Displays starting EMI of the model.
+
+6. Key Specifications
+
+Display grid of:
+
+Engine details
+
+Ground clearance
+
+Power
+
+Torque
+
+Seating capacity
+
+Safety rating
+
+7. Model Highlights (Scrollable Grid)
+
+Section header:
+
+"Key Features"
+
+"Space & Comfort"
+
+"Storage & Convenience"
+
+Each category → horizontally scrollable grid of images/cards.
+
+8. Model Price Section
+
+Header: "Model Price".
+
+Below → SEO text for all variants.
+
+Show only first 2 lines, with "Read More" expand option.
+
+9. Variants Section
+
+Header: "Variants".
+
+Filters: All | Fuel Type | Transmission | Value for Money.
+
+Below → list of variant cards:
+
+Variant name
+
+Price
+
+Key details
+
+Clicking a variant → opens Variant Page.
+
+At the end → "More Variants" button.
+
+10. Model Colors
+
+Horizontal carousel of car PNGs in different colors.
+
+11. Pros & Cons Section
+
+Two-column layout: Pros vs Cons.
+
+12. Model Summary
+
+Rich SEO text description.
+
+13. Engine Highlights
+
+SEO data section about engine.
+
+14. Mileage Section
+
+Horizontally scrollable boxes with mileage figures.
+
+15. Similar Cars Section
+
+Show cars with similar pricing logic.
+
+16. Compare Cars Section
+
+User can select similar cars to compare.
+
+Comparison table UI.
+
+17. Model News Section
+
+List of news articles related to the model.
+
+18. Model Videos
+
+Embed YouTube videos related to the model.
+
+19. FAQ Section
+
+Expandable/collapsible FAQ list.
+
+20. User Reviews
+
+User-submitted reviews section.
+
+21. Upcoming Cars
+
+Same as Home Page upcoming cars.
+
+22. New Launches
+
+Same as Home Page new launches.
+
+23. Consultancy Ad Section
+
+Banner ad slot.
+
+24. Feedback Section
+
+Simple feedback form.
+
+25. Footer
+
+Standard site footer.
+
+📌 Note:
+Each section header should follow the format:
+Brand Name + Model Name + Section Title
+
+🔎 Variant Page
+
+Use CarWale-style layout as inspiration.
+
+Must include:
+
+Variant list with key specs & price
+
+Tabs/filters for fuel type, transmission
+
+Comparison option
+
+Expandable detail view for each variant
+
+Sticky "Book Now / Get Offers" CTA button
+
+🔎 Price Breakup Page
+
+Show On-road price calculation:
+
+Ex-showroom price
+
+RTO tax
+
+Insurance
+
+Accessories
+
+Other charges
+
+Interactive, so selecting/deselecting components updates total.
+
+Prominent final price at bottom.
+
+🔎 EMI Page
+
+EMI calculator with inputs:
+
+Loan amount
+
+Interest rate
+
+Tenure
+
+Dynamic output:
+
+Monthly EMI amount
+
+Total payable
+
+Graph view (optional).
+
+"Apply for Loan" CTA.
+
+🔎 News Page
+
+Card-style layout for articles.
+
+Each card: image, headline, short description, "Read More".
+
+Pagination or infinite scroll.
+
+Filter by Brand / Model / Category.

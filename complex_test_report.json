@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-11-25T15:24:25.353823",
+  "summary": {
+    "total": 20,
+    "follow_ups": 15,
+    "avg_quality": 6.1,
+    "follow_up_quality": 6.0
+  },
+  "conversation": [
+    {
+      "message": "hello",
+      "reply": "Hi! \ud83d\udc4b I'm here to help you find the perfect car. What kind of car are you looking for?",
+      "quality": 6.5,
+      "has_cars": false,
+      "is_follow_up": false
+    },
+    {
+      "message": "I need a family SUV",
+      "reply": "Perfect! A 5-seater. What's your budget for an SUV?",
+      "quality": 6.5,
+      "has_cars": false,
+      "is_follow_up": false
+    },
+    {
+      "message": "5 people",
+      "reply": "Perfect! A 5-seater. What's your budget for an SUV?",
+      "quality": 6.5,
+      "has_cars": false,
+      "is_follow_up": false
+    },
+    {
+      "message": "15 lakhs budget",
+      "reply": "Perfect! A 5-seater. Where will you drive your SUV - city, highway, or both?",
+      "quality": 6.5,
+      "has_cars": false,
+      "is_follow_up": false
+    },
+    {
+      "message": "city driving in Mumbai",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 6,
+      "has_cars": true,
+      "is_follow_up": false
+    },
+    {
+      "message": "What's the mileage?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 6,
+      "has_cars": true,
+      "is_follow_up": true
+    },
+    {
+      "message": "Is it safe?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 6,
+      "has_cars": true,
+      "is_follow_up": true
+    },
+    {
+      "message": "What will be the insurance cost?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 6,
+      "has_cars": true,
+      "is_follow_up": true
+    },
+    {
+      "message": "How's the maintenance cost?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 6,
+      "has_cars": true,
+      "is_follow_up": true
+    },
+    {
+      "message": "What's the resale value?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 6,
+      "has_cars": true,
+      "is_follow_up": true
+    },
+    {
+      "message": "Creta vs Seltos?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 6,
+      "has_cars": true,
+      "is_follow_up": true
+    },
+    {
+      "message": "Which is more reliable?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 6,
+      "has_cars": true,
+      "is_follow_up": true
+    },
+    {
+      "message": "What do owners say?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 6,
+      "has_cars": true,
+      "is_follow_up": true
+    },
+    {
+      "message": "Any common problems?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 6,
+      "has_cars": true,
+      "is_follow_up": true
+    },
+    {
+      "message": "What will be the EMI?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 6,
+      "has_cars": true,
+      "is_follow_up": true
+    },
+    {
+      "message": "Does it have sunroof?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 6,
+      "has_cars": true,
+      "is_follow_up": true
+    },
+    {
+      "message": "Is service network good?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 6,
+      "has_cars": true,
+      "is_follow_up": true
+    },
+    {
+      "message": "Should I buy Creta?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 6,
+      "has_cars": true,
+      "is_follow_up": true
+    },
+    {
+      "message": "Tell me about warranty",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 6,
+      "has_cars": true,
+      "is_follow_up": true
+    },
+    {
+      "message": "Final recommendation?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 6,
+      "has_cars": true,
+      "is_follow_up": true
+    }
+  ]
+}

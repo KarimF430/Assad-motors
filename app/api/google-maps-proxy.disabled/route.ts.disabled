@@ -1,0 +1,146 @@
+import { NextRequest, NextResponse } from 'next/server';
+
+/**
+ * Google Maps API Proxy
+ * Secure server-side proxy for Google Maps API calls
+ * Prevents API key exposure to clients
+ */
+
+const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY;
+
+// Rate limiting map (simple in-memory)
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+const RATE_LIMIT = 100; // requests per minute per IP
+const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
+
+function checkRateLimit(ip: string): boolean {
+    const now = Date.now();
+    const record = rateLimitMap.get(ip);
+
+    if (!record || now > record.resetTime) {
+        rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
+        return true;
+    }
+
+    if (record.count >= RATE_LIMIT) {
+        return false;
+    }
+
+    record.count++;
+    return true;
+}
+
+export async function GET(request: NextRequest) {
+    const { searchParams } = new URL(request.url);
+    const action = searchParams.get('action');
+
+    // Get client IP for rate limiting
+    const ip = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown';
+
+    // Check rate limit
+    if (!checkRateLimit(ip)) {
+        return NextResponse.json(
+            { error: 'Rate limit exceeded' },
+            { status: 429 }
+        );
+    }
+
+    // Check API key configuration
+    if (!GOOGLE_MAPS_API_KEY) {
+        return NextResponse.json(
+            { error: 'Google Maps API not configured' },
+            { status: 503 }
+        );
+    }
+
+    try {
+        switch (action) {
+            case 'loadScript':
+                // Return JavaScript that loads Google Maps
+                const scriptContent = `
+          (function() {
+            if (window.google && window.google.maps) {
+              console.log('Google Maps already loaded');
+              return;
+            }
+            const script = document.createElement('script');
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=places';
+            script.async = true;
+            script.defer = true;
+            document.head.appendChild(script);
+          })();
+        `;
+
+                return new NextResponse(scriptContent, {
+                    headers: {
+                        'Content-Type': 'application/javascript',
+                        'Cache-Control': 'public, max-age=86400' // Cache for 24 hours
+                    }
+                });
+
+            case 'geocode':
+                // Reverse geocoding
+                const lat = searchParams.get('lat');
+                const lng = searchParams.get('lng');
+
+                if (!lat || !lng) {
+                    return NextResponse.json(
+                        { error: 'Missing lat/lng parameters' },
+                        { status: 400 }
+                    );
+                }
+
+                const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${GOOGLE_MAPS_API_KEY}`;
+                const geocodeRes = await fetch(geocodeUrl);
+                const geocodeData = await geocodeRes.json();
+
+                return NextResponse.json(geocodeData);
+
+            case 'autocomplete':
+                // Place autocomplete
+                const input = searchParams.get('input');
+
+                if (!input) {
+                    return NextResponse.json(
+                        { error: 'Missing input parameter' },
+                        { status: 400 }
+                    );
+                }
+
+                const autocompleteUrl = `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${encodeURIComponent(input)}&types=(cities)&components=country:in&key=${GOOGLE_MAPS_API_KEY}`;
+                const autocompleteRes = await fetch(autocompleteUrl);
+                const autocompleteData = await autocompleteRes.json();
+
+                return NextResponse.json(autocompleteData);
+
+            case 'placeDetails':
+                // Place details
+                const placeId = searchParams.get('placeId');
+
+                if (!placeId) {
+                    return NextResponse.json(
+                        { error: 'Missing placeId parameter' },
+                        { status: 400 }
+                    );
+                }
+
+                const detailsUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=address_components,geometry,formatted_address&key=${GOOGLE_MAPS_API_KEY}`;
+                const detailsRes = await fetch(detailsUrl);
+                const detailsData = await detailsRes.json();
+
+                return NextResponse.json(detailsData);
+
+            default:
+                return NextResponse.json(
+                    { error: 'Invalid action parameter' },
+                    { status: 400 }
+                );
+        }
+    } catch (error) {
+        console.error('Google Maps proxy error:', error);
+        return NextResponse.json(
+            { error: 'Internal server error' },
+            { status: 500 }
+        );
+    }
+}

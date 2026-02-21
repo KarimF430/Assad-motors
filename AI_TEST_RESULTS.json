@@ -1,0 +1,283 @@
+{
+  "total": 100,
+  "passed": 79,
+  "failed": 21,
+  "accuracy": 79.0,
+  "avg_response_time": 11.649494116306306,
+  "by_category": {
+    "car_name": {
+      "passed": 27,
+      "failed": 3,
+      "accuracy": 90.0
+    },
+    "comparison": {
+      "passed": 15,
+      "failed": 5,
+      "accuracy": 75.0
+    },
+    "budget": {
+      "passed": 15,
+      "failed": 0,
+      "accuracy": 100.0
+    },
+    "safety": {
+      "passed": 3,
+      "failed": 7,
+      "accuracy": 30.0
+    },
+    "typo": {
+      "passed": 13,
+      "failed": 2,
+      "accuracy": 86.66666666666667
+    },
+    "brand": {
+      "passed": 6,
+      "failed": 4,
+      "accuracy": 60.0
+    }
+  },
+  "failed_tests": [
+    {
+      "query": "innova crysta price",
+      "expected": [
+        "Innova"
+      ],
+      "got": [
+        "Innova Hycross",
+        "Innova Crysta"
+      ],
+      "error": null
+    },
+    {
+      "query": "scorpio specs",
+      "expected": [
+        "Scorpio"
+      ],
+      "got": [
+        "Scorpio Classic",
+        "Scorpio-N"
+      ],
+      "error": null
+    },
+    {
+      "query": "xuv300 price",
+      "expected": [
+        "XUV300"
+      ],
+      "got": [],
+      "error": null
+    },
+    {
+      "query": "swift vs baleno",
+      "expected": [
+        "Swift",
+        "Baleno"
+      ],
+      "got": [],
+      "error": "HTTP 500"
+    },
+    {
+      "query": "brezza vs venue",
+      "expected": [
+        "Brezza",
+        "Venue"
+      ],
+      "got": [],
+      "error": "HTTP 500"
+    },
+    {
+      "query": "scorpio vs thar",
+      "expected": [
+        "Scorpio",
+        "Thar"
+      ],
+      "got": [
+        "Thar",
+        "Thar Roxx",
+        "Scorpio Classic"
+      ],
+      "error": null
+    },
+    {
+      "query": "innova vs carens",
+      "expected": [
+        "Innova",
+        "Carens"
+      ],
+      "got": [
+        "Carens",
+        "Innova Hycross",
+        "Innova Crysta"
+      ],
+      "error": null
+    },
+    {
+      "query": "creta vs seltos vs venue",
+      "expected": [
+        "Creta",
+        "Seltos",
+        "Venue"
+      ],
+      "got": [
+        "Creta",
+        "Venue",
+        "Venue N Line"
+      ],
+      "error": null
+    },
+    {
+      "query": "safest car in india",
+      "expected": [
+        "Nexon"
+      ],
+      "got": [
+        "Carnival",
+        "Brezza",
+        "Carens"
+      ],
+      "error": null
+    },
+    {
+      "query": "5 star safety rating cars",
+      "expected": [
+        "Nexon",
+        "Punch"
+      ],
+      "got": [],
+      "error": null
+    },
+    {
+      "query": "safest suv under 15 lakh",
+      "expected": [
+        "Nexon"
+      ],
+      "got": [
+        "Clavis",
+        "Syros",
+        "Victoris"
+      ],
+      "error": null
+    },
+    {
+      "query": "safest hatchback",
+      "expected": [
+        "Altroz",
+        "Punch"
+      ],
+      "got": [
+        "Glanza",
+        "Baleno",
+        "i20 N Line"
+      ],
+      "error": null
+    },
+    {
+      "query": "adas features car",
+      "expected": [
+        "XUV700"
+      ],
+      "got": [
+        "Venue N Line",
+        "Clavis",
+        "Syros"
+      ],
+      "error": null
+    },
+    {
+      "query": "car with best crash rating",
+      "expected": [
+        "Nexon"
+      ],
+      "got": [
+        "Venue",
+        "Clavis",
+        "Syros"
+      ],
+      "error": null
+    },
+    {
+      "query": "ncap 5 star cars india",
+      "expected": [
+        "Nexon",
+        "Punch"
+      ],
+      "got": [
+        "Brezza"
+      ],
+      "error": null
+    },
+    {
+      "query": "inoova crysta",
+      "expected": [
+        "Innova"
+      ],
+      "got": [
+        "Innova Hycross",
+        "Innova Crysta"
+      ],
+      "error": null
+    },
+    {
+      "query": "scorpeo classic",
+      "expected": [
+        "Scorpio"
+      ],
+      "got": [
+        "Scorpio Classic"
+      ],
+      "error": null
+    },
+    {
+      "query": "maruti cars list",
+      "expected": [
+        "Swift",
+        "Brezza",
+        "Baleno"
+      ],
+      "got": [
+        "Ciaz",
+        "S-Presso",
+        "Wagon R"
+      ],
+      "error": null
+    },
+    {
+      "query": "kia cars in india",
+      "expected": [
+        "Seltos",
+        "Sonet",
+        "Carens"
+      ],
+      "got": [
+        "Carnival",
+        "Clavis",
+        "Syros"
+      ],
+      "error": null
+    },
+    {
+      "query": "tata electric cars",
+      "expected": [
+        "Nexon"
+      ],
+      "got": [
+        "Punch EV",
+        "Harrier EV",
+        "Nexon EV"
+      ],
+      "error": null
+    },
+    {
+      "query": "most popular hyundai car",
+      "expected": [
+        "Creta"
+      ],
+      "got": [
+        "Carnival",
+        "Carens",
+        "Dzire"
+      ],
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+node_modules
+dist
+.DS_Store
+server/public
+vite.config.ts.*
+*.tar.gzscripts/
+
+# Environment variables (contains MongoDB, Redis credentials)
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Claude Desktop config (contains database URIs)
+claude_desktop_config.json
+
+# MCP server files with credentials
+mcp-config.json

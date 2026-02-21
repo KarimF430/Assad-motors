@@ -1,0 +1,94 @@
+{
+  "timestamp": "2025-12-04T16:55:35.527330",
+  "total_tests": 8,
+  "passed_tests": 8,
+  "results": [
+    {
+      "question": "What is the mileage of Hyundai Creta?",
+      "category": "spec_query",
+      "answer": "The Hyundai Creta offers impressive fuel efficiency. With the 1.5L petrol engine, you can expect a mileage of up to 16.7 kmpl in city conditions and 19.4 kmpl on the highway. The 1.5L diesel engine de...",
+      "faithfulness": 1.0,
+      "context_relevancy": 1.0,
+      "answer_relevancy": 1.0,
+      "hallucination_score": 0.4,
+      "overall": 0.85
+    },
+    {
+      "question": "Is the Tata Nexon safe?",
+      "category": "safety_query",
+      "answer": "The Tata Nexon is a highly safe compact SUV, with a 5-star Global NCAP rating. It has consistently performed well in crash tests, earning high scores for adult and child occupant safety. The Nexon's r...",
+      "faithfulness": 1.0,
+      "context_relevancy": 0.75,
+      "answer_relevancy": 1.0,
+      "hallucination_score": 1.0,
+      "overall": 0.94
+    },
+    {
+      "question": "Compare Creta vs Seltos",
+      "category": "comparison",
+      "answer": "Both are excellent compact SUVs at \u20b910.87L (top variants). Creta wins on resale value and brand trust (Hyundai network), while Seltos offers more features and sporty design. Choose Creta for long-term...",
+      "faithfulness": 1.0,
+      "context_relevancy": 1.0,
+      "answer_relevancy": 1.0,
+      "hallucination_score": 1.0,
+      "overall": 1.0
+    },
+    {
+      "question": "What is the price of Maruti Swift?",
+      "category": "price_query",
+      "answer": "The latest price of Maruti Swift (GLX, Petrol) in India is around \u20b96.49L (ex-showroom, Delhi). However, prices may vary depending on the location and other factors. It's best to check with local deale...",
+      "faithfulness": 1.0,
+      "context_relevancy": 0.75,
+      "answer_relevancy": 1.0,
+      "hallucination_score": 0.7,
+      "overall": 0.86
+    },
+    {
+      "question": "Which car is best for city driving under 15 lakhs?",
+      "category": "recommendation",
+      "answer": "Under 15 lakhs, I recommend the Hyundai i20, priced at \u20b910.95L. It's a feature-packed hatchback with a comfortable ride and good fuel efficiency. However, be aware that the waiting period is around 3-...",
+      "faithfulness": 0.0,
+      "context_relevancy": 0.75,
+      "answer_relevancy": 0.7,
+      "hallucination_score": 1.0,
+      "overall": 0.61
+    },
+    {
+      "question": "Tell me about XUV700 safety features",
+      "category": "safety_query",
+      "answer": "The Mahindra XUV700 is a flagship SUV that boasts an impressive array of safety features. Some of the key safety features in the XUV700 include:\n\n1. **6-Airbag System**: Dual front airbags, two side a...",
+      "faithfulness": 1.0,
+      "context_relevancy": 0.75,
+      "answer_relevancy": 1.0,
+      "hallucination_score": 1.0,
+      "overall": 0.94
+    },
+    {
+      "question": "What is the engine power of Tata Harrier?",
+      "category": "spec_query",
+      "answer": "The Tata Harrier is available in two engine options. \n\n1. **Kryotec 2.0L Turbo Diesel**: This engine produces **170 HP** and **350 Nm** of torque, paired with a 6-speed automatic transmission. \n2. **K...",
+      "faithfulness": 1.0,
+      "context_relevancy": 0.75,
+      "answer_relevancy": 0.7,
+      "hallucination_score": 0.4,
+      "overall": 0.71
+    },
+    {
+      "question": "Best 7 seater SUV in India?",
+      "category": "recommendation",
+      "answer": "For a 7-seater SUV in India, I'd recommend the **MG Gloster** (\u20b933.78L) and **Toyota Fortuner** (\u20b932.85L). These two are the top choices in the segment.\n\nMG Gloster:\n- Pros: Luxurious interior, smooth...",
+      "faithfulness": 1.0,
+      "context_relevancy": 0.5,
+      "answer_relevancy": 0.7,
+      "hallucination_score": 0.1,
+      "overall": 0.58
+    }
+  ],
+  "summary": {
+    "faithfulness": 0.88,
+    "context_relevancy": 0.78,
+    "answer_relevancy": 0.89,
+    "hallucination_score": 0.7,
+    "overall": 0.81
+  }
+}

@@ -1,0 +1,369 @@
+{
+  "timestamp": "2025-11-25T15:18:59.948870",
+  "summary": {
+    "total_tested": 70,
+    "avg_quality": 8.6675,
+    "long_conv_quality": 8.325,
+    "diverse_quality": 9.01
+  },
+  "distribution": {
+    "excellent": 70,
+    "good": 0,
+    "average": 0,
+    "poor": 0
+  },
+  "long_conversation": [
+    {
+      "message": "hello",
+      "reply": "Hi! \ud83d\udc4b I'm here to help you find the perfect car. What kind of car are you looking for?",
+      "quality": 9.5
+    },
+    {
+      "message": "I need a family car",
+      "reply": "Perfect! A 5-seater. What's your budget range?",
+      "quality": 9.5
+    },
+    {
+      "message": "We are 5 people",
+      "reply": "Perfect! A 5-seater. What's your budget range?",
+      "quality": 9
+    },
+    {
+      "message": "around 15 lakhs",
+      "reply": "Perfect! A 5-seater. Where will you mostly drive?",
+      "quality": 9
+    },
+    {
+      "message": "mostly city driving",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 8
+    },
+    {
+      "message": "What about mileage?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 8
+    },
+    {
+      "message": "Is it safe?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 8
+    },
+    {
+      "message": "Which brand is reliable?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 8
+    },
+    {
+      "message": "Creta or Seltos?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 8
+    },
+    {
+      "message": "What's the difference?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 8
+    },
+    {
+      "message": "Which has better features?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 8
+    },
+    {
+      "message": "Resale value?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 8
+    },
+    {
+      "message": "Maintenance cost?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 8
+    },
+    {
+      "message": "Should I go for diesel?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 8.5
+    },
+    {
+      "message": "What about automatic?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 8
+    },
+    {
+      "message": "Show me the cars",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 8.5
+    },
+    {
+      "message": "Tell me more about Creta",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 8
+    },
+    {
+      "message": "What do owners say?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 8
+    },
+    {
+      "message": "Any problems?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 8
+    },
+    {
+      "message": "Should I buy it?",
+      "reply": "\ud83c\udfaf Great! I found 2 cars that match your requirements:",
+      "quality": 8.5
+    }
+  ],
+  "diverse_questions": [
+    {
+      "question": "Suggest a hatchback",
+      "reply": "Hatchbacks are great! What's your budget range?",
+      "quality": 9
+    },
+    {
+      "question": "around 5 lakhs",
+      "reply": "Perfect! \u20b95 lakhs gives you great options. How many people will typically travel?",
+      "quality": 9.5
+    },
+    {
+      "question": "Suggest a sedan",
+      "reply": "Sedans are great! What's your budget range?",
+      "quality": 9
+    },
+    {
+      "question": "Best car under 5 lakhs",
+      "reply": "Perfect! \u20b95 lakhs gives you great options. How many people will typically travel?",
+      "quality": 9.5
+    },
+    {
+      "question": "2 seater car",
+      "reply": "Great! A car for two. What's your budget range?",
+      "quality": 9.5
+    },
+    {
+      "question": "Car for Bangalore roads",
+      "reply": "What's your budget range?",
+      "quality": 8
+    },
+    {
+      "question": "Best MUV",
+      "reply": "What's your budget range?",
+      "quality": 8
+    },
+    {
+      "question": "Which car is good in Kolkata?",
+      "reply": "Hi! \ud83d\udc4b I'm here to help you find the perfect car. What kind of car are you looking for?",
+      "quality": 10
+    },
+    {
+      "question": "Is CNG worth it?",
+      "reply": "What's your budget range?",
+      "quality": 8
+    },
+    {
+      "question": "Best car for Chennai traffic",
+      "reply": "For city traffic, what's your budget range?",
+      "quality": 8.5
+    },
+    {
+      "question": "Car for Mumbai roads",
+      "reply": "For city traffic, what's your budget range?",
+      "quality": 8.5
+    },
+    {
+      "question": "Best car for family of 5?",
+      "reply": "Perfect! A 5-seater. What's your budget range?",
+      "quality": 9
+    },
+    {
+      "question": "Which car in 15 lakh budget?",
+      "reply": "Perfect! \u20b915 lakhs gives you great options. How many people will typically travel?",
+      "quality": 9
+    },
+    {
+      "question": "How's the service?",
+      "reply": "What's your budget range?",
+      "quality": 8
+    },
+    {
+      "question": "4 passengers",
+      "reply": "What's your budget range?",
+      "quality": 8
+    },
+    {
+      "question": "No, I meant 15 lakhs not 10",
+      "reply": "Perfect! \u20b915 lakhs gives you great options. How many people will typically travel?",
+      "quality": 9.5
+    },
+    {
+      "question": "Suggest car for 8L",
+      "reply": "Perfect! \u20b98 lakhs gives you great options. How many people will typically travel?",
+      "quality": 9
+    },
+    {
+      "question": "Which car in 7 lakh budget?",
+      "reply": "Perfect! \u20b97 lakhs gives you great options. How many people will typically travel?",
+      "quality": 9
+    },
+    {
+      "question": "Which car is good in Hyderabad?",
+      "reply": "Hi! \ud83d\udc4b I'm here to help you find the perfect car. What kind of car are you looking for?",
+      "quality": 10
+    },
+    {
+      "question": "car for 5 people",
+      "reply": "Perfect! A 5-seater. What's your budget range?",
+      "quality": 9
+    },
+    {
+      "question": "Car for Delhi roads",
+      "reply": "Hi! \ud83d\udc4b I'm here to help you find the perfect car. What kind of car are you looking for?",
+      "quality": 10
+    },
+    {
+      "question": "car for 8 people",
+      "reply": "Excellent! A 8-seater for the whole family. For a 8-seater, what's your budget?",
+      "quality": 9.5
+    },
+    {
+      "question": "Which MUV to buy?",
+      "reply": "Hi! \ud83d\udc4b I'm here to help you find the perfect car. What kind of car are you looking for?",
+      "quality": 10
+    },
+    {
+      "question": "Best car for Bangalore roads?",
+      "reply": "What's your budget range?",
+      "quality": 8
+    },
+    {
+      "question": "Creta vs Seltos - which is better?",
+      "reply": "Hi! \ud83d\udc4b I'm here to help you find the perfect car. What kind of car are you looking for?",
+      "quality": 9.5
+    },
+    {
+      "question": "Best car under 8 lakhs",
+      "reply": "Perfect! \u20b98 lakhs gives you great options. How many people will typically travel?",
+      "quality": 9.5
+    },
+    {
+      "question": "Which SUV to buy?",
+      "reply": "Hi! \ud83d\udc4b I'm here to help you find the perfect car. What kind of car are you looking for?",
+      "quality": 10
+    },
+    {
+      "question": "Best electric car",
+      "reply": "What's your budget range?",
+      "quality": 8
+    },
+    {
+      "question": "Comfortable car for elderly parents?",
+      "reply": "What's your budget range?",
+      "quality": 8
+    },
+    {
+      "question": "Best car under 35 lakhs",
+      "reply": "Perfect! \u20b935 lakhs gives you great options. How many people will typically travel?",
+      "quality": 9.5
+    },
+    {
+      "question": "Car for Chennai roads",
+      "reply": "What's your budget range?",
+      "quality": 8
+    },
+    {
+      "question": "Best car under 30 lakhs",
+      "reply": "Perfect! \u20b930 lakhs gives you great options. How many people will typically travel?",
+      "quality": 9.5
+    },
+    {
+      "question": "around 50 lakhs",
+      "reply": "Perfect! \u20b950 lakhs gives you great options. How many people will typically travel?",
+      "quality": 9.5
+    },
+    {
+      "question": "Which car in 35 lakh budget?",
+      "reply": "Perfect! \u20b935 lakhs gives you great options. How many people will typically travel?",
+      "quality": 9
+    },
+    {
+      "question": "Is it safe?",
+      "reply": "What's your budget range?",
+      "quality": 8
+    },
+    {
+      "question": "Which car has best mileage?",
+      "reply": "Hi! \ud83d\udc4b I'm here to help you find the perfect car. What kind of car are you looking for?",
+      "quality": 10
+    },
+    {
+      "question": "4 seater car",
+      "reply": "Perfect! A 4-seater. What's your budget range?",
+      "quality": 9
+    },
+    {
+      "question": "6 passengers",
+      "reply": "What's your budget range?",
+      "quality": 8
+    },
+    {
+      "question": "I'm confused between sedan and SUV",
+      "reply": "Sedans are great! What's your budget range?",
+      "quality": 9
+    },
+    {
+      "question": "around 7 lakhs",
+      "reply": "Perfect! \u20b97 lakhs gives you great options. How many people will typically travel?",
+      "quality": 9.5
+    },
+    {
+      "question": "Which car in 12 lakh budget?",
+      "reply": "Perfect! \u20b912 lakhs gives you great options. How many people will typically travel?",
+      "quality": 9
+    },
+    {
+      "question": "Best car under 12 lakhs",
+      "reply": "Perfect! \u20b912 lakhs gives you great options. How many people will typically travel?",
+      "quality": 9.5
+    },
+    {
+      "question": "Which hatchback to buy?",
+      "reply": "Hi! \ud83d\udc4b I'm here to help you find the perfect car. What kind of car are you looking for?",
+      "quality": 10
+    },
+    {
+      "question": "Maintenance cost?",
+      "reply": "What's your budget range?",
+      "quality": 8
+    },
+    {
+      "question": "petrol car under 15 lakhs",
+      "reply": "Perfect! \u20b915 lakhs gives you great options. How many people will typically travel?",
+      "quality": 9.5
+    },
+    {
+      "question": "around 25 lakhs",
+      "reply": "Perfect! \u20b925 lakhs gives you great options. How many people will typically travel?",
+      "quality": 9.5
+    },
+    {
+      "question": "Suggest car for 30L",
+      "reply": "Perfect! \u20b930 lakhs gives you great options. How many people will typically travel?",
+      "quality": 9
+    },
+    {
+      "question": "8 seater car",
+      "reply": "Excellent! A 8-seater for the whole family. For a 8-seater, what's your budget?",
+      "quality": 9
+    },
+    {
+      "question": "What about mileage?",
+      "reply": "What's your budget range?",
+      "quality": 8
+    },
+    {
+      "question": "Best car under 25 lakhs",
+      "reply": "Perfect! \u20b925 lakhs gives you great options. How many people will typically travel?",
+      "quality": 9.5
+    }
+  ]
+}

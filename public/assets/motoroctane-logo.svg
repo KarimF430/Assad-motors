@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" fill="none">
+  <!-- MO Text with 3D effect -->
+  <defs>
+    <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#DC2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B91C1C;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="flameGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#DC2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B91C1C;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- M Letter -->
+  <path d="M10 20 L10 60 L18 60 L18 35 L25 50 L30 50 L37 35 L37 60 L45 60 L45 20 L35 20 L27.5 40 L20 20 Z" fill="url(#redGradient)" stroke="#991B1B" stroke-width="1"/>
+  
+  <!-- O Letter (Wheel Design) -->
+  <circle cx="75" cy="40" r="22" fill="#374151" stroke="#DC2626" stroke-width="2"/>
+  <circle cx="75" cy="40" r="18" fill="#F59E0B"/>
+  <circle cx="75" cy="40" r="14" fill="#6B7280"/>
+  <circle cx="75" cy="40" r="3" fill="#E5E7EB"/>
+  
+  <!-- Wheel Spokes -->
+  <line x1="57" y1="40" x2="93" y2="40" stroke="#E5E7EB" stroke-width="2"/>
+  <line x1="75" y1="22" x2="75" y2="58" stroke="#E5E7EB" stroke-width="2"/>
+  <line x1="62" y1="27" x2="88" y2="53" stroke="#E5E7EB" stroke-width="2"/>
+  <line x1="88" y1="27" x2="62" y2="53" stroke="#E5E7EB" stroke-width="2"/>
+  
+  <!-- Flame Effect -->
+  <path d="M100 25 Q108 18 115 28 Q122 20 130 32 Q138 24 145 38 Q140 50 128 45 Q120 52 110 42 Q102 35 100 25Z" fill="url(#flameGradient)"/>
+  <path d="M108 30 Q113 26 118 32 Q123 28 128 36 Q125 42 118 38 Q113 40 108 35 Q105 32 108 30Z" fill="#FCD34D"/>
+  
+  <!-- Tagline -->
+  <text x="10" y="72" font-family="Arial, sans-serif" font-size="11" font-style="italic" fill="#374151" font-weight="600">Aapka Auto Expert!</text>
+</svg>

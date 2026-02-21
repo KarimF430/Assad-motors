@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" fill="none">
+  <!-- MO Text -->
+  <text x="10" y="45" font-family="Arial Black, sans-serif" font-size="32" font-weight="900" fill="#DC2626">M</text>
+  <text x="40" y="45" font-family="Arial Black, sans-serif" font-size="32" font-weight="900" fill="#DC2626">O</text>
+  
+  <!-- Wheel -->
+  <circle cx="85" cy="35" r="25" fill="#374151" stroke="#DC2626" stroke-width="2"/>
+  <circle cx="85" cy="35" r="20" fill="#F59E0B"/>
+  <circle cx="85" cy="35" r="15" fill="#6B7280"/>
+  
+  <!-- Spokes -->
+  <line x1="70" y1="35" x2="100" y2="35" stroke="#E5E7EB" stroke-width="2"/>
+  <line x1="85" y1="20" x2="85" y2="50" stroke="#E5E7EB" stroke-width="2"/>
+  <line x1="75" y1="25" x2="95" y2="45" stroke="#E5E7EB" stroke-width="2"/>
+  <line x1="95" y1="25" x2="75" y2="45" stroke="#E5E7EB" stroke-width="2"/>
+  
+  <!-- Flame -->
+  <path d="M110 20 Q120 15 125 25 Q130 20 135 30 Q140 25 145 35 Q140 45 130 40 Q125 45 115 35 Q110 30 110 20Z" fill="#DC2626"/>
+  <path d="M115 25 Q120 22 123 28 Q126 25 130 32 Q125 38 120 35 Q115 32 115 25Z" fill="#F59E0B"/>
+  
+  <!-- Tagline -->
+  <text x="10" y="65" font-family="Arial, sans-serif" font-size="10" font-style="italic" fill="#374151">Aapka Auto Expert!</text>
+</svg>

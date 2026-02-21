@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analytics Connection Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .status {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .pending { background: #fff3cd; color: #856404; }
+        h1 { color: #333; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 5px; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Analytics Connection Test</h1>
+    
+    <div class="test-section">
+        <h2>Platform Status</h2>
+        <div id="ga-status" class="status pending">⏳ Google Analytics: Checking...</div>
+        <div id="clarity-status" class="status pending">⏳ Microsoft Clarity: Checking...</div>
+        <div id="amplitude-status" class="status pending">⏳ Amplitude: Checking...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test Events</h2>
+        <button onclick="testPageView()">Test Page View</button>
+        <button onclick="testCustomEvent()">Test Custom Event</button>
+        <button onclick="testCarView()">Test Car View</button>
+        <div id="event-log" style="margin-top: 20px; padding: 10px; background: #f5f5f5; border-radius: 5px; max-height: 300px; overflow-y: auto;"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Network Requests</h2>
+        <p>Open DevTools → Network tab and filter by:</p>
+        <ul>
+            <li><code>google-analytics.com</code> or <code>analytics.google.com</code></li>
+            <li><code>clarity.ms</code></li>
+            <li><code>amplitude.com</code></li>
+        </ul>
+        <p>You should see requests to these domains when events are tracked.</p>
+    </div>
+
+    <script>
+        // Check if analytics platforms are loaded
+        setTimeout(() => {
+            // Google Analytics
+            if (typeof window.gtag === 'function') {
+                document.getElementById('ga-status').className = 'status success';
+                document.getElementById('ga-status').textContent = '✅ Google Analytics: Connected';
+                logEvent('Google Analytics initialized');
+            } else {
+                document.getElementById('ga-status').className = 'status error';
+                document.getElementById('ga-status').textContent = '❌ Google Analytics: Not detected';
+                logEvent('Google Analytics NOT found', true);
+            }
+
+            // Microsoft Clarity
+            if (typeof window.clarity === 'function') {
+                document.getElementById('clarity-status').className = 'status success';
+                document.getElementById('clarity-status').textContent = '✅ Microsoft Clarity: Connected';
+                logEvent('Microsoft Clarity initialized');
+            } else {
+                document.getElementById('clarity-status').className = 'status error';
+                document.getElementById('clarity-status').textContent = '❌ Microsoft Clarity: Not detected';
+                logEvent('Microsoft Clarity NOT found', true);
+            }
+
+            // Amplitude
+            if (typeof window.amplitude !== 'undefined') {
+                document.getElementById('amplitude-status').className = 'status success';
+                document.getElementById('amplitude-status').textContent = '✅ Amplitude: Connected';
+                logEvent('Amplitude initialized');
+            } else {
+                document.getElementById('amplitude-status').className = 'status error';
+                document.getElementById('amplitude-status').textContent = '⚠️ Amplitude: Not detected (may be loaded via module)';
+                logEvent('Amplitude not on window object (normal for module-based loading)');
+            }
+        }, 2000);
+
+        function logEvent(message, isError = false) {
+            const log = document.getElementById('event-log');
+            const time = new Date().toLocaleTimeString();
+            const color = isError ? '#dc3545' : '#28a745';
+            log.innerHTML += `<div style="color: ${color}; margin: 5px 0;">[${time}] ${message}</div>`;
+            log.scrollTop = log.scrollHeight;
+        }
+
+        function testPageView() {
+            if (typeof window.gtag === 'function') {
+                window.gtag('event', 'page_view', { page_path: '/test' });
+                logEvent('✅ Sent page_view to Google Analytics');
+            }
+            logEvent('📊 Page view event triggered');
+        }
+
+        function testCustomEvent() {
+            if (typeof window.gtag === 'function') {
+                window.gtag('event', 'test_event', { test_property: 'test_value' });
+                logEvent('✅ Sent test_event to Google Analytics');
+            }
+            if (typeof window.clarity === 'function') {
+                window.clarity('set', 'test_event', 'test_value');
+                logEvent('✅ Sent test_event to Clarity');
+            }
+            logEvent('📊 Custom event triggered');
+        }
+
+        function testCarView() {
+            const carData = {
+                car_id: 'test-123',
+                brand: 'Tata',
+                model: 'Nexon',
+                price: 800000
+            };
+            
+            if (typeof window.gtag === 'function') {
+                window.gtag('event', 'car_viewed', carData);
+                logEvent('✅ Sent car_viewed to Google Analytics');
+            }
+            if (typeof window.clarity === 'function') {
+                window.clarity('set', 'car_viewed', JSON.stringify(carData));
+                logEvent('✅ Sent car_viewed to Clarity');
+            }
+            logEvent('📊 Car view event triggered: Tata Nexon');
+        }
+
+        // Log initial state
+        logEvent('Analytics test page loaded');
+        logEvent('Waiting 2 seconds for analytics to initialize...');
+    </script>
+</body>
+</html>

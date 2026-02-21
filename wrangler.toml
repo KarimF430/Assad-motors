@@ -1,0 +1,17 @@
+# Cloudflare Pages Configuration
+name = "motoroctane-frontend"
+compatibility_date = "2024-11-12"
+
+[build]
+command = "npm run build"
+cwd = ""
+
+[env.production]
+vars = { NODE_ENV = "production" }
+
+[env.production.vars]
+NEXT_PUBLIC_API_URL = "https://motoroctane-backend.onrender.com"
+NEXT_PUBLIC_BACKEND_URL = "https://motoroctane-backend.onrender.com"
+
+[env.preview]
+vars = { NODE_ENV = "development" }

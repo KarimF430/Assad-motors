@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-section {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .success { border-color: #4CAF50; background-color: #f9fff9; }
+        .error { border-color: #f44336; background-color: #fff9f9; }
+        .warning { border-color: #ff9800; background-color: #fffaf0; }
+        
+        input[type="file"] {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        img {
+            max-width: 300px;
+            max-height: 300px;
+            border: 1px solid #ddd;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🖼️ Image Upload & Display Test</h1>
+    <p>This tool helps debug why uploaded images are not showing up on the frontend.</p>
+
+    <div class="test-section">
+        <h2>📤 Upload Test</h2>
+        <input type="file" id="imageFile" accept="image/*">
+        <button onclick="uploadImage()">Upload Image</button>
+        <div id="uploadResult" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>🔗 URL Test</h2>
+        <p>Test if a specific image URL loads correctly:</p>
+        <input type="text" id="testUrl" placeholder="Enter image URL to test" style="width: 100%; padding: 8px;">
+        <button onclick="testUrl()">Test URL</button>
+        <div id="urlResult" class="result"></div>
+        <div id="imagePreview"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>📋 Common URLs to Test</h2>
+        <p>Click these buttons to test common URL patterns:</p>
+        <button onclick="testUrl('https://pub-a4a4bb84fc2d41cba103f4e2a8b5d185.r2.dev/uploads/images/202511/test.webp')">Test R2 URL</button>
+        <button onclick="testUrl('https://killer-whale.onrender.com/uploads/test.webp')">Test Backend Local URL</button>
+        <button onclick="testUrl('/uploads/test.webp')">Test Relative Local URL</button>
+    </div>
+
+    <script>
+        async function uploadImage() {
+            const fileInput = document.getElementById('imageFile');
+            const resultDiv = document.getElementById('uploadResult');
+            
+            if (!fileInput.files[0]) {
+                resultDiv.textContent = 'Please select a file first';
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('image', fileInput.files[0]);
+
+            resultDiv.textContent = 'Uploading...';
+
+            try {
+                // You'll need to add authentication token here
+                const token = prompt('Enter your auth token (or "dev-access-token" for development):');
+                
+                const response = await fetch('/api/upload/image', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                const data = await response.json();
+                
+                if (data.success) {
+                    resultDiv.innerHTML = `
+✅ Upload Successful!
+URL: ${data.url}
+Filename: ${data.filename}
+Timestamp: ${data.timestamp}
+
+🔍 Analysis:
+${data.url.startsWith('http') ? '✅ R2 URL (cloud storage)' : '❌ Local URL (will be lost on restart)'}
+                    `;
+                    resultDiv.className = 'result success';
+                    
+                    // Auto-test the returned URL
+                    document.getElementById('testUrl').value = data.url;
+                    testUrl();
+                } else {
+                    resultDiv.textContent = `❌ Upload Failed: ${data.error}`;
+                    resultDiv.className = 'result error';
+                }
+            } catch (error) {
+                resultDiv.textContent = `❌ Error: ${error.message}`;
+                resultDiv.className = 'result error';
+            }
+        }
+
+        function testUrl(url) {
+            const urlInput = document.getElementById('testUrl');
+            const resultDiv = document.getElementById('urlResult');
+            const previewDiv = document.getElementById('imagePreview');
+            
+            const testUrl = url || urlInput.value;
+            if (!testUrl) {
+                resultDiv.textContent = 'Please enter a URL to test';
+                return;
+            }
+
+            urlInput.value = testUrl;
+            resultDiv.textContent = `Testing URL: ${testUrl}`;
+            previewDiv.innerHTML = '';
+
+            // Create image element to test loading
+            const img = new Image();
+            
+            img.onload = function() {
+                resultDiv.innerHTML = `
+✅ URL Test Successful!
+URL: ${testUrl}
+Dimensions: ${img.naturalWidth} x ${img.naturalHeight}
+Status: Image loads correctly
+                `;
+                resultDiv.className = 'result success';
+                
+                // Show preview
+                const previewImg = img.cloneNode();
+                previewImg.style.maxWidth = '300px';
+                previewImg.style.maxHeight = '300px';
+                previewDiv.appendChild(previewImg);
+            };
+            
+            img.onerror = function() {
+                resultDiv.innerHTML = `
+❌ URL Test Failed!
+URL: ${testUrl}
+Status: Image failed to load
+Possible causes:
+- File doesn't exist at this URL
+- CORS issues
+- Network connectivity problems
+- Invalid URL format
+                `;
+                resultDiv.className = 'result error';
+            };
+            
+            img.src = testUrl;
+        }
+    </script>
+</body>
+</html>

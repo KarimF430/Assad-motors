@@ -73,9 +73,9 @@ export default function AboutUsPage() {
                                 <h3 className="font-semibold text-green-900 mb-2">India-Specific Context</h3>
                                 <p className="text-green-800 text-sm leading-relaxed">Every review and comparison is written with Indian road conditions, fuel prices, and ownership costs in mind — not adapted from global content.</p>
                             </div>
-                            <div className="bg-orange-50 rounded-lg p-4 border border-orange-100">
-                                <h3 className="font-semibold text-orange-900 mb-2">Transparent Pricing</h3>
-                                <p className="text-orange-800 text-sm leading-relaxed">Our on-road price calculator shows you exactly how the final price is built up — RTO, insurance, and accessories — so there are no surprises at the dealership.</p>
+                            <div className="bg-[#f0eef5] rounded-lg p-4 border border-[#e8e6f0]">
+                                <h3 className="font-semibold text-[#1c144a] mb-2">Transparent Pricing</h3>
+                                <p className="text-[#291e6a] text-sm leading-relaxed">Our on-road price calculator shows you exactly how the final price is built up — RTO, insurance, and accessories — so there are no surprises at the dealership.</p>
                             </div>
                             <div className="bg-purple-50 rounded-lg p-4 border border-purple-100">
                                 <h3 className="font-semibold text-purple-900 mb-2">Depth Over Breadth</h3>
@@ -111,7 +111,7 @@ export default function AboutUsPage() {
                                 width: 56,
                                 height: 56,
                                 borderRadius: '50%',
-                                background: 'linear-gradient(135deg, #dc2626, #ea580c)',
+                                background: 'linear-gradient(135deg, #dc2626, #291e6a)',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
@@ -124,7 +124,7 @@ export default function AboutUsPage() {
                             </div>
                             <div>
                                 <h3 className="font-semibold text-gray-900 text-base mb-0.5">Karim Beldaar</h3>
-                                <p className="text-sm text-orange-600 mb-2">Founder, gadizone · Mumbai, India</p>
+                                <p className="text-sm text-[#1c144a] mb-2">Founder, gadizone · Mumbai, India</p>
                                 <p className="text-gray-700 text-sm leading-relaxed">
                                     Karim built gadizone after spending months trying to find honest, India-specific car research online and coming up short.
                                     With a background in software engineering and a genuine interest in the Indian automotive market, he set out to create
@@ -133,7 +133,7 @@ export default function AboutUsPage() {
                                 </p>
                                 <p className="text-gray-700 text-sm leading-relaxed mt-2">
                                     You can reach him directly at{' '}
-                                    <a href="mailto:Karim0beldaar@gmail.com" className="text-orange-600 hover:underline">
+                                    <a href="mailto:Karim0beldaar@gmail.com" className="text-[#1c144a] hover:underline">
                                         Karim0beldaar@gmail.com
                                     </a>
                                     .

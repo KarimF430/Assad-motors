@@ -204,7 +204,7 @@ export default function ModelOwnerReviews({
                                         <span className="text-xs sm:text-sm font-medium text-gray-700 w-5 sm:w-6">{rating}★</span>
                                         <div className="flex-1 mx-2 sm:mx-3 bg-gray-200 rounded-full h-1.5 sm:h-2">
                                             <div
-                                                className="bg-orange-500 h-1.5 sm:h-2 rounded-full"
+                                                className="bg-[#291e6a] h-1.5 sm:h-2 rounded-full"
                                                 style={{ width: `${getRatingPercentage(ratingBreakdown[rating as keyof typeof ratingBreakdown])}%` }}
                                             ></div>
                                         </div>
@@ -253,8 +253,8 @@ export default function ModelOwnerReviews({
                             {reviews.map((review) => (
                                 <div key={review.id} className="border-b border-gray-200 pb-4 sm:pb-6">
                                     <div className="flex items-start">
-                                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-orange-100 rounded-full flex items-center justify-center mr-2 sm:mr-4 flex-shrink-0">
-                                            <span className="text-orange-600 font-semibold text-xs sm:text-sm">
+                                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#e8e6f0] rounded-full flex items-center justify-center mr-2 sm:mr-4 flex-shrink-0">
+                                            <span className="text-[#1c144a] font-semibold text-xs sm:text-sm">
                                                 {review.userName?.charAt(0).toUpperCase() || 'U'}
                                             </span>
                                         </div>
@@ -330,7 +330,7 @@ export default function ModelOwnerReviews({
                         {/* Read More Button - EXACT MATCH */}
                         {totalReviews > reviews.length && (
                             <div className="text-center mt-4 sm:mt-6">
-                                <button className="text-red-600 hover:text-orange-600 font-medium transition-colors min-h-[44px] py-2 text-sm sm:text-base">
+                                <button className="text-red-600 hover:text-[#1c144a] font-medium transition-colors min-h-[44px] py-2 text-sm sm:text-base">
                                     Read More
                                 </button>
                             </div>

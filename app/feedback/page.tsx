@@ -33,7 +33,7 @@ export default function FeedbackPage() {
                 <PageContainer maxWidth="md">
                     <PageSection spacing="normal">
                         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 md:p-10">
-                            <Link href="/" className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 mb-6">
+                            <Link href="/" className="inline-flex items-center gap-2 text-[#1c144a] hover:text-[#1c144a] mb-6">
                                 <ArrowLeft className="w-4 h-4" />
                                 Back to Home
                             </Link>
@@ -50,7 +50,7 @@ export default function FeedbackPage() {
                                     </div>
                                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Thank You!</h3>
                                     <p className="text-gray-600 mb-6">Your feedback helps us serve you better.</p>
-                                    <button onClick={() => { setSubmitted(false); setFormData({ name: '', email: '', rating: 0, category: '', feedback: '' }) }} className="text-orange-600 hover:text-orange-700 font-medium">
+                                    <button onClick={() => { setSubmitted(false); setFormData({ name: '', email: '', rating: 0, category: '', feedback: '' }) }} className="text-[#1c144a] hover:text-[#1c144a] font-medium">
                                         Submit more feedback
                                     </button>
                                 </div>
@@ -93,19 +93,19 @@ export default function FeedbackPage() {
                                         <div>
                                             <label className="block text-xs font-medium text-gray-700 mb-1">YOUR NAME (Optional)</label>
                                             <input type="text" name="name" value={formData.name} onChange={handleChange}
-                                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-orange-500 text-sm" />
+                                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#291e6a] text-sm" />
                                         </div>
                                         <div>
                                             <label className="block text-xs font-medium text-gray-700 mb-1">EMAIL (Optional)</label>
                                             <input type="email" name="email" value={formData.email} onChange={handleChange}
-                                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-orange-500 text-sm" />
+                                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#291e6a] text-sm" />
                                         </div>
                                     </div>
 
                                     <div>
                                         <label className="block text-xs font-medium text-gray-700 mb-1">FEEDBACK CATEGORY *</label>
                                         <select name="category" value={formData.category} onChange={handleChange} required
-                                            className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-orange-500 text-sm">
+                                            className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#291e6a] text-sm">
                                             <option value="">Select category</option>
                                             <option value="website">Website Experience</option>
                                             <option value="content">Content Quality</option>
@@ -119,11 +119,11 @@ export default function FeedbackPage() {
                                     <div>
                                         <label className="block text-xs font-medium text-gray-700 mb-1">YOUR FEEDBACK *</label>
                                         <textarea name="feedback" value={formData.feedback} onChange={handleChange} required rows={5}
-                                            className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-orange-500 text-sm resize-none" placeholder="Tell us what you think..." />
+                                            className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#291e6a] text-sm resize-none" placeholder="Tell us what you think..." />
                                     </div>
 
                                     <button type="submit" disabled={isSubmitting || !formData.category || !formData.feedback}
-                                        className="w-full bg-orange-600 hover:bg-orange-700 disabled:bg-gray-300 text-white font-semibold py-3 rounded transition-colors">
+                                        className="w-full bg-[#1c144a] hover:bg-[#1c144a] disabled:bg-gray-300 text-white font-semibold py-3 rounded transition-colors">
                                         {isSubmitting ? 'Submitting...' : 'Submit Feedback'}
                                     </button>
                                 </form>

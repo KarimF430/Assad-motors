@@ -6,7 +6,7 @@ import AlternativeBrands from '@/components/brand/AlternativeBrands'
 import BrandNews from '@/components/brand/BrandNews'
 import BrandYouTube from '@/components/brand/BrandYouTube'
 import BrandFAQ from '@/components/brand/BrandFAQ'
-import BrandUserReviews from '@/components/brand/BrandUserReviews'
+
 import ConsultancyAd from '@/components/home/ConsultancyAd'
 import AdSpaces from '@/components/home/AdSpaces'
 import FeedbackBox from '@/components/brand/FeedbackBox'
@@ -15,7 +15,7 @@ import Footer from '@/components/Footer'
 import PageSection from '@/components/common/PageSection'
 import PageHeader from '@/components/common/PageHeader'
 import CarComparison from '@/components/common/CarComparison'
-import { FloatingAIBot } from '@/components/FloatingAIBot'
+
 import { generateBrandSEO } from '@/lib/seo'
 import { generateBreadcrumbSchema } from '@/lib/structured-data'
 import Breadcrumb from '@/components/common/Breadcrumb'
@@ -432,12 +432,7 @@ export default async function BrandPage({ params }: BrandPageProps) {
           </SafeComponent>
         </main>
 
-        {/* Floating AI Bot */}
-        <FloatingAIBot
-          type="brand"
-          id={backendBrand.id}
-          name={brand.name}
-        />
+
 
         <Breadcrumb items={breadcrumbs} />
         <Footer />

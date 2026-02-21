@@ -89,30 +89,30 @@ export default function BrandHeroSection({ brand, brands = [], models = [], bran
       </div>
 
       {/* Brand Title and SEO Text Section */}
-      <section className="py-6 sm:py-8 bg-white">
+      <section className="py-3 sm:py-6 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
           {/* Brand Title */}
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-            {brand.name} Cars Price in India, New Models {new Date().getFullYear()}, Reviews & Offers
+            Used {brand.name} Cars for Sale | Certified Pre-Owned {brand.name} {new Date().getFullYear()}
           </h1>
 
           {/* Dynamic SEO Description */}
           <div className="bg-white">
             <div className="text-gray-700 text-sm sm:text-base leading-relaxed">
               <p className="mb-2">
-                {brand.name} offers {brand.totalModels} car models in India, including {brand.categories.suv > 0 ? `${brand.categories.suv} SUVs, ` : ''}{brand.categories.sedan > 0 ? `${brand.categories.sedan} Sedans, ` : ''}{brand.categories.hatchback > 0 ? `${brand.categories.hatchback} Hatchbacks` : ''}.
-                The price range for {brand.name} cars starts from <span className="font-semibold">₹ {formatPrice(brand.priceRange.min)} Lakh</span> and goes up to <span className="font-semibold">₹ {formatPrice(brand.priceRange.max)} Lakh</span> (Avg. ex-showroom).
+                Browse {brand.totalModels} certified pre-owned {brand.name} cars available for sale.
+                Used {brand.name} car prices start from <span className="font-semibold">₹ {formatPrice(brand.priceRange.min)} Lakh</span> and go up to <span className="font-semibold">₹ {formatPrice(brand.priceRange.max)} Lakh</span>.
               </p>
 
               {!isExpanded ? (
                 <>
                   <p className="inline">
-                    Some of the most popular {brand.name} cars include {top5Models.map(m => m.name).join(', ')}.
-                    {brand.upcomingCars > 0 && ` There are ${brand.upcomingCars} upcoming ${brand.name} cars expected to launch in ${new Date().getFullYear()}.`}
+                    Popular used {brand.name} models include {top5Models.map(m => m.name).join(', ')}.
+                    All our pre-owned cars come with thorough inspection reports and warranty options.
                   </p>
                   <button
                     onClick={() => setIsExpanded(true)}
-                    className="ml-2 text-red-600 hover:text-orange-600 font-medium transition-colors hover:underline"
+                    className="ml-2 text-red-600 hover:text-[#1c144a] font-medium transition-colors hover:underline"
                   >
                     Read More
                   </button>
@@ -124,7 +124,7 @@ export default function BrandHeroSection({ brand, brands = [], models = [], bran
                     <p>{brand.fullDescription}</p>
 
                     <h2 className="text-lg sm:text-xl font-bold text-gray-900 mt-6 mb-3">
-                      Why Buy {brand.name} Cars?
+                      Why Buy a Used {brand.name}?
                     </h2>
                     <p>
                       {brand.name} is one of the leading car manufacturers in India, known for its widespread service network,
@@ -153,7 +153,7 @@ export default function BrandHeroSection({ brand, brands = [], models = [], bran
                   <div className="mt-6 border border-gray-200 rounded-lg overflow-hidden">
                     <div className="bg-gray-100 px-4 py-3 border-b border-gray-200">
                       <h3 className="text-base sm:text-lg font-bold text-gray-900">
-                        {brand.name} Car Prices List ({getCurrentMonthYear()})
+                        Used {brand.name} Car Prices ({getCurrentMonthYear()})
                       </h3>
                     </div>
                     <div className="divide-y divide-gray-200">
@@ -221,7 +221,7 @@ export default function BrandHeroSection({ brand, brands = [], models = [], bran
 
 
       {/* Section 6: Brand News and Videos */}
-      <div className="py-6 sm:py-8 bg-white">
+      <div className="py-3 sm:py-6 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
           {newsSlot}
         </div>
@@ -238,27 +238,10 @@ export default function BrandHeroSection({ brand, brands = [], models = [], bran
       {/* Brand FAQ Section - Dynamic with Backend Logic */}
       <BrandFAQ brandName={brand.name} initialBrand={backendBrand} />
 
-      {/* Section 8: Owner Reviews */}
-      <section className="py-6 sm:py-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8">{brand.name} Owner Reviews</h2>
-          <div className="bg-gray-50 rounded-lg p-4 sm:p-6 text-center">
-            <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2">Own a {brand.name.toLowerCase()} car? Share your experience!</h3>
-            <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">
-              Be the first to review this car and help other buyers make informed decisions
-            </p>
-            <Link
-              href={`/${brand.slug}-cars/write-review`}
-              className="inline-block bg-[#291e6a] hover:bg-[#1c144a] text-white px-5 py-2 sm:px-6 sm:py-2 rounded-lg font-medium transition-all duration-200 shadow-md text-sm sm:text-base"
-            >
-              Write a Review
-            </Link>
-          </div>
-        </div>
-      </section>
+
 
       {/* Website Feedback Section */}
-      <section className="py-6 sm:py-8 bg-gray-50">
+      <section className="py-3 sm:py-6 bg-gray-50">
         <div className="max-w-2xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
           <div className="bg-white border border-gray-200 rounded-xl p-4 sm:p-6 lg:p-8">
             <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 text-center mb-2 sm:mb-3">

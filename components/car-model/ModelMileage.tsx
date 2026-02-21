@@ -34,7 +34,7 @@ export default function ModelMileage({ carData }: ModelMileageProps) {
       unit: 'kmpl',
       description: 'Heavy traffic & frequent stops',
       icon: Building2,
-      color: 'orange',
+      color: '#291e6a',
       conditions: 'Urban traffic conditions',
       badge: 'Real World'
     },
@@ -82,7 +82,7 @@ export default function ModelMileage({ carData }: ModelMileageProps) {
 
   const colorClasses = {
     blue: 'bg-blue-50 border-blue-200 text-blue-600',
-    orange: 'bg-orange-50 border-orange-200 text-orange-600',
+    blue: 'bg-[#f0eef5] border-[#6b5fc7] text-[#1c144a]',
     green: 'bg-green-50 border-green-200 text-green-600',
     purple: 'bg-purple-50 border-purple-200 text-purple-600',
     teal: 'bg-teal-50 border-teal-200 text-teal-600'
@@ -90,7 +90,7 @@ export default function ModelMileage({ carData }: ModelMileageProps) {
 
   const badgeColors = {
     'Official': 'bg-blue-100 text-blue-700',
-    'Real World': 'bg-orange-100 text-orange-700',
+    'Real World': 'bg-[#e8e6f0] text-[#1c144a]',
     'Best Case': 'bg-green-100 text-green-700',
     'Average': 'bg-purple-100 text-purple-700',
     'Efficient': 'bg-teal-100 text-teal-700'

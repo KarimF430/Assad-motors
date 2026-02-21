@@ -109,7 +109,7 @@ export default function LocationSelector({ popularCities }: LocationSelectorProp
                 {/* Integrated Search Bar in Header */}
                 <div className="px-4 pb-3">
                     <div className="relative">
-                        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-orange-500" />
+                        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-[#291e6a]" />
                         <input
                             type="text"
                             placeholder="Search for city or area..."
@@ -178,10 +178,10 @@ export default function LocationSelector({ popularCities }: LocationSelectorProp
                                             variants={itemVariants}
                                             whileTap={{ scale: 0.98 }}
                                             onClick={() => handleCitySelect(city)}
-                                            className="group flex items-center gap-4 p-3 bg-white border border-gray-50 rounded-xl hover:border-orange-200 hover:bg-orange-50/30 transition-all text-left"
+                                            className="group flex items-center gap-4 p-3 bg-white border border-gray-50 rounded-xl hover:border-[#6b5fc7] hover:bg-[#f0eef5]/30 transition-all text-left"
                                         >
-                                            <div className="w-10 h-10 bg-orange-50 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-orange-100 transition-colors">
-                                                <MapPin className="h-5 w-5 text-orange-500" />
+                                            <div className="w-10 h-10 bg-[#f0eef5] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#e8e6f0] transition-colors">
+                                                <MapPin className="h-5 w-5 text-[#291e6a]" />
                                             </div>
                                             <div className="flex-1">
                                                 <div className="font-bold text-gray-800 text-base group-hover:text-red-500 transition-colors">{city.name}</div>

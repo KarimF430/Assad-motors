@@ -1,8 +1,11 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import React from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
-import { Star, ChevronRight } from 'lucide-react'
+import { Heart, Fuel, Settings, Gauge, Banknote } from 'lucide-react'
+import { useFavourites } from '@/lib/favourites-context'
+import { OptimizedImage } from '@/components/common/OptimizedImage'
 
 interface Car {
   id: string
@@ -22,91 +25,130 @@ interface Car {
   rating?: number
   reviews?: number
   variants?: number
+  variantName?: string
 }
 
-// BrandCarCard component (exact copy from budget page) - MOBILE OPTIMIZED
-function BrandCarCard({ car }: { car: Car }) {
-  const exShowroomPrice = car.startingPrice
-  const displayPrice = (exShowroomPrice / 100000).toFixed(2)
-  const priceLabel = 'Price'
+// Helper function to format transmission
+const formatTransmission = (transmission: string): string => {
+  const lower = transmission.toLowerCase()
+  if (lower === 'manual') return 'Manual'
+  if (lower === 'automatic') return 'Automatic'
+  return transmission.toUpperCase()
+}
+
+// Helper function to format fuel type
+const formatFuelType = (fuel: string): string => {
+  const lower = fuel.toLowerCase()
+  if (lower === 'cng') return 'CNG'
+  if (lower === 'petrol') return 'Petrol'
+  if (lower === 'diesel') return 'Diesel'
+  if (lower === 'electric') return 'Electric'
+  return fuel
+}
+
+// BrandCarCard - Vertical card matching home page CarCard design
+function BrandCarCard({ car, index }: { car: Car; index: number }) {
+  const { isFavourite, toggleFavourite } = useFavourites()
+  const [mounted, setMounted] = React.useState(false)
+  const isFav = mounted ? isFavourite(car.id) : false
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const displayPrice = car.startingPrice
+  const kmDriven = "70,000"
+  const variantText = car.variantName || "LXI"
+  const emiEstimation = Math.round((displayPrice * 0.85 * 0.09) / 12 + (displayPrice * 0.85) / 60).toLocaleString('en-IN')
+
+  const brandSlug = car.brandName?.toLowerCase().replace(/\s+/g, '-') || ''
+  const modelSlug = car.name?.toLowerCase().replace(/\s+/g, '-') || ''
+  const carHref = `/${brandSlug}-cars/${modelSlug}`
 
   return (
     <Link
-      href={`/${car.brandName.toLowerCase().replace(/\s+/g, '-')}-cars/${car.name.toLowerCase().replace(/\s+/g, '-')}`}
-      className="block group"
+      href={carHref}
+      className="flex flex-col bg-white rounded-xl border border-gray-200 hover:shadow-lg active:scale-[0.98] transition-all duration-300 overflow-hidden cursor-pointer group"
     >
-      <div className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-all duration-200">
-        <div className="flex min-h-[144px] sm:min-h-[176px]">
-          {/* Car Image - Responsive */}
-          <div className="w-32 sm:w-48 flex-shrink-0 relative overflow-hidden rounded-l-lg">
-            <img
+      {/* Image Container */}
+      <div className="relative h-40 sm:h-48 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
+        {/* Wishlist Button */}
+        <button
+          onClick={(e) => {
+            e.preventDefault()
+            e.stopPropagation()
+            toggleFavourite(car)
+          }}
+          aria-label={isFav ? "Remove from wishlist" : "Add to wishlist"}
+          className={`absolute top-2 right-2 sm:top-3 sm:right-3 p-2 sm:p-2.5 rounded-full shadow-md transition-all duration-200 z-10 ${isFav
+            ? 'bg-red-500 hover:bg-red-600'
+            : 'bg-white hover:bg-red-50'
+            }`}
+        >
+          <Heart
+            className={`h-4 w-4 sm:h-5 sm:w-5 transition-colors ${isFav ? 'text-white' : 'text-gray-400 hover:text-red-500'}`}
+            fill={isFav ? 'currentColor' : 'none'}
+          />
+        </button>
+
+        {/* Car Image */}
+        <div className="w-full h-full flex items-center justify-center relative">
+          {car.image ? (
+            <OptimizedImage
               src={car.image}
-              alt={car.name}
-              className="w-full h-full object-contain"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none'
-                const parent = e.currentTarget.parentElement
-                if (parent) {
-                  const fallback = document.createElement('div')
-                  fallback.className = 'bg-gray-200 text-gray-600 text-xs sm:text-sm font-semibold text-center flex items-center justify-center h-full p-1'
-                  fallback.innerHTML = car.name
-                  parent.appendChild(fallback)
-                }
-              }}
+              alt={`${car.brandName} ${car.name}`}
+              fill
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              className="object-contain p-2"
+              priority={index < 2}
             />
-            {car.isNew && (
-              <span className="absolute top-1 left-1 sm:top-2 sm:left-2 bg-green-600 text-white text-[10px] sm:text-xs font-bold px-1.5 py-0.5 sm:px-2 sm:py-1 rounded z-10">
-                NEW
-              </span>
-            )}
-            {car.isPopular && !car.isNew && (
-              <span className="absolute top-1 left-1 sm:top-2 sm:left-2 bg-orange-600 text-white text-[10px] sm:text-xs font-bold px-1.5 py-0.5 sm:px-2 sm:py-1 rounded z-10">
-                POPULAR
-              </span>
-            )}
+          ) : (
+            <div className="bg-gray-200 text-gray-600 text-sm font-semibold text-center flex items-center justify-center h-full w-full p-2">
+              {car.brandName} {car.name}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Car Info */}
+      <div className="p-3 sm:p-4 flex flex-col justify-between flex-1">
+        <div>
+          <h3 className="font-bold text-gray-900 mb-1 text-sm sm:text-base truncate" title={`${car.brandName} ${car.name} ${variantText}`}>
+            {car.brandName} {car.name} <span className="font-medium text-gray-500 text-xs sm:text-sm ml-1">{variantText}</span>
+          </h3>
+
+          <div className="flex items-baseline mb-3 mt-1">
+            <span className="text-red-600 font-bold text-base sm:text-lg">₹ {(displayPrice / 100000).toFixed(2)} Lakh</span>
           </div>
 
-          {/* Car Details - Responsive */}
-          <div className="flex-1 p-2 sm:p-3 md:p-4 flex flex-col justify-between min-w-0">
-            {/* Top Section */}
-            <div>
-              <div className="flex items-start justify-between mb-0.5 sm:mb-1">
-                <div className="flex-1 pr-1 sm:pr-2 min-w-0">
-                  <h3 className="text-base sm:text-xl md:text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors leading-tight">
-                    <span className="truncate block">{car.brandName} {car.name}</span>
-                  </h3>
-                </div>
-                <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-gray-400 group-hover:text-blue-600 transition-colors flex-shrink-0 mt-0.5 sm:mt-1" />
-              </div>
-
-              {/* Rating - Responsive */}
-              {car.reviews && car.reviews > 0 ? (
-                <div className="flex items-center gap-0.5 sm:gap-1 mb-0.5 sm:mb-1">
-                  <svg className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-green-600 fill-current flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <span className="font-semibold text-gray-900 text-xs sm:text-sm whitespace-nowrap">{car.rating}/5</span>
-                  <span className="text-gray-500 text-xs sm:text-sm whitespace-nowrap">{car.reviews} Ratings</span>
-                </div>
-              ) : null}
-
-              {/* Variants - Responsive */}
-              <div className="text-gray-600 text-xs sm:text-sm mb-1 sm:mb-2">
-                {car.variants || 0} Variants
-              </div>
+          {/* Specs Grid */}
+          <div className="grid grid-cols-2 gap-y-2 gap-x-1.5 text-[11px] sm:text-sm text-gray-600 mb-3 bg-slate-50 rounded-lg p-2 sm:p-3 border border-slate-100">
+            <div className="flex items-center overflow-hidden" title="Fuel Type">
+              <Fuel className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1 sm:mr-1.5 text-gray-400 flex-shrink-0" />
+              <span className="truncate font-medium">{formatFuelType((car.fuelTypes || ['Petrol'])[0])}</span>
             </div>
-
-            {/* Bottom Section: Price - Responsive */}
-            <div>
-              <div className="flex items-baseline gap-1 sm:gap-2 flex-wrap">
-                <span className="text-base sm:text-xl md:text-2xl font-bold text-red-600">₹ {displayPrice}</span>
-                <span className="text-sm sm:text-base md:text-lg font-semibold text-red-600">Lakh</span>
-                <span className="text-gray-500 text-xs sm:text-sm">Onwards</span>
-              </div>
-              <span className="text-[10px] sm:text-xs text-gray-500">{priceLabel}</span>
+            <div className="flex items-center overflow-hidden" title="Transmission">
+              <Settings className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1 sm:mr-1.5 text-gray-400 flex-shrink-0" />
+              <span className="truncate font-medium">{formatTransmission((car.transmissions || ['Manual'])[0])}</span>
+            </div>
+            <div className="flex items-center overflow-hidden" title="Kilometers Driven">
+              <Gauge className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1 sm:mr-1.5 text-gray-400 flex-shrink-0" />
+              <span className="truncate font-medium">70,000 km</span>
+            </div>
+            <div className="flex items-center overflow-hidden" title="EMI starts at">
+              <Banknote className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1 sm:mr-1.5 text-gray-400 flex-shrink-0" />
+              <span className="truncate font-bold text-gray-900 text-[11px] sm:text-xs">
+                ₹{emiEstimation}/m
+              </span>
             </div>
           </div>
         </div>
+
+        <button
+          className="w-full bg-[#291e6a] hover:bg-[#1c144a] text-white py-2 sm:py-2.5 rounded-lg font-semibold text-sm sm:text-base transition-all duration-200 shadow-md hover:shadow-lg"
+        >
+          View Details
+        </button>
       </div>
     </Link>
   )
@@ -148,7 +190,7 @@ export default function BrandCarsList({ brand, initialModels = [], brandId }: Br
     variants: model.variantCount || 0
   }))
 
-  // Apply filters (exact copy from budget page)
+  // Apply filters
   const filteredModels = models.filter((model) => {
     if (selectedFuel.length > 0) {
       const hasFuel = selectedFuel.some(fuel =>
@@ -181,15 +223,15 @@ export default function BrandCarsList({ brand, initialModels = [], brandId }: Br
 
   return (
     <>
-      {/* Filters Section (exact copy from budget page) */}
-      <section className="bg-white pt-2 pb-4">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex flex-wrap gap-3 pb-4 border-b border-gray-200">
+      {/* Filters Section */}
+      <section className="bg-white pt-2 pb-3">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
+          <div className="flex flex-wrap gap-2 sm:gap-3 pb-3 border-b border-gray-200">
             {fuelFilters.map(fuel => (
               <button
                 key={fuel}
                 onClick={() => toggleFilter('fuel', fuel)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${selectedFuel.includes(fuel)
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${selectedFuel.includes(fuel)
                   ? 'bg-[#291e6a] text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
@@ -201,7 +243,7 @@ export default function BrandCarsList({ brand, initialModels = [], brandId }: Br
               <button
                 key={trans}
                 onClick={() => toggleFilter('transmission', trans)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${selectedTransmission.includes(trans)
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${selectedTransmission.includes(trans)
                   ? 'bg-[#291e6a] text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
@@ -213,17 +255,17 @@ export default function BrandCarsList({ brand, initialModels = [], brandId }: Br
         </div>
       </section>
 
-      <section className="bg-white py-4">
-        <div className="max-w-6xl mx-auto px-4">
-          {/* Car List - Responsive Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+      <section className="bg-white py-3 sm:py-4">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
+          {/* Car Grid - 2 columns on mobile, 3 on tablet, 4 on desktop */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
             {models.length === 0 ? (
-              <div className="text-center py-20 col-span-full">
+              <div className="text-center py-12 col-span-full">
                 <p className="text-gray-500 text-lg">No models found for {brandName}</p>
               </div>
             ) : (
-              filteredModels.map((car) => (
-                <BrandCarCard key={car.id} car={car} />
+              filteredModels.map((car, index) => (
+                <BrandCarCard key={car.id} car={car} index={index} />
               ))
             )}
           </div>

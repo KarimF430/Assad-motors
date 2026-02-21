@@ -100,7 +100,7 @@ export default function CarReviews({ carData }: CarReviewsProps) {
                 <span className="w-8">{item.stars}★</span>
                 <div className="flex-1 bg-gray-200 rounded-full h-2">
                   <div
-                    className="bg-orange-500 h-2 rounded-full"
+                    className="bg-[#291e6a] h-2 rounded-full"
                     style={{ width: `${item.percentage}%` }}
                   />
                 </div>
@@ -148,8 +148,8 @@ export default function CarReviews({ carData }: CarReviewsProps) {
               <div key={review.id} className="border-b border-gray-200 pb-6 last:border-b-0">
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
-                      <User className="h-5 w-5 text-orange-600" />
+                    <div className="w-10 h-10 bg-[#e8e6f0] rounded-full flex items-center justify-center">
+                      <User className="h-5 w-5 text-[#1c144a]" />
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
@@ -196,7 +196,7 @@ export default function CarReviews({ carData }: CarReviewsProps) {
           </div>
 
           <div className="mt-6 text-center">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-medium">
+            <button className="bg-[#291e6a] hover:bg-[#1c144a] text-white px-6 py-2 rounded-lg font-medium">
               Load More Reviews
             </button>
           </div>
@@ -209,7 +209,7 @@ export default function CarReviews({ carData }: CarReviewsProps) {
         <p className="text-gray-600 mb-4">Help other buyers make informed decisions by sharing your honest review</p>
         <Link
           href={`/${carData.brand}-cars/${carData.model}/rate-review`}
-          className="inline-block bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-3 rounded-lg font-medium shadow-md hover:shadow-lg transition-all"
+          className="inline-block bg-gradient-to-r from-[#291e6a] to-[#1c144a] hover:from-[#1c144a] hover:to-[#1c144a] text-white px-8 py-3 rounded-lg font-medium shadow-md hover:shadow-lg transition-all"
         >
           Write a Review
         </Link>

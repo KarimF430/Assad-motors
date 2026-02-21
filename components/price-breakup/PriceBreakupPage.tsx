@@ -1110,7 +1110,7 @@ export default function PriceBreakupPage({
               </div>
               <button
                 onClick={() => setIsTextExpanded(!isTextExpanded)}
-                className="flex items-center text-red-600 font-medium text-sm mt-1 hover:text-orange-600 transition-colors"
+                className="flex items-center text-red-600 font-medium text-sm mt-1 hover:text-[#1c144a] transition-colors"
               >
                 {isTextExpanded ? (
                   <>
@@ -1159,7 +1159,7 @@ export default function PriceBreakupPage({
                 <div className="text-2xl font-bold text-gray-900">
                   <Link
                     href={`/${brandName.toLowerCase().replace(/\s+/g, '-')}-cars/${modelName.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="hover:text-orange-600 transition-colors"
+                    className="hover:text-[#1c144a] transition-colors"
                   >
                     {brandName} {modelName}
                   </Link>
@@ -1283,7 +1283,7 @@ export default function PriceBreakupPage({
                           <div className="flex items-center gap-2">
                             <span className="text-gray-700">RTO Registration</span>
                             <div className="group relative">
-                              <Info className="h-3.5 w-3.5 text-gray-300 group-hover:text-orange-500 cursor-help transition-colors" />
+                              <Info className="h-3.5 w-3.5 text-gray-300 group-hover:text-[#291e6a] cursor-help transition-colors" />
                               <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-52 p-3 bg-gray-900 text-white text-[11px] leading-relaxed rounded-lg shadow-2xl z-20 font-normal transform-gpu transition-all animate-in fade-in zoom-in-95 duration-200 origin-bottom">
                                 Mandatory state government tax for vehicle registration and number plate.
                                 <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-[6px] border-transparent border-t-gray-900"></div>
@@ -1659,7 +1659,7 @@ export default function PriceBreakupPage({
 
                     <div className="bg-gray-50 rounded-xl p-5 border border-gray-100">
                       <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3 flex items-center gap-2">
-                        <TrendingUp className="w-4 h-4 text-orange-500" />
+                        <TrendingUp className="w-4 h-4 text-[#291e6a]" />
                         Quick Highlights
                       </h4>
                       <ul className="space-y-2">

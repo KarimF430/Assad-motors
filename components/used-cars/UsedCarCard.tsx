@@ -43,7 +43,7 @@ const platforms = [
     },
     {
         name: 'CarWale',
-        color: 'bg-orange-600 hover:bg-orange-700',
+        color: 'bg-[#1c144a] hover:bg-[#1c144a]',
         buildUrl: (brand: string, model: string, city: string) =>
             `https://www.carwale.com/used/${brand.toLowerCase()}-${model.toLowerCase().replace(/\s+/g, '-')}-cars-in-${city.toLowerCase()}/`
     },
@@ -79,7 +79,7 @@ export default function UsedCarCard({ car, city }: UsedCarCardProps) {
             {/* Image Container */}
             <div className="relative h-44 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
                 {/* Used Badge */}
-                <div className="absolute top-3 left-3 bg-gradient-to-r from-amber-500 to-orange-600 text-white px-3 py-1 rounded-full text-xs font-semibold z-10 shadow-md">
+                <div className="absolute top-3 left-3 bg-gradient-to-r from-amber-500 to-[#1c144a] text-white px-3 py-1 rounded-full text-xs font-semibold z-10 shadow-md">
                     FIND USED
                 </div>
 

@@ -358,9 +358,9 @@ export default function ModelSummarySEO({ carData }: ModelSummarySEOProps) {
               <p className="text-xs text-blue-700">{ev ? 'Range' : 'Claimed Mileage'}</p>
             </div>
           )}
-          <div className="bg-orange-50 rounded-lg p-3 border border-orange-100 text-center">
-            <p className="text-lg font-bold text-orange-600">{bodyTypeLabel}</p>
-            <p className="text-xs text-orange-700">Body Type</p>
+          <div className="bg-[#f0eef5] rounded-lg p-3 border border-[#e8e6f0] text-center">
+            <p className="text-lg font-bold text-[#1c144a]">{bodyTypeLabel}</p>
+            <p className="text-xs text-[#1c144a]">Body Type</p>
           </div>
           <div className="bg-purple-50 rounded-lg p-3 border border-purple-100 text-center">
             <p className="text-lg font-bold text-purple-600">{seating}</p>

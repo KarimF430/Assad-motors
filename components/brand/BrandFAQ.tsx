@@ -1,8 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'lucide-react'
-import { FrontendBrand } from '@/lib/brand-api'
 import { renderTextWithCarLinks, useCarModelsData } from '@/lib/faq-hyperlinks'
 
 interface FAQ {
@@ -17,7 +16,7 @@ interface BrandFAQProps {
 }
 
 export default function BrandFAQ({ brandName, brandId, initialBrand }: BrandFAQProps) {
-  const [openFAQ, setOpenFAQ] = useState<string | null>(null)
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null)
 
   // Load car models for hyperlink generation
   useCarModelsData()
@@ -25,50 +24,50 @@ export default function BrandFAQ({ brandName, brandId, initialBrand }: BrandFAQP
   // Use FAQs from initial brand or empty array
   const faqs: FAQ[] = initialBrand?.faqs || []
 
-  const toggleFAQ = (faqId: string) => {
-    setOpenFAQ(openFAQ === faqId ? null : faqId)
+  const toggleFAQ = (index: number) => {
+    setOpenFAQ(openFAQ === index ? null : index)
   }
 
   return (
-    <section className="py-6 sm:py-8 bg-white">
-      <div className="max-w-4xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-        <div className="mb-6 sm:mb-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1.5 sm:mb-2">
+    <section className="py-3 sm:py-6">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
+        <div className="mb-8">
+          <h2 className="text-[20px] sm:text-[24px] font-extrabold text-[#1c144a] mb-2">
             {brandName} FAQ
           </h2>
-          <p className="text-sm sm:text-base text-gray-600">
+          <p className="text-sm sm:text-base text-gray-500">
             {faqs.length > 0 ? `${faqs.length} questions about ${brandName} cars` : 'No FAQs available'}
           </p>
         </div>
 
         {faqs.length === 0 ? (
-          <div className="text-center py-6 sm:py-8">
-            <p className="text-sm sm:text-base text-gray-600">
+          <div className="text-center py-3 sm:py-6">
+            <p className="text-sm sm:text-base text-gray-500">
               No FAQs available for {brandName} yet. Check back soon for answers to common questions!
             </p>
           </div>
         ) : (
-          <div className="space-y-3 sm:space-y-4">
+          <div className="border-t border-gray-200">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+              <div key={index} className="border-b border-gray-200">
                 <button
-                  onClick={() => toggleFAQ(index.toString())}
-                  className="w-full px-4 py-3 sm:px-6 sm:py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors min-h-[56px]"
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full py-5 text-left flex items-center justify-between transition-colors group"
                 >
-                  <span className="font-medium text-gray-900 pr-3 sm:pr-4 text-sm sm:text-base">{faq.question}</span>
-                  {openFAQ === index.toString() ? (
-                    <ChevronUp className="h-4 w-4 sm:h-5 sm:w-5 text-gray-500 flex-shrink-0" />
-                  ) : (
-                    <ChevronDown className="h-4 w-4 sm:h-5 sm:w-5 text-gray-500 flex-shrink-0" />
-                  )}
+                  <span className="font-semibold text-[#1e1e1e] pr-4 text-sm sm:text-base group-hover:text-[#1c144a]">{faq.question}</span>
+                  <div className="bg-gray-50 flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-gray-100 flex-shrink-0 transition-colors group-hover:bg-gray-100">
+                    {openFAQ === index ? (
+                      <ChevronUp className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#291e6a]" />
+                    ) : (
+                      <ChevronDown className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#291e6a]" />
+                    )}
+                  </div>
                 </button>
 
-                {openFAQ === index.toString() && (
-                  <div className="px-4 pb-3 sm:px-6 sm:pb-4">
-                    <div className="border-t border-gray-100 pt-3 sm:pt-4">
-                      <div className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                        {renderTextWithCarLinks(faq.answer, brandName)}
-                      </div>
+                {openFAQ === index && (
+                  <div className="pb-5 pr-12">
+                    <div className="text-gray-600 leading-relaxed text-sm sm:text-base">
+                      {renderTextWithCarLinks(faq.answer, brandName)}
                     </div>
                   </div>
                 )}

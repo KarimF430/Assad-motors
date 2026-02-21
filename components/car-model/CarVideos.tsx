@@ -103,7 +103,7 @@ export default function CarVideos({ carData }: CarVideosProps) {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-            <button className="w-16 h-16 bg-orange-500 hover:bg-orange-600 rounded-full flex items-center justify-center transition-colors">
+            <button className="w-16 h-16 bg-[#291e6a] hover:bg-[#1c144a] rounded-full flex items-center justify-center transition-colors">
               <Play className="h-8 w-8 text-white ml-1" />
             </button>
           </div>
@@ -119,7 +119,7 @@ export default function CarVideos({ carData }: CarVideosProps) {
               <Eye className="h-4 w-4" />
               <span>{videos[activeVideo].views} views</span>
             </div>
-            <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs">
+            <span className="bg-[#e8e6f0] text-[#291e6a] px-2 py-1 rounded-full text-xs">
               {videos[activeVideo].type}
             </span>
           </div>
@@ -138,7 +138,7 @@ export default function CarVideos({ carData }: CarVideosProps) {
               key={video.id}
               onClick={() => setActiveVideo(index)}
               className={`flex-shrink-0 cursor-pointer transition-all ${
-                index === activeVideo ? 'ring-2 ring-orange-500' : ''
+                index === activeVideo ? 'ring-2 ring-[#291e6a]' : ''
               }`}
             >
               <div className="w-40 sm:w-48 bg-gray-100 rounded-lg overflow-hidden">
@@ -180,7 +180,7 @@ export default function CarVideos({ carData }: CarVideosProps) {
           {['Reviews', 'Comparisons', 'Test Drives', 'Walkarounds'].map((category) => (
             <button
               key={category}
-              className="p-3 border border-gray-300 rounded-lg hover:border-orange-500 hover:bg-orange-50 text-center transition-colors"
+              className="p-3 border border-gray-300 rounded-lg hover:border-[#291e6a] hover:bg-[#f0eef5] text-center transition-colors"
             >
               <div className="font-medium text-sm">{category}</div>
               <div className="text-xs text-gray-600 mt-1">
@@ -192,10 +192,10 @@ export default function CarVideos({ carData }: CarVideosProps) {
       </div>
 
       {/* Subscribe CTA */}
-      <div className="mt-6 bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-lg p-4 text-center">
+      <div className="mt-6 bg-gradient-to-r from-[#f0eef5] to-red-50 border border-[#6b5fc7] rounded-lg p-4 text-center">
         <h3 className="font-semibold mb-2">Stay Updated with Latest Videos</h3>
         <p className="text-gray-600 mb-4">Get notified when new {carData.brand} videos are uploaded</p>
-        <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-medium">
+        <button className="bg-[#291e6a] hover:bg-[#1c144a] text-white px-6 py-2 rounded-lg font-medium">
           Subscribe to Updates
         </button>
       </div>

@@ -2,7 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Search, Menu, X, MapPin, Heart, Smile, ChevronDown, Phone } from 'lucide-react'
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import { Search, Menu, X, MapPin, Phone, ChevronDown, ChevronRight } from 'lucide-react'
 import { useAuth } from '@/lib/auth-context'
 
 // Dropdown Links configuration
@@ -29,6 +31,7 @@ const POPULAR_BRANDS = [
 ]
 
 export default function Header() {
+  const router = useRouter()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isHeaderVisible, setIsHeaderVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
@@ -80,122 +83,256 @@ export default function Header() {
     <>
       <header className={`sticky top-0 z-50 transition-transform duration-300 ${isHeaderVisible ? 'translate-y-0' : '-translate-y-full'}`}>
 
-        {/* TOP BAR (Desktop & Mobile) - Dark Indigo Theme */}
-        <div className="bg-[#291e6a] text-white">
+        {/* Clean White Navbar */}
+        <div className="bg-white border-b border-gray-100 shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Desktop Layout */}
-            <div className="hidden lg:flex justify-between items-center h-[72px]">
+            <div className="hidden lg:flex justify-between items-center h-[68px]">
 
-              {/* Logo & Location & Search */}
-              <div className="flex items-center space-x-6 flex-1">
-                {/* Logo */}
-                <Link href="/" className="flex items-center gap-2 group">
-                  <div className="relative w-10 h-10 flex items-center justify-center shrink-0">
-                    <img src="/logo.png?v=3" alt="Assad Motors Logo" className="w-full h-full object-contain drop-shadow-md" />
-                  </div>
-                  <span className="text-2xl font-bold text-white tracking-tight">Assad Motors</span>
-                </Link>
+              {/* Left: Logo + Brand Name */}
+              <Link href="/" className="flex items-center gap-3 group">
+                <div className="relative w-11 h-11 flex items-center justify-center shrink-0">
+                  <Image
+                    src="/am-logo.png"
+                    alt="Assad Motors Logo"
+                    width={44}
+                    height={44}
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+                <span className="text-[22px] font-bold text-[#291e6a] tracking-tight">Assad Motors</span>
+              </Link>
 
-                {/* Location Dropdown */}
-                <Link href="/location" className="flex items-center space-x-1 border border-white/20 rounded-full px-4 py-2 hover:bg-white/10 transition-colors">
-                  <span className="text-sm font-medium">{selectedCity}</span>
-                  <ChevronDown className="h-4 w-4" />
-                </Link>
-              </div>
-
-              {/* Right Side Links & Actions */}
-              <div className="flex items-center justify-end space-x-8 lg:ml-8">
-                <nav className="flex items-center space-x-6 shrink-0">
-                  <button className="flex items-center space-x-1 text-sm font-medium text-white/90 hover:text-white group">
-                    <span>Buy car</span>
-                    <ChevronDown className="h-4 w-4 text-white/60 group-hover:text-white" />
-                  </button>
-                  <button className="flex items-center space-x-1 text-sm font-medium text-white/90 hover:text-white group">
-                    <span>Sell car</span>
-                    <ChevronDown className="h-4 w-4 text-white/60 group-hover:text-white" />
-                  </button>
+              {/* Right: Navigation + Icons */}
+              <div className="flex items-center space-x-6">
+                {/* Desktop Nav Links */}
+                <nav className="flex items-center space-x-5">
+                  <Link href="/buy" className="text-[15px] font-medium text-gray-700 hover:text-[#291e6a] transition-colors">
+                    Buy Car
+                  </Link>
+                  <Link href="/sell" className="text-[15px] font-medium text-gray-700 hover:text-[#291e6a] transition-colors">
+                    Sell Car
+                  </Link>
+                  <Link href="/service" className="text-[15px] font-medium text-gray-700 hover:text-[#291e6a] transition-colors">
+                    Service
+                  </Link>
                 </nav>
 
-                <div className="flex items-center space-x-6 shrink-0 border-l border-white/20 pl-6">
-                  <div className="flex flex-col items-start hidden xl:flex">
-                    <span className="text-[10px] text-white/70">Call us at</span>
-                    <a href="tel:727-727-7275" className="text-sm font-bold tracking-wide">727-727-7275</a>
-                  </div>
-                </div>
-              </div>
+                <div className="w-px h-6 bg-gray-200" />
 
+                {/* Search Icon */}
+                <button
+                  onClick={() => router.push('/search')}
+                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                  aria-label="Search"
+                >
+                  <Search className="h-[22px] w-[22px] text-gray-600" />
+                </button>
+
+                {/* Location Icon */}
+                <Link
+                  href="/location"
+                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                  aria-label="Select location"
+                >
+                  <MapPin className="h-[22px] w-[22px] text-gray-600" />
+                </Link>
+
+                {/* Phone */}
+                <a
+                  href="tel:9945210466"
+                  className="hidden xl:flex items-center gap-2 text-sm font-semibold text-[#291e6a] hover:text-[#1c144a] transition-colors"
+                >
+                  <Phone className="h-4 w-4" />
+                  9945210466
+                </a>
+              </div>
             </div>
 
-            {/* Mobile Layout (Top Bar) */}
-            <div className="flex lg:hidden justify-between items-center h-16">
-              <div className="flex items-center space-x-3">
-                <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-1 -ml-1 text-white hover:bg-white/10 rounded-lg">
-                  <Menu className="h-7 w-7" />
-                </button>
-                <div className="flex flex-col">
-                  <Link href="/location" className="flex items-center space-x-1 text-white group">
-                    <span className="font-semibold text-lg">{selectedCity}</span>
-                    <ChevronDown className="h-4 w-4 opacity-70 group-hover:opacity-100" />
-                  </Link>
+            {/* Mobile Layout */}
+            <div className="flex lg:hidden justify-between items-center h-[60px]">
+
+              {/* Left: Logo + Brand */}
+              <Link href="/" className="flex items-center gap-2.5">
+                <div className="relative w-9 h-9 flex items-center justify-center shrink-0">
+                  <Image
+                    src="/am-logo.png"
+                    alt="Assad Motors Logo"
+                    width={36}
+                    height={36}
+                    className="object-contain"
+                    priority
+                  />
                 </div>
-              </div>
-              <div className="flex items-center space-x-2">
+                <span className="text-lg font-bold text-[#291e6a] tracking-tight">Assad Motors</span>
+              </Link>
+
+              {/* Right: Icons */}
+              <div className="flex items-center space-x-1">
+                {/* Search */}
+                <button
+                  onClick={() => router.push('/search')}
+                  className="p-2.5 hover:bg-gray-100 rounded-full transition-colors"
+                  aria-label="Search"
+                >
+                  <Search className="h-[22px] w-[22px] text-gray-600" />
+                </button>
+
+                {/* Location */}
+                <Link
+                  href="/location"
+                  className="p-2.5 hover:bg-gray-100 rounded-full transition-colors"
+                  aria-label="Select location"
+                >
+                  <MapPin className="h-[22px] w-[22px] text-gray-600" />
+                </Link>
+
+                {/* Hamburger Menu */}
+                <button
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  className="p-2.5 hover:bg-gray-100 rounded-full transition-colors"
+                  aria-label="Menu"
+                >
+                  <Menu className="h-[22px] w-[22px] text-gray-600" />
+                </button>
               </div>
             </div>
 
           </div>
         </div>
 
-      </header >
+      </header>
 
       {/* Mobile Menu Overlay */}
-      {
-        isMenuOpen && (
-          <>
-            <div className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm lg:hidden animate-in fade-in duration-200" onClick={() => setIsMenuOpen(false)} />
-            <div className="fixed inset-y-0 left-0 w-[85%] max-w-sm z-[70] bg-white shadow-2xl lg:hidden flex flex-col animate-in slide-in-from-left duration-300">
-              {/* Menu Header */}
-              <div className="bg-[#291e6a] p-5 text-white flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="relative w-10 h-10 flex items-center justify-center">
-                    <img src="/logo.png?v=3" alt="Assad Motors Logo" className="w-full h-full object-contain drop-shadow-md" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="font-bold text-lg leading-tight">Assad Motors</span>
-                    <span className="text-xs text-white/70">Welcome to Assad Motors</span>
-                  </div>
+      {isMenuOpen && (
+        <>
+          <div
+            className="fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm lg:hidden animate-in fade-in duration-200"
+            onClick={() => setIsMenuOpen(false)}
+          />
+          <div className="fixed inset-y-0 right-0 w-[85%] max-w-sm z-[70] bg-white shadow-2xl lg:hidden flex flex-col animate-in slide-in-from-right duration-300">
+            {/* Menu Header */}
+            <div className="bg-white p-5 flex items-center justify-between border-b border-gray-100">
+              <div className="flex items-center gap-3">
+                <div className="relative w-10 h-10 flex items-center justify-center">
+                  <Image
+                    src="/am-logo.png"
+                    alt="Assad Motors Logo"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
                 </div>
-                <button onClick={() => setIsMenuOpen(false)} className="p-2 -mr-2 text-white/80 hover:text-white bg-white/10 rounded-full">
-                  <X className="h-5 w-5" />
-                </button>
-              </div>
-
-              {/* Menu Links */}
-              <div className="flex-1 overflow-y-auto py-4 bg-gray-50">
-                <div className="space-y-1 px-3">
-                  <Link href="/buy" className="block px-4 py-3 text-gray-800 font-medium hover:bg-gray-100 rounded-lg">Buy a car</Link>
-                  <Link href="/sell" className="block px-4 py-3 text-gray-800 font-medium hover:bg-gray-100 rounded-lg">Sell a car</Link>
-                  <Link href="/service" className="block px-4 py-3 text-gray-800 font-medium hover:bg-gray-100 rounded-lg">Service car</Link>
-                  <div className="h-px bg-gray-200 my-2 mx-4" />
-                  <Link href="/about" className="block px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg">About Us</Link>
-                  <Link href="/faq" className="block px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg">FAQ</Link>
-                  <Link href="/contact" className="block px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg">Contact Us</Link>
+                <div className="flex flex-col">
+                  <span className="font-bold text-lg text-[#291e6a] leading-tight">Assad Motors</span>
+                  <span className="text-xs text-gray-500">Premium Car Experience</span>
                 </div>
               </div>
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="p-2 -mr-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full transition-colors"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
 
-              {/* Menu Footer */}
-              <div className="p-4 bg-white border-t border-gray-100">
-                <a href="tel:727-727-7275" className="flex items-center justify-center gap-2 w-full py-3 bg-[#291e6a]/5 text-[#291e6a] rounded-xl font-semibold">
-                  <Phone className="h-4 w-4" />
-                  Call 727-727-7275
-                </a>
+            {/* Location Bar in Menu */}
+            <Link
+              href="/location"
+              onClick={() => setIsMenuOpen(false)}
+              className="flex items-center justify-between px-6 py-3.5 bg-gray-50 border-b border-gray-100"
+            >
+              <div className="flex items-center gap-2.5">
+                <MapPin className="h-4 w-4 text-[#291e6a]" />
+                <span className="text-sm font-medium text-gray-800">{selectedCity}</span>
+              </div>
+              <ChevronDown className="h-4 w-4 text-gray-400" />
+            </Link>
+
+            {/* Menu Links */}
+            <div className="flex-1 overflow-y-auto py-3">
+              <div className="space-y-0.5 px-3">
+                <Link
+                  href="/buy"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="flex items-center justify-between px-4 py-3.5 text-gray-800 font-medium hover:bg-gray-50 rounded-xl transition-colors"
+                >
+                  <span>Buy a car</span>
+                  <ChevronRight className="h-4 w-4 text-gray-300" />
+                </Link>
+                <Link
+                  href="/sell"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="flex items-center justify-between px-4 py-3.5 text-gray-800 font-medium hover:bg-gray-50 rounded-xl transition-colors"
+                >
+                  <span>Sell a car</span>
+                  <ChevronRight className="h-4 w-4 text-gray-300" />
+                </Link>
+                <Link
+                  href="/service"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="flex items-center justify-between px-4 py-3.5 text-gray-800 font-medium hover:bg-gray-50 rounded-xl transition-colors"
+                >
+                  <span>Service car</span>
+                  <ChevronRight className="h-4 w-4 text-gray-300" />
+                </Link>
+
+                <div className="h-px bg-gray-100 my-2 mx-4" />
+
+                {/* Browse Section */}
+                <p className="px-4 pt-3 pb-1 text-[11px] font-semibold text-gray-400 uppercase tracking-wider">Browse</p>
+                {POPULAR_BRANDS.map((brand) => (
+                  <Link
+                    key={brand.name}
+                    href={brand.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl transition-colors"
+                  >
+                    {brand.name}
+                  </Link>
+                ))}
+
+                <div className="h-px bg-gray-100 my-2 mx-4" />
+
+                <Link
+                  href="/about"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl transition-colors"
+                >
+                  About Us
+                </Link>
+                <Link
+                  href="/faq"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl transition-colors"
+                >
+                  FAQ
+                </Link>
+                <Link
+                  href="/contact"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl transition-colors"
+                >
+                  Contact Us
+                </Link>
               </div>
             </div>
-          </>
-        )
-      }
+
+            {/* Menu Footer */}
+            <div className="p-4 bg-white border-t border-gray-100">
+              <a
+                href="tel:9945210466"
+                className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#291e6a] text-white rounded-xl font-semibold text-sm hover:bg-[#1c144a] transition-colors"
+              >
+                <Phone className="h-4 w-4" />
+                Call 9945210466
+              </a>
+            </div>
+          </div>
+        </>
+      )}
     </>
   )
 }
-

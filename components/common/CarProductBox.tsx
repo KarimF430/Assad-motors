@@ -71,7 +71,7 @@ export default function CarProductBox({
   const badgeColors = {
     'New Launch': 'bg-green-100 text-green-700',
     'Popular': 'bg-blue-100 text-blue-700',
-    'Best Seller': 'bg-orange-100 text-orange-700',
+    'Best Seller': 'bg-[#e8e6f0] text-[#1c144a]',
     'Premium': 'bg-purple-100 text-purple-700',
     'Value': 'bg-yellow-100 text-yellow-700'
   }
@@ -163,7 +163,7 @@ export default function CarProductBox({
               <span className="text-xs text-gray-600">{car.seating} Seater</span>
             </div>
             <div className="flex items-center space-x-1">
-              <Zap className="h-4 w-4 text-orange-600" />
+              <Zap className="h-4 w-4 text-[#1c144a]" />
               <span className="text-xs text-gray-600">{car.fuelType}</span>
             </div>
           </div>

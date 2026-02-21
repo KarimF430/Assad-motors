@@ -26,7 +26,7 @@ export default function ModelFAQ({ brandName = 'Car', modelName = 'Model', faqs 
     }
 
     return (
-        <section className="py-8">
+        <section className="py-3 sm:py-6">
             <div className="sm:mx-2 lg:mx-0">
                 <div className="mb-8">
                     <h2 className="text-[20px] sm:text-[24px] font-extrabold text-[#1c144a] mb-2">
@@ -38,7 +38,7 @@ export default function ModelFAQ({ brandName = 'Car', modelName = 'Model', faqs 
                 </div>
 
                 {faqs.length === 0 ? (
-                    <div className="text-center py-6 sm:py-8">
+                    <div className="text-center py-3 sm:py-6">
                         <p className="text-sm sm:text-base text-gray-500">
                             No FAQs available for {brandName} {modelName} yet. Check back soon for answers to common questions!
                         </p>

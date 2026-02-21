@@ -28,7 +28,7 @@ export default function FounderPage() {
                                 {/* Content Side */}
                                 <div className="flex-1 order-2 lg:order-1">
                                     <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 leading-tight">
-                                        Me & <span className="text-orange-600">Gadizone</span>
+                                        Me & <span className="text-[#1c144a]">Gadizone</span>
                                     </h1>
 
                                     {/* Intro Quote - Model Page Style */}
@@ -39,22 +39,22 @@ export default function FounderPage() {
                                     {/* Key Stats - Matching Model Page Spec Pills */}
                                     <div className="flex flex-wrap gap-3 mb-6">
                                         <div className="flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-lg border border-gray-100">
-                                            <Brain className="w-4 h-4 text-orange-600" />
+                                            <Brain className="w-4 h-4 text-[#1c144a]" />
                                             <span className="text-sm font-medium text-gray-700">Product-First</span>
                                         </div>
                                         <div className="flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-lg border border-gray-100">
-                                            <Zap className="w-4 h-4 text-orange-600" />
+                                            <Zap className="w-4 h-4 text-[#1c144a]" />
                                             <span className="text-sm font-medium text-gray-700">System-Driven</span>
                                         </div>
                                         <div className="flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-lg border border-gray-100">
-                                            <Users className="w-4 h-4 text-orange-600" />
+                                            <Users className="w-4 h-4 text-[#1c144a]" />
                                             <span className="text-sm font-medium text-gray-700">User-Centric</span>
                                         </div>
                                     </div>
 
                                     {/* Contact CTAs - Model Page Button Style */}
                                     <div className="flex flex-wrap gap-3">
-                                        <a href="mailto:karim0beldaar@gmail.com" className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors shadow-md shadow-orange-600/20">
+                                        <a href="mailto:karim0beldaar@gmail.com" className="inline-flex items-center gap-2 bg-[#1c144a] hover:bg-[#1c144a] text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors shadow-md shadow-[#1c144a]/20">
                                             <Mail className="w-4 h-4" />
                                             Email Me
                                         </a>
@@ -80,7 +80,7 @@ export default function FounderPage() {
                                         </div>
                                         <div className="p-4 text-center border-t border-gray-50">
                                             <h2 className="text-lg font-bold text-gray-900">Haji Karim</h2>
-                                            <p className="text-orange-600 font-medium text-sm">Founder & Product Architect</p>
+                                            <p className="text-[#1c144a] font-medium text-sm">Founder & Product Architect</p>
                                         </div>
                                     </div>
                                 </div>
@@ -95,15 +95,15 @@ export default function FounderPage() {
                     <PageSection spacing="normal" className="py-10">
                         <div className="bg-white rounded-2xl shadow-lg shadow-gray-100/50 border border-gray-100 p-6 md:p-8">
                             <div className="flex items-center gap-3 mb-4">
-                                <div className="w-10 h-10 bg-orange-50 rounded-full flex items-center justify-center">
-                                    <Brain className="w-5 h-5 text-orange-600" />
+                                <div className="w-10 h-10 bg-[#f0eef5] rounded-full flex items-center justify-center">
+                                    <Brain className="w-5 h-5 text-[#1c144a]" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900">The Builder's Mindset</h3>
                             </div>
                             <p className="text-gray-600 leading-relaxed text-base">
                                 I come from a builder's mindset — <span className="font-semibold text-gray-800">product-first, user-first, and system-driven</span>. While working hands-on across product thinking, full-stack development, data structuring, and UX, I repeatedly noticed the same issue in the automotive space: users aren't confused because they lack information, they're confused because information is <span className="font-semibold text-gray-800">poorly organised, biased, and overwhelming</span>.
                             </p>
-                            <p className="text-orange-600 font-bold text-lg mt-4">
+                            <p className="text-[#1c144a] font-bold text-lg mt-4">
                                 I built Gadizone to solve that.
                             </p>
                         </div>
@@ -114,7 +114,7 @@ export default function FounderPage() {
                         <div className="grid md:grid-cols-2 gap-6">
                             <div className="bg-white rounded-2xl shadow-lg shadow-gray-100/50 border border-gray-100 p-6">
                                 <div className="flex items-center gap-3 mb-3">
-                                    <Target className="w-6 h-6 text-orange-600" />
+                                    <Target className="w-6 h-6 text-[#1c144a]" />
                                     <h3 className="text-lg font-bold text-gray-900">A Decision Platform</h3>
                                 </div>
                                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -123,7 +123,7 @@ export default function FounderPage() {
                             </div>
                             <div className="bg-white rounded-2xl shadow-lg shadow-gray-100/50 border border-gray-100 p-6">
                                 <div className="flex items-center gap-3 mb-3">
-                                    <Zap className="w-6 h-6 text-orange-600" />
+                                    <Zap className="w-6 h-6 text-[#1c144a]" />
                                     <h3 className="text-lg font-bold text-gray-900">Built from Ground Up</h3>
                                 </div>
                                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -150,8 +150,8 @@ export default function FounderPage() {
                     <PageSection spacing="tight" className="pb-10">
                         <div className="bg-white rounded-2xl shadow-lg shadow-gray-100/50 border border-gray-100 p-6 md:p-8">
                             <div className="flex items-center gap-3 mb-4">
-                                <div className="w-10 h-10 bg-orange-50 rounded-full flex items-center justify-center">
-                                    <Users className="w-5 h-5 text-orange-600" />
+                                <div className="w-10 h-10 bg-[#f0eef5] rounded-full flex items-center justify-center">
+                                    <Users className="w-5 h-5 text-[#1c144a]" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900">Bridging Disciplines</h3>
                             </div>
@@ -164,11 +164,11 @@ export default function FounderPage() {
                     {/* Section 5: What Gadizone Solves - Dark Highlight Card */}
                     <PageSection spacing="tight" className="pb-10">
                         <div className="bg-gray-900 rounded-2xl p-6 md:p-8 relative overflow-hidden">
-                            <div className="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-orange-500 rounded-full opacity-10 blur-3xl"></div>
+                            <div className="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-[#291e6a] rounded-full opacity-10 blur-3xl"></div>
                             <div className="relative z-10">
                                 <div className="flex items-center gap-3 mb-4">
-                                    <Sparkles className="w-6 h-6 text-orange-400" />
-                                    <h3 className="text-lg font-bold text-orange-400 uppercase tracking-wider">What Gadizone Solves</h3>
+                                    <Sparkles className="w-6 h-6 text-[#291e6a]" />
+                                    <h3 className="text-lg font-bold text-[#291e6a] uppercase tracking-wider">What Gadizone Solves</h3>
                                 </div>
                                 <p className="text-xl md:text-2xl font-semibold text-white leading-relaxed mb-4">
                                     Decision paralysis.
@@ -184,8 +184,8 @@ export default function FounderPage() {
                     <PageSection spacing="tight" className="pb-10">
                         <div className="bg-white rounded-2xl shadow-lg shadow-gray-100/50 border border-gray-100 p-6 md:p-8">
                             <div className="flex items-center gap-3 mb-4">
-                                <div className="w-10 h-10 bg-orange-50 rounded-full flex items-center justify-center">
-                                    <Lightbulb className="w-5 h-5 text-orange-600" />
+                                <div className="w-10 h-10 bg-[#f0eef5] rounded-full flex items-center justify-center">
+                                    <Lightbulb className="w-5 h-5 text-[#1c144a]" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900">The Long-Term Vision</h3>
                             </div>
@@ -197,18 +197,18 @@ export default function FounderPage() {
 
                     {/* Closing Statement */}
                     <PageSection spacing="tight" className="pb-16">
-                        <div className="bg-gradient-to-br from-orange-50 to-orange-100/50 rounded-2xl p-6 md:p-8 border border-orange-100">
+                        <div className="bg-gradient-to-br from-[#f0eef5] to-[#e8e6f0]/50 rounded-2xl p-6 md:p-8 border border-[#e8e6f0]">
                             <p className="text-lg md:text-xl font-semibold text-gray-900 leading-relaxed mb-3">
                                 For me, Gadizone is not just a project.
                             </p>
                             <p className="text-gray-700 leading-relaxed">
                                 It is proof of how thoughtful product design, grounded execution, and user-centric thinking can fix real problems — and a starting point for building <span className="font-semibold text-gray-900">clarity-first digital platforms at scale</span>.
                             </p>
-                            <div className="mt-6 pt-6 border-t border-orange-200/50 flex items-center gap-4">
-                                <div className="h-12 w-12 rounded-full bg-orange-600 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-orange-600/30">HK</div>
+                            <div className="mt-6 pt-6 border-t border-[#6b5fc7]/50 flex items-center gap-4">
+                                <div className="h-12 w-12 rounded-full bg-[#1c144a] flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-[#1c144a]/30">HK</div>
                                 <div>
                                     <div className="font-bold text-gray-900">Haji Karim</div>
-                                    <div className="text-orange-600 text-sm font-medium">Founder, Gadizone</div>
+                                    <div className="text-[#1c144a] text-sm font-medium">Founder, Gadizone</div>
                                 </div>
                             </div>
                         </div>

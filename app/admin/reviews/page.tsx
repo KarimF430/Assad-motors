@@ -255,8 +255,8 @@ export default function AdminReviewsPage() {
 
                     <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                         <div className="flex items-center justify-between mb-2">
-                            <div className="p-3 bg-orange-50 rounded-lg">
-                                <Star className="h-6 w-6 text-orange-600" />
+                            <div className="p-3 bg-[#f0eef5] rounded-lg">
+                                <Star className="h-6 w-6 text-[#1c144a]" />
                             </div>
                             <span className="text-2xl font-bold text-gray-900">{stats?.averageRating?.toFixed(1) || '0.0'}</span>
                         </div>
@@ -340,7 +340,7 @@ export default function AdminReviewsPage() {
                                             <tr key={review.id} className="hover:bg-gray-50 transition-colors">
                                                 <td className="px-6 py-4 whitespace-nowrap">
                                                     <div className="flex items-center">
-                                                        <div className="flex-shrink-0 h-10 w-10 rounded-full bg-gradient-to-r from-red-400 to-orange-400 flex items-center justify-center text-white font-semibold">
+                                                        <div className="flex-shrink-0 h-10 w-10 rounded-full bg-gradient-to-r from-red-400 to-[#291e6a] flex items-center justify-center text-white font-semibold">
                                                             {review.userName?.[0]?.toUpperCase() || 'U'}
                                                         </div>
                                                         <div className="ml-3">
@@ -462,7 +462,7 @@ export default function AdminReviewsPage() {
                         <div className="p-6 space-y-6">
                             {/* User Info */}
                             <div className="flex items-center">
-                                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-red-400 to-orange-400 flex items-center justify-center text-white font-semibold text-lg">
+                                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-red-400 to-[#291e6a] flex items-center justify-center text-white font-semibold text-lg">
                                     {selectedReview.userName?.[0]?.toUpperCase() || 'U'}
                                 </div>
                                 <div className="ml-4">

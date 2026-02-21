@@ -15,7 +15,7 @@ export default function EMIBox({ startingPrice, carName }: EMIBoxProps) {
     <div className="bg-white border border-gray-200 rounded-lg p-6 mb-8">
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
-          <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
+          <div className="w-12 h-12 bg-[#291e6a] rounded-full flex items-center justify-center">
             <Calculator className="h-6 w-6 text-white" />
           </div>
           <div>

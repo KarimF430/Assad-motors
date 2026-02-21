@@ -92,7 +92,7 @@ const nextConfig = {
       // Allow unsafe-eval only in development for Next/Webpack dev tooling
       // Added unpkg.com and lottie hosts for Killer Whale loading animation
       // Added Clarity and Amplitude domains (including wildcards)
-      `script-src 'self' 'unsafe-inline'${unsafeEval} 'wasm-unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://unpkg.com https://cdn.jsdelivr.net https://www.clarity.ms https://c.clarity.ms https://scripts.clarity.ms https://*.clarity.ms https://static.cloudflareinsights.com https://checkout.razorpay.com https://pagead2.googlesyndication.com https://*.google.com https://*.doubleclick.net https://*.google`,
+      `script-src 'self' 'unsafe-inline'${unsafeEval} 'wasm-unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://unpkg.com https://cdn.jsdelivr.net https://www.clarity.ms https://c.clarity.ms https://scripts.clarity.ms https://*.clarity.ms https://static.cloudflareinsights.com https://checkout.razorpay.com`,
       "style-src 'self' 'unsafe-inline'",
       "worker-src 'self' blob:;",
       // Added Clarity image domains
@@ -101,11 +101,11 @@ const nextConfig = {
       // Added lottie.host, unpkg.com, cdn.jsdelivr.net for Killer Whale animation
       // Added Amplitude and Clarity connect domains
       // Added https://*.google for domains like ep1.adtrafficquality.google
-      `connect-src 'self' ${connectSrc} https://www.google-analytics.com https://*.sentry.io https://images.unsplash.com https://www.googleapis.com https://lottie.host https://unpkg.com https://cdn.jsdelivr.net https://*.amplitude.com https://api.amplitude.com https://api2.amplitude.com https://*.clarity.ms https://c.clarity.ms https://static.cloudflareinsights.com https://api.razorpay.com https://*.google.com https://*.googlesyndication.com https://*.doubleclick.net https://*.google`,
-      // Added Google AdSense domains to frame-src
-      "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://api.razorpay.com https://*.google.com https://*.doubleclick.net https://*.googlesyndication.com https://*.google",
+      `connect-src 'self' ${connectSrc} https://www.google-analytics.com https://*.sentry.io https://images.unsplash.com https://www.googleapis.com https://lottie.host https://unpkg.com https://cdn.jsdelivr.net https://*.amplitude.com https://api.amplitude.com https://api2.amplitude.com https://*.clarity.ms https://c.clarity.ms https://static.cloudflareinsights.com https://api.razorpay.com`,
+      // Frame sources
+      "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://api.razorpay.com",
       // Added wasm-unsafe-eval for Lottie WASM player
-      "script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://unpkg.com https://cdn.jsdelivr.net https://www.clarity.ms https://scripts.clarity.ms https://*.clarity.ms https://static.cloudflareinsights.com https://checkout.razorpay.com https://pagead2.googlesyndication.com https://*.google.com https://*.doubleclick.net https://*.google",
+      "script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://unpkg.com https://cdn.jsdelivr.net https://www.clarity.ms https://scripts.clarity.ms https://*.clarity.ms https://static.cloudflareinsights.com https://checkout.razorpay.com",
     ].join('; ')
 
     return [

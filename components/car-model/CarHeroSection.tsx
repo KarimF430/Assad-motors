@@ -30,7 +30,7 @@ export default function CarHeroSection({ carData }: CarHeroSectionProps) {
   }
 
   return (
-    <div className="relative bg-gradient-to-br from-orange-400 via-orange-500 to-red-500 overflow-hidden">
+    <div className="relative bg-gradient-to-br from-[#291e6a] via-[#291e6a] to-red-500 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-black/10"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -131,10 +131,10 @@ export default function CarHeroSection({ carData }: CarHeroSectionProps) {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-white text-orange-600 hover:bg-gray-50 font-bold py-4 px-8 rounded-xl transition-all duration-200 hover:scale-105 shadow-lg">
+                <button className="bg-white text-[#1c144a] hover:bg-gray-50 font-bold py-4 px-8 rounded-xl transition-all duration-200 hover:scale-105 shadow-lg">
                   Book Test Drive
                 </button>
-                <button className="border-2 border-white text-white hover:bg-white hover:text-orange-600 font-bold py-4 px-8 rounded-xl transition-all duration-200 hover:scale-105">
+                <button className="border-2 border-white text-white hover:bg-white hover:text-[#1c144a] font-bold py-4 px-8 rounded-xl transition-all duration-200 hover:scale-105">
                   Get Best Price
                 </button>
               </div>

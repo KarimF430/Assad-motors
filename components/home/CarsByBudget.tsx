@@ -155,7 +155,7 @@ export default function CarsByBudget({ allCars }: CarsByBudgetProps) {
                 flex-shrink-0 px-4 py-2 rounded-lg text-xs sm:text-sm font-medium 
                 transition-all duration-200 whitespace-nowrap
                 ${selectedBudget === budget.id
-                  ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-md'
+                  ? 'bg-gradient-to-r from-[#291e6a] to-red-500 text-white shadow-md'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200 border border-gray-200'
                 }
               `}
@@ -213,10 +213,10 @@ export default function CarsByBudget({ allCars }: CarsByBudgetProps) {
               {currentCars.length > 0 && (
                 <Link
                   href={`/best-cars-under-${selectedRange?.urlSlug || '10'}-lakh`}
-                  className="flex-shrink-0 w-[260px] sm:w-72 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
+                  className="flex-shrink-0 w-[260px] sm:w-72 bg-gradient-to-br from-[#291e6a] to-[#1c144a] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
                 >
                   {/* Top section matching image height */}
-                  <div className="h-40 sm:h-48 flex items-center justify-center bg-gradient-to-br from-orange-400 to-orange-500">
+                  <div className="h-40 sm:h-48 flex items-center justify-center bg-gradient-to-br from-[#291e6a] to-[#291e6a]">
                     <div className="text-center px-4 sm:px-6">
                       <h3 className="text-3xl sm:text-4xl font-bold text-white mb-2">
                         See More
@@ -225,7 +225,7 @@ export default function CarsByBudget({ allCars }: CarsByBudgetProps) {
                   </div>
 
                   {/* Bottom section matching card info height */}
-                  <div className="p-4 sm:p-5 bg-gradient-to-br from-orange-500 to-orange-600">
+                  <div className="p-4 sm:p-5 bg-gradient-to-br from-[#291e6a] to-[#1c144a]">
                     <h4 className="text-xl sm:text-2xl font-bold text-white text-center mb-3 sm:mb-4">
                       {selectedRange?.label} Cars
                     </h4>
@@ -234,7 +234,7 @@ export default function CarsByBudget({ allCars }: CarsByBudgetProps) {
                     <div className="h-20 sm:h-24"></div>
 
                     {/* Button matching View Details */}
-                    <div className="w-full bg-white text-orange-600 py-2 sm:py-2.5 rounded-lg font-semibold text-sm sm:text-base text-center shadow-md">
+                    <div className="w-full bg-white text-[#1c144a] py-2 sm:py-2.5 rounded-lg font-semibold text-sm sm:text-base text-center shadow-md">
                       View All Cars
                     </div>
                   </div>

@@ -41,7 +41,7 @@ export default function UpcomingCarsSection({ upcomingCars }: UpcomingCarsSectio
           <h2 className="text-2xl font-bold text-gray-800">
             Upcoming Cars
           </h2>
-          <button className="text-orange-500 hover:text-orange-600 font-medium flex items-center transition-colors">
+          <button className="text-[#291e6a] hover:text-[#1c144a] font-medium flex items-center transition-colors">
             View All Cars
             <ChevronRight className="w-4 h-4 ml-1" />
           </button>
@@ -74,7 +74,7 @@ export default function UpcomingCarsSection({ upcomingCars }: UpcomingCarsSectio
               <div key={car.id} className="flex-none w-72">
                 <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
                   {/* Car Image */}
-                  <div className="relative h-40 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center p-4">
+                  <div className="relative h-40 bg-gradient-to-br from-[#291e6a] to-red-500 flex items-center justify-center p-4">
                     {/* Status Badge */}
                     <div className={`absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-medium ${car.status === 'Coming' ? 'bg-green-500 text-white' : 'bg-blue-500 text-white'
                       }`}>
@@ -117,7 +117,7 @@ export default function UpcomingCarsSection({ upcomingCars }: UpcomingCarsSectio
                     </div>
 
                     {/* Get Notified Button */}
-                    <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg text-sm transition-colors">
+                    <button className="w-full bg-[#291e6a] hover:bg-[#1c144a] text-white font-medium py-2 px-4 rounded-lg text-sm transition-colors">
                       Get Notified
                     </button>
                   </div>

@@ -48,7 +48,7 @@ export default function BrandSection({ initialBrands = [] }: BrandSectionProps) 
           <Link
             key={brand.id}
             href={`/${brand.slug}-cars`}
-            className="group bg-white rounded-xl border border-gray-100 hover:border-orange-200 hover:shadow-md transition-all duration-300 p-3 sm:p-4 text-center"
+            className="group bg-white rounded-xl border border-gray-100 hover:border-[#6b5fc7] hover:shadow-md transition-all duration-300 p-3 sm:p-4 text-center"
           >
             {/* Brand Logo */}
             <div className="h-12 sm:h-14 flex items-center justify-center mb-2 relative">
@@ -61,7 +61,7 @@ export default function BrandSection({ initialBrands = [] }: BrandSectionProps) 
                   className="w-10 h-10 sm:w-12 sm:h-12 object-contain group-hover:scale-110 transition-transform duration-300"
                 />
               ) : null}
-              <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-sm ${brand.logo ? 'hidden' : ''}`}>
+              <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#291e6a] to-red-500 rounded-full flex items-center justify-center shadow-sm ${brand.logo ? 'hidden' : ''}`}>
                 <span className="text-xs sm:text-sm font-bold text-white">
                   {brand.name.split(' ').map((word: string) => word.charAt(0)).join('')}
                 </span>
@@ -69,7 +69,7 @@ export default function BrandSection({ initialBrands = [] }: BrandSectionProps) 
             </div>
 
             {/* Brand Name */}
-            <h3 className="font-medium text-gray-800 text-xs sm:text-sm group-hover:text-orange-600 transition-colors line-clamp-1">{brand.name}</h3>
+            <h3 className="font-medium text-gray-800 text-xs sm:text-sm group-hover:text-[#1c144a] transition-colors line-clamp-1">{brand.name}</h3>
           </Link>
         ))}
       </div>

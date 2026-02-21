@@ -908,7 +908,7 @@ export default function VariantPage({
                     )}
                     <Link
                       href={`/${displayBrandName?.toLowerCase().replace(/\s+/g, '-')}-cars/${displayModelName?.toLowerCase().replace(/\s+/g, '-')}/rate-review`}
-                      className="text-red-600 hover:text-orange-600 font-medium"
+                      className="text-red-600 hover:text-[#1c144a] font-medium"
                     >
                       Rate & Review
                     </Link>
@@ -967,14 +967,14 @@ export default function VariantPage({
                         {!showFullDescription ? (
                           <button
                             onClick={() => setShowFullDescription(true)}
-                            className="text-red-600 hover:text-orange-600 font-medium"
+                            className="text-red-600 hover:text-[#1c144a] font-medium"
                           >
                             ...more
                           </button>
                         ) : (
                           <button
                             onClick={() => setShowFullDescription(false)}
-                            className="text-red-600 hover:text-orange-600 font-medium"
+                            className="text-red-600 hover:text-[#1c144a] font-medium"
                           >
                             Show less
                           </button>
@@ -1278,7 +1278,7 @@ export default function VariantPage({
                           {shouldTruncate && (
                             <button
                               onClick={() => setShowFullDescription(false)}
-                              className="text-red-600 hover:text-orange-600 font-medium ml-1"
+                              className="text-red-600 hover:text-[#1c144a] font-medium ml-1"
                             >
                               Read Less
                             </button>
@@ -1289,7 +1289,7 @@ export default function VariantPage({
                           {fullText.substring(0, truncatedLength)}...
                           <button
                             onClick={() => setShowFullDescription(true)}
-                            className="text-red-600 hover:text-orange-600 font-medium ml-1"
+                            className="text-red-600 hover:text-[#1c144a] font-medium ml-1"
                           >
                             Read More
                           </button>
@@ -2755,7 +2755,7 @@ export default function VariantPage({
               {!loading && transformedVariants.length > 8 && (
                 <div className="text-center pt-4">
                   <button
-                    className="text-red-600 hover:text-orange-600 font-medium text-lg"
+                    className="text-red-600 hover:text-[#1c144a] font-medium text-lg"
                     onClick={() => {
                       const brandSlug = displayBrandName?.toLowerCase().replace(/\s+/g, '-')
                       const modelSlug = displayModelName?.toLowerCase().replace(/\s+/g, '-')
@@ -2816,8 +2816,8 @@ export default function VariantPage({
                   {/* Cons Column */}
                   <div className="bg-white border border-gray-200 rounded-lg p-6">
                     <div className="flex items-center space-x-2 mb-4">
-                      <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center">
-                        <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-6 h-6 bg-[#e8e6f0] rounded-full flex items-center justify-center">
+                        <svg className="w-4 h-4 text-[#1c144a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 13l3 3 7-7" />
                         </svg>
                       </div>

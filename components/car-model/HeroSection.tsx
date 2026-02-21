@@ -89,7 +89,7 @@ export default function HeroSection({ carData }: HeroSectionProps) {
             </span>
             <Link
               href={`/${carData.brand}-cars/${carData.model}/rate-review`}
-              className="text-sm font-medium text-orange-500 hover:text-orange-600 ml-3 hover:underline"
+              className="text-sm font-medium text-[#291e6a] hover:text-[#1c144a] ml-3 hover:underline"
             >
               Rate & Review
             </Link>
@@ -192,7 +192,7 @@ export default function HeroSection({ carData }: HeroSectionProps) {
               <button
                 key={index}
                 onClick={() => setSelectedImage(index)}
-                className={`flex-shrink-0 w-16 h-12 sm:w-20 sm:h-16 rounded-lg overflow-hidden border-2 transition-colors ${selectedImage === index ? 'border-orange-500' : 'border-gray-200 hover:border-gray-300'
+                className={`flex-shrink-0 w-16 h-12 sm:w-20 sm:h-16 rounded-lg overflow-hidden border-2 transition-colors ${selectedImage === index ? 'border-[#291e6a]' : 'border-gray-200 hover:border-gray-300'
                   }`}
               >
                 <OptimizedImage
@@ -218,7 +218,7 @@ export default function HeroSection({ carData }: HeroSectionProps) {
 
           {/* Quick Actions */}
           <div className="space-y-2 sm:space-y-3">
-            <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-2.5 sm:py-3 px-4 rounded-lg transition-colors text-sm sm:text-base">
+            <button className="w-full bg-[#291e6a] hover:bg-[#1c144a] text-white font-medium py-2.5 sm:py-3 px-4 rounded-lg transition-colors text-sm sm:text-base">
               Get On Road Price
             </button>
             <button className="w-full border border-gray-300 hover:bg-gray-50 text-gray-700 font-medium py-2.5 sm:py-3 px-4 rounded-lg transition-colors text-sm sm:text-base">

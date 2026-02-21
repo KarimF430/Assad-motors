@@ -64,15 +64,15 @@ export default function CityPriceGrid({
                     <Link
                         key={city.slug}
                         href={`/${brandSlug}-cars/${modelSlug}/price-in/${city.slug}`}
-                        className="group block p-4 rounded-xl border border-gray-200 hover:border-orange-300 hover:shadow-md transition-all bg-white"
+                        className="group block p-4 rounded-xl border border-gray-200 hover:border-[#4a3d9e] hover:shadow-md transition-all bg-white"
                     >
                         <div className="flex items-center gap-2 mb-2">
-                            <MapPin className="h-4 w-4 text-gray-400 group-hover:text-orange-500 transition-colors" />
+                            <MapPin className="h-4 w-4 text-gray-400 group-hover:text-[#291e6a] transition-colors" />
                             <span className="font-semibold text-gray-900 text-sm">{city.name}</span>
                         </div>
                         <div className="flex items-baseline justify-between">
                             <span className="text-lg font-bold text-gray-900">₹{(city.onRoadPrice / 100000).toFixed(2)} Lakhs</span>
-                            <ChevronRight className="h-4 w-4 text-gray-300 group-hover:text-orange-500 transition-colors" />
+                            <ChevronRight className="h-4 w-4 text-gray-300 group-hover:text-[#291e6a] transition-colors" />
                         </div>
                         <span className="text-xs text-gray-500">Price</span>
                     </Link>

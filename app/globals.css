@@ -19,7 +19,7 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 shadow-md;
+    @apply bg-gradient-to-r from-red-600 to-[#291e6a] hover:from-red-700 hover:to-[#1c144a] text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 shadow-md;
   }
 
   .btn-secondary {
@@ -35,11 +35,11 @@
   }
 
   .gradient-bg {
-    @apply bg-gradient-to-r from-red-600 to-orange-500;
+    @apply bg-gradient-to-r from-red-600 to-[#291e6a];
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-red-600 to-[#291e6a] bg-clip-text text-transparent;
   }
 
   .line-clamp-2 {
@@ -92,11 +92,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gradient-to-b from-red-400 to-orange-400 rounded-full;
+  @apply bg-gradient-to-b from-red-400 to-[#4a3d9e] rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply from-red-500 to-orange-500;
+  @apply from-red-500 to-[#291e6a];
 }
 
 /* Remove any potential orange bars from navigation */

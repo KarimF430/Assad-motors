@@ -40,7 +40,7 @@ export default function AlternativeBrands({ currentBrand, initialBrands = [] }: 
   }
 
   return (
-    <section className="py-6 sm:py-8 bg-white">
+    <section className="py-3 sm:py-6 bg-white">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
         <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Alternative Brands</h2>
 
@@ -50,7 +50,7 @@ export default function AlternativeBrands({ currentBrand, initialBrands = [] }: 
             <Link
               key={brand.id}
               href={`/${brand.slug}-cars`}
-              className="group bg-white rounded-xl border border-gray-100 hover:border-orange-200 hover:shadow-md transition-all duration-300 p-3 sm:p-4 text-center"
+              className="group bg-white rounded-xl border border-gray-100 hover:border-[#6b5fc7] hover:shadow-md transition-all duration-300 p-3 sm:p-4 text-center"
             >
               {/* Brand Logo */}
               <div className="h-12 sm:h-14 flex items-center justify-center mb-2">
@@ -62,7 +62,7 @@ export default function AlternativeBrands({ currentBrand, initialBrands = [] }: 
                     className="object-contain group-hover:scale-110 transition-transform duration-300"
                   />
                 ) : null}
-                <div className={`fallback-logo w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-sm ${brand.logo && (brand.logo.startsWith('http') || brand.logo.startsWith('/uploads')) ? 'hidden' : ''}`}>
+                <div className={`fallback-logo w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#291e6a] to-red-500 rounded-full flex items-center justify-center shadow-sm ${brand.logo && (brand.logo.startsWith('http') || brand.logo.startsWith('/uploads')) ? 'hidden' : ''}`}>
                   <span className="text-xs sm:text-sm font-bold text-white">
                     {brand.name.split(' ').map((word: string) => word.charAt(0)).join('')}
                   </span>
@@ -70,7 +70,7 @@ export default function AlternativeBrands({ currentBrand, initialBrands = [] }: 
               </div>
 
               {/* Brand Name */}
-              <h3 className="font-medium text-gray-800 text-xs sm:text-sm group-hover:text-orange-600 transition-colors line-clamp-1">{brand.name}</h3>
+              <h3 className="font-medium text-gray-800 text-xs sm:text-sm group-hover:text-[#1c144a] transition-colors line-clamp-1">{brand.name}</h3>
             </Link>
           ))}
         </div>

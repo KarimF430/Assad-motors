@@ -150,7 +150,7 @@ export default function TopCarsByBodyType({ initialCars = [] }: { initialCars?: 
                         {/* Left Scroll Arrow */}
                         <button
                             onClick={() => scrollContainer('left')}
-                            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-white hover:bg-gray-50 shadow-lg rounded-full items-center justify-center text-gray-500 hover:text-orange-600 transition-all duration-300 opacity-0 group-hover:opacity-100 -translate-x-1/2 border border-gray-100"
+                            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-white hover:bg-gray-50 shadow-lg rounded-full items-center justify-center text-gray-500 hover:text-[#1c144a] transition-all duration-300 opacity-0 group-hover:opacity-100 -translate-x-1/2 border border-gray-100"
                             aria-label="Scroll left"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -161,7 +161,7 @@ export default function TopCarsByBodyType({ initialCars = [] }: { initialCars?: 
                         {/* Right Scroll Arrow */}
                         <button
                             onClick={() => scrollContainer('right')}
-                            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-white hover:bg-gray-50 shadow-lg rounded-full items-center justify-center text-gray-500 hover:text-orange-600 transition-all duration-300 opacity-0 group-hover:opacity-100 translate-x-1/2 border border-gray-100"
+                            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-white hover:bg-gray-50 shadow-lg rounded-full items-center justify-center text-gray-500 hover:text-[#1c144a] transition-all duration-300 opacity-0 group-hover:opacity-100 translate-x-1/2 border border-gray-100"
                             aria-label="Scroll right"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -188,7 +188,7 @@ export default function TopCarsByBodyType({ initialCars = [] }: { initialCars?: 
                             {rankedCars.length > 0 && (
                                 <Link
                                     href={selectedBodyType === 'all' ? '/top-selling-cars-in-india' : `/top-selling-cars-in-india?bodyType=${selectedBodyType}`}
-                                    className="flex-shrink-0 w-[220px] sm:w-[240px] bg-gradient-to-br from-orange-500 to-red-500 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer"
+                                    className="flex-shrink-0 w-[220px] sm:w-[240px] bg-gradient-to-br from-[#291e6a] to-red-500 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer"
                                 >
                                     <div className="h-full flex flex-col items-center justify-center p-6 text-center min-h-[280px] sm:min-h-[300px]">
                                         <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mb-4">
@@ -200,7 +200,7 @@ export default function TopCarsByBodyType({ initialCars = [] }: { initialCars?: 
                                         <p className="text-white/80 text-sm mb-4">
                                             {selectedBodyType === 'all' ? 'Top Cars' : selectedBodyType}
                                         </p>
-                                        <div className="px-5 py-2 bg-white text-orange-600 rounded-full font-semibold text-sm">
+                                        <div className="px-5 py-2 bg-white text-[#1c144a] rounded-full font-semibold text-sm">
                                             Explore
                                         </div>
                                     </div>

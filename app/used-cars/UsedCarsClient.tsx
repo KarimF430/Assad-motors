@@ -394,7 +394,7 @@ export default function UsedCarsClient() {
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                             onFocus={() => setShowSuggestions(true)}
-                            className="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500 text-gray-900"
+                            className="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#291e6a] focus:border-[#291e6a] text-gray-900"
                         />
 
                         {/* Autocomplete Suggestions */}
@@ -424,10 +424,10 @@ export default function UsedCarsClient() {
                     </label>
                     <Link
                         href="/location"
-                        className="flex items-center justify-between px-3 py-3 bg-white border border-gray-300 rounded-lg hover:border-orange-400 transition-colors"
+                        className="flex items-center justify-between px-3 py-3 bg-white border border-gray-300 rounded-lg hover:border-[#291e6a] transition-colors"
                     >
                         <div className="flex items-center gap-2">
-                            <MapPin className="h-5 w-5 text-orange-500" />
+                            <MapPin className="h-5 w-5 text-[#291e6a]" />
                             <span className="text-gray-900 font-medium">{selectedCity}</span>
                         </div>
                         <ChevronRight className="h-5 w-5 text-gray-400" />
@@ -438,10 +438,10 @@ export default function UsedCarsClient() {
                 <div className="mb-5">
                     <div className="flex items-center justify-between mb-2">
                         <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
-                            <IndianRupee className="h-4 w-4 text-orange-500" />
+                            <IndianRupee className="h-4 w-4 text-[#291e6a]" />
                             Budget
                         </label>
-                        <span className="text-sm font-semibold text-orange-600">
+                        <span className="text-sm font-semibold text-[#1c144a]">
                             Up to {formatBudget(budgetMax)}
                         </span>
                     </div>
@@ -451,7 +451,7 @@ export default function UsedCarsClient() {
                         max="100"
                         value={budgetMax}
                         onChange={(e) => setBudgetMax(Number(e.target.value))}
-                        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-orange-600"
+                        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#1c144a]"
                     />
                     <div className="flex justify-between text-xs text-gray-500 mt-1">
                         <span>₹1 Lakh</span>
@@ -463,10 +463,10 @@ export default function UsedCarsClient() {
                 <div className="mb-5">
                     <div className="flex items-center justify-between mb-2">
                         <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
-                            <Calendar className="h-4 w-4 text-orange-500" />
+                            <Calendar className="h-4 w-4 text-[#291e6a]" />
                             Car Age
                         </label>
-                        <span className="text-sm font-semibold text-orange-600">
+                        <span className="text-sm font-semibold text-[#1c144a]">
                             Up to {carAgeMax} years
                         </span>
                     </div>
@@ -476,7 +476,7 @@ export default function UsedCarsClient() {
                         max="10"
                         value={carAgeMax}
                         onChange={(e) => setCarAgeMax(Number(e.target.value))}
-                        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-orange-600"
+                        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#1c144a]"
                     />
                     <div className="flex justify-between text-xs text-gray-500 mt-1">
                         <span>1 Year</span>
@@ -487,7 +487,7 @@ export default function UsedCarsClient() {
                 {/* Fuel Type */}
                 <div className="mb-5">
                     <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
-                        <Fuel className="h-4 w-4 text-orange-500" />
+                        <Fuel className="h-4 w-4 text-[#291e6a]" />
                         Fuel Type
                     </label>
                     <div className="flex flex-wrap gap-2">
@@ -496,8 +496,8 @@ export default function UsedCarsClient() {
                                 key={fuel}
                                 onClick={() => toggleSelection(selectedFuel, setSelectedFuel, fuel)}
                                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${selectedFuel.includes(fuel)
-                                    ? 'bg-orange-600 text-white'
-                                    : 'bg-white border border-gray-300 text-gray-700 hover:border-orange-400'
+                                    ? 'bg-[#1c144a] text-white'
+                                    : 'bg-white border border-gray-300 text-gray-700 hover:border-[#291e6a]'
                                     }`}
                             >
                                 {fuel}
@@ -509,7 +509,7 @@ export default function UsedCarsClient() {
                 {/* Transmission */}
                 <div className="mb-5">
                     <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
-                        <Car className="h-4 w-4 text-orange-500" />
+                        <Car className="h-4 w-4 text-[#291e6a]" />
                         Transmission
                     </label>
                     <div className="flex gap-2">
@@ -518,8 +518,8 @@ export default function UsedCarsClient() {
                                 key={trans}
                                 onClick={() => toggleSelection(selectedTransmission, setSelectedTransmission, trans)}
                                 className={`flex-1 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${selectedTransmission.includes(trans)
-                                    ? 'bg-orange-600 text-white'
-                                    : 'bg-white border border-gray-300 text-gray-700 hover:border-orange-400'
+                                    ? 'bg-[#1c144a] text-white'
+                                    : 'bg-white border border-gray-300 text-gray-700 hover:border-[#291e6a]'
                                     }`}
                             >
                                 {trans}
@@ -531,7 +531,7 @@ export default function UsedCarsClient() {
                 {/* Owners */}
                 <div className="mb-6">
                     <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
-                        <Users className="h-4 w-4 text-orange-500" />
+                        <Users className="h-4 w-4 text-[#291e6a]" />
                         Previous Owners
                     </label>
                     <div className="flex gap-2">
@@ -540,8 +540,8 @@ export default function UsedCarsClient() {
                                 key={owner}
                                 onClick={() => toggleSelection(selectedOwners, setSelectedOwners, owner)}
                                 className={`flex-1 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${selectedOwners.includes(owner)
-                                    ? 'bg-orange-600 text-white'
-                                    : 'bg-white border border-gray-300 text-gray-700 hover:border-orange-400'
+                                    ? 'bg-[#1c144a] text-white'
+                                    : 'bg-white border border-gray-300 text-gray-700 hover:border-[#291e6a]'
                                     }`}
                             >
                                 {owner}
@@ -552,7 +552,7 @@ export default function UsedCarsClient() {
                 {/* Search Button */}
                 <button
                     onClick={handleSearch}
-                    className="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 rounded-lg transition-colors mb-10"
+                    className="w-full bg-[#1c144a] hover:bg-[#1c144a] text-white font-semibold py-3 rounded-lg transition-colors mb-10"
                 >
                     <Search className="inline-block h-5 w-5 mr-2" />
                     Search Used Cars
@@ -607,8 +607,8 @@ export default function UsedCarsClient() {
                                 </div>
                             </div>
                             <div className="flex items-start gap-3">
-                                <div className="p-2 bg-orange-100 rounded-lg">
-                                    <FileCheck className="h-5 w-5 text-orange-600" />
+                                <div className="p-2 bg-[#e8e6f0] rounded-lg">
+                                    <FileCheck className="h-5 w-5 text-[#1c144a]" />
                                 </div>
                                 <div className="text-left">
                                     <h4 className="font-semibold text-gray-900">Proven Reliability</h4>
@@ -705,7 +705,7 @@ export default function UsedCarsClient() {
                         <h3 className="text-lg font-bold text-gray-900 mb-4 text-left">Frequently Asked Questions</h3>
                         <div className="space-y-4">
                             <details className="group border-b border-gray-200 pb-4">
-                                <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-orange-600 text-left">
+                                <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-[#1c144a] text-left">
                                     <span>What should I check before buying a used car?</span>
                                     <span className="transition group-open:rotate-180">
                                         <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
@@ -719,7 +719,7 @@ export default function UsedCarsClient() {
                             </details>
 
                             <details className="group border-b border-gray-200 pb-4">
-                                <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-orange-600 text-left">
+                                <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-[#1c144a] text-left">
                                     <span>How do I determine the fair price of a used car?</span>
                                     <span className="transition group-open:rotate-180">
                                         <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
@@ -733,7 +733,7 @@ export default function UsedCarsClient() {
                             </details>
 
                             <details className="group border-b border-gray-200 pb-4">
-                                <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-orange-600 text-left">
+                                <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-[#1c144a] text-left">
                                     <span>Is it better to buy from a dealer or private seller?</span>
                                     <span className="transition group-open:rotate-180">
                                         <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
@@ -747,7 +747,7 @@ export default function UsedCarsClient() {
                             </details>
 
                             <details className="group border-b border-gray-200 pb-4">
-                                <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-orange-600 text-left">
+                                <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-[#1c144a] text-left">
                                     <span>What documents are needed for used car transfer?</span>
                                     <span className="transition group-open:rotate-180">
                                         <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
@@ -761,7 +761,7 @@ export default function UsedCarsClient() {
                             </details>
 
                             <details className="group border-b border-gray-200 pb-4">
-                                <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-orange-600 text-left">
+                                <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-[#1c144a] text-left">
                                     <span>Can I get a loan for a used car?</span>
                                     <span className="transition group-open:rotate-180">
                                         <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
@@ -775,7 +775,7 @@ export default function UsedCarsClient() {
                             </details>
 
                             <details className="group pb-4">
-                                <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-orange-600 text-left">
+                                <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-[#1c144a] text-left">
                                     <span>How many kilometers is too much for a used car?</span>
                                     <span className="transition group-open:rotate-180">
                                         <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>

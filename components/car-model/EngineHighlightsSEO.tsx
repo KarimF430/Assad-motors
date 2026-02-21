@@ -51,7 +51,7 @@ export default function EngineHighlightsSEO({ carData }: EngineHighlightsSEOProp
         value: '113 Nm',
         description: 'Peak torque at 4200 rpm',
         icon: Gauge,
-        color: 'orange'
+        color: '#291e6a'
       },
       {
         title: 'Technology',
@@ -105,7 +105,7 @@ Built with proven Japanese engineering principles, the K-Series engine is known 
           const colorClasses = {
             green: 'bg-green-50 border-green-200 text-green-600',
             blue: 'bg-blue-50 border-blue-200 text-blue-600',
-            orange: 'bg-orange-50 border-orange-200 text-orange-600',
+            blue: 'bg-[#f0eef5] border-[#6b5fc7] text-[#1c144a]',
             purple: 'bg-purple-50 border-purple-200 text-purple-600'
           }
           

@@ -74,13 +74,13 @@ export default function ModelColors({ colors, carName }: ModelColorsProps) {
               <button
                 key={color.id}
                 type="button"
-                className="flex-shrink-0 cursor-pointer focus:outline-none focus:ring-2 focus:ring-orange-500 rounded-lg"
+                className="flex-shrink-0 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#291e6a] rounded-lg"
                 onClick={() => setSelectedColor(color.id)}
                 aria-label={`Select color ${color.name}`}
                 aria-pressed={selectedColor === color.id}
               >
                 <div className={`relative p-3 rounded-lg border-2 transition-all ${selectedColor === color.id
-                    ? 'border-orange-500 bg-orange-50'
+                    ? 'border-[#291e6a] bg-[#f0eef5]'
                     : 'border-gray-200 hover:border-gray-300'
                   }`}>
                   {/* Car PNG placeholder with color tint */}
@@ -95,7 +95,7 @@ export default function ModelColors({ colors, carName }: ModelColorsProps) {
                     ></div>
                     {/* Selection indicator */}
                     {selectedColor === color.id && (
-                      <div className="absolute top-2 right-2 w-5 h-5 bg-orange-500 rounded-full flex items-center justify-center">
+                      <div className="absolute top-2 right-2 w-5 h-5 bg-[#291e6a] rounded-full flex items-center justify-center">
                         <span className="text-white text-xs font-bold">✓</span>
                       </div>
                     )}

@@ -42,7 +42,7 @@ const BRAND_COLORS: Record<string, BrandColors> = {
     'hyundai': { from: 'from-blue-500', to: 'to-blue-600', hover: 'hover:from-blue-600 hover:to-blue-700' },
     'maruti': { from: 'from-red-500', to: 'to-red-600', hover: 'hover:from-red-600 hover:to-red-700' },
     'suzuki': { from: 'from-red-500', to: 'to-red-600', hover: 'hover:from-red-600 hover:to-red-700' },
-    'mahindra': { from: 'from-orange-500', to: 'to-red-500', hover: 'hover:from-orange-600 hover:to-red-600' },
+    'mahindra': { from: 'from-[#291e6a]', to: 'to-red-500', hover: 'hover:from-[#1c144a] hover:to-red-600' },
     'tata': { from: 'from-blue-600', to: 'to-indigo-600', hover: 'hover:from-blue-700 hover:to-indigo-700' },
     'toyota': { from: 'from-red-600', to: 'to-red-700', hover: 'hover:from-red-700 hover:to-red-800' },
     'kia': { from: 'from-red-500', to: 'to-red-600', hover: 'hover:from-red-600 hover:to-red-700' },
@@ -82,7 +82,7 @@ export default function DecemberOffersSection({ initialCars = [], initialBrands 
     // Get brand color for selected brand
     const getBrandColor = (brandId: string): BrandColors => {
         const brandKey = Object.keys(BRAND_COLORS).find(key => brandId.toLowerCase().includes(key))
-        return brandKey ? BRAND_COLORS[brandKey] : { from: 'from-orange-500', to: 'to-red-500', hover: 'hover:from-orange-600 hover:to-red-600' }
+        return brandKey ? BRAND_COLORS[brandKey] : { from: 'from-[#291e6a]', to: 'to-red-500', hover: 'hover:from-[#1c144a] hover:to-red-600' }
     }
 
     // Filter cars by selected brand - take up to 5 cars per brand

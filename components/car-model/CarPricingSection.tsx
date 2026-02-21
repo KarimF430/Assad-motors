@@ -68,7 +68,7 @@ export default function CarPricingSection({ carData }: CarPricingSectionProps) {
               <span>5-star safety rating</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-[#291e6a] rounded-full"></div>
               <span>Low maintenance cost</span>
             </div>
           </div>

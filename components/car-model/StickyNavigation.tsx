@@ -98,7 +98,7 @@ export default function StickyNavigation({ activeSection, carData }: StickyNavig
                   onClick={() => scrollToSection(section.id)}
                   className={`flex-shrink-0 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
                     activeSection === section.id
-                      ? 'bg-orange-500 text-white'
+                      ? 'bg-[#291e6a] text-white'
                       : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                   }`}
                 >
@@ -118,7 +118,7 @@ export default function StickyNavigation({ activeSection, carData }: StickyNavig
 
           {/* Quick Action Button */}
           <div className="hidden lg:block ml-4">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+            <button className="bg-[#291e6a] hover:bg-[#1c144a] text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
               Get Price
             </button>
           </div>

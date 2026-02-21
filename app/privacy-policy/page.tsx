@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
                 <PageContainer maxWidth="lg">
                     <PageSection spacing="normal">
                         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 md:p-10">
-                            <Link href="/" className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 mb-6">
+                            <Link href="/" className="inline-flex items-center gap-2 text-[#1c144a] hover:text-[#1c144a] mb-6">
                                 <ArrowLeft className="w-4 h-4" />
                                 Back to Home
                             </Link>
@@ -109,7 +109,7 @@ export default function PrivacyPolicyPage() {
                                         href="https://www.google.com/settings/ads"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-orange-600 hover:underline"
+                                        className="text-[#1c144a] hover:underline"
                                     >
                                         Google Ads Settings
                                     </a>
@@ -118,7 +118,7 @@ export default function PrivacyPolicyPage() {
                                         href="https://www.aboutads.info"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-orange-600 hover:underline"
+                                        className="text-[#1c144a] hover:underline"
                                     >
                                         aboutads.info
                                     </a>
@@ -127,7 +127,7 @@ export default function PrivacyPolicyPage() {
                                         href="https://policies.google.com/technologies/partner-sites"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-orange-600 hover:underline"
+                                        className="text-[#1c144a] hover:underline"
                                     >
                                         Google's Privacy & Terms
                                     </a>

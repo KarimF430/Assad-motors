@@ -39,7 +39,7 @@ export default function MovingAdBanner({ variant = 'horizontal', className = '' 
             image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=400&fit=crop',
             cta: 'Get Quote',
             link: '/insurance',
-            bgGradient: 'from-orange-600 to-red-600'
+            bgGradient: 'from-[#1c144a] to-red-600'
         },
         {
             id: 4,

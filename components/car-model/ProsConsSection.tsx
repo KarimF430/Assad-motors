@@ -30,7 +30,7 @@ export default function ProsConsSection({ carName, data }: ProsConsSectionProps)
   const hasMoreCons = data.cons.length > data.cons.filter(con => con.isVisible).length
 
   return (
-    <section className="py-6 sm:py-8 bg-gray-100">
+    <section className="py-3 sm:py-6 bg-gray-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title - matching screenshot exactly */}
         <h2 className="text-4xl font-bold text-gray-700 mb-12">
@@ -73,7 +73,7 @@ export default function ProsConsSection({ carName, data }: ProsConsSectionProps)
           <div className="bg-white rounded-3xl shadow-sm border border-gray-200 p-8">
             <div className="flex items-center mb-8">
               <div className="flex items-center justify-center w-10 h-10 mr-4">
-                <ThumbsDown className="w-8 h-8 text-orange-400" strokeWidth={1.5} />
+                <ThumbsDown className="w-8 h-8 text-[#291e6a]" strokeWidth={1.5} />
               </div>
               <h3 className="text-2xl font-bold text-gray-900">Cons</h3>
             </div>

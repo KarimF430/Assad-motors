@@ -84,7 +84,7 @@ export default function UpcomingCars({ initialCars = [] }: { initialCars?: Upcom
                 <Link
                   key="view-all-upcoming"
                   href="/upcoming-cars-in-india"
-                  className="flex-shrink-0 w-[220px] sm:w-[240px] bg-gradient-to-br from-orange-500 to-red-600 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer"
+                  className="flex-shrink-0 w-[220px] sm:w-[240px] bg-gradient-to-br from-[#291e6a] to-red-600 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer"
                 >
                   <div className="h-full flex flex-col items-center justify-center p-6 text-center min-h-[280px] sm:min-h-[300px]">
                     <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mb-4">
@@ -94,7 +94,7 @@ export default function UpcomingCars({ initialCars = [] }: { initialCars?: Upcom
                     </div>
                     <h3 className="text-xl font-bold text-white mb-1">View All</h3>
                     <p className="text-white/80 text-sm mb-4">Upcoming Cars</p>
-                    <div className="px-5 py-2 bg-white text-orange-600 rounded-full font-semibold text-sm">
+                    <div className="px-5 py-2 bg-white text-[#1c144a] rounded-full font-semibold text-sm">
                       Explore
                     </div>
                   </div>

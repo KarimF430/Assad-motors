@@ -55,7 +55,7 @@ export default function AdSpaces() {
       description: 'Premium car accessories and customization options available.',
       buttonText: 'Shop Now',
       buttonLink: '/accessories',
-      backgroundColor: 'bg-gradient-to-r from-orange-500 to-red-600',
+      backgroundColor: 'bg-gradient-to-r from-[#291e6a] to-red-600',
       textColor: 'text-white',
       icon: <Gift className="h-6 w-6" />,
       size: 'medium'
@@ -109,7 +109,7 @@ export default function AdSpaces() {
             </p>
             <button 
               onClick={() => handleAdClick('/advertise')}
-              className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              className="bg-[#1c144a] hover:bg-[#1c144a] text-white px-6 py-3 rounded-lg font-medium transition-colors"
             >
               Advertise With Us
             </button>

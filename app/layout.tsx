@@ -9,6 +9,7 @@ import { AnalyticsProvider } from '@/components/providers/AnalyticsProvider'
 import { WebVitalsReporter } from '@/components/WebVitalsReporter'
 import { CartProvider } from './context/CartContext'
 import CookieConsent from '@/components/CookieConsent'
+import FloatingWhatsApp from '@/components/FloatingWhatsApp'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -203,13 +204,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         {/* Schema.org structured data */}
 
-        {/* Google AdSense */}
-        <Script
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1143112388277725"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-
         {/* Schema.org structured data */}
         <script
           type="application/ld+json"
@@ -281,6 +275,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <Header />
                 {children}
                 <CookieConsent />
+                <FloatingWhatsApp />
               </CartProvider>
             </FavouritesProvider>
           </AuthProvider>

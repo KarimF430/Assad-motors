@@ -64,7 +64,7 @@ export default function ModelPriceSEO({ carData }: ModelPriceSEOProps) {
                 </div>
                 <button
                   onClick={() => toggleExpanded(index)}
-                  className="flex items-center space-x-2 text-orange-600 hover:text-orange-700 transition-colors"
+                  className="flex items-center space-x-2 text-[#1c144a] hover:text-[#1c144a] transition-colors"
                 >
                   <span className="text-sm font-medium">
                     {expandedItems[index] ? 'Read Less' : 'Read More'}

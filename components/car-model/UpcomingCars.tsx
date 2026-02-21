@@ -61,7 +61,7 @@ export default function UpcomingCars({ carData }: UpcomingCarsProps) {
         >
           {upcomingCars.map((car) => (
             <div key={car.id} className="flex-shrink-0 w-72">
-              <div className="bg-gradient-to-br from-orange-500 to-red-600 rounded-lg p-6 text-white relative overflow-hidden">
+              <div className="bg-gradient-to-br from-[#291e6a] to-red-600 rounded-lg p-6 text-white relative overflow-hidden">
                 {/* Background Pattern */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -translate-y-16 translate-x-16"></div>
                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-white opacity-10 rounded-full translate-y-12 -translate-x-12"></div>
@@ -126,7 +126,7 @@ export default function UpcomingCars({ carData }: UpcomingCarsProps) {
                 </div>
 
                 {/* CTA Button */}
-                <button className="w-full bg-white text-orange-600 font-semibold py-3 rounded-lg hover:bg-gray-100 transition-colors">
+                <button className="w-full bg-white text-[#1c144a] font-semibold py-3 rounded-lg hover:bg-gray-100 transition-colors">
                   Get Notified
                 </button>
               </div>
@@ -153,16 +153,16 @@ export default function UpcomingCars({ carData }: UpcomingCarsProps) {
       </div>
 
       {/* Newsletter Signup */}
-      <div className="mt-6 bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-lg p-4 text-center">
+      <div className="mt-6 bg-gradient-to-r from-[#f0eef5] to-red-50 border border-[#6b5fc7] rounded-lg p-4 text-center">
         <h3 className="font-semibold mb-2">Never Miss a Launch</h3>
         <p className="text-gray-600 mb-4">Get notified about upcoming {carData.brand} car launches</p>
         <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
           <input
             type="email"
             placeholder="Enter your email"
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#291e6a]"
           />
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-medium">
+          <button className="bg-[#291e6a] hover:bg-[#1c144a] text-white px-6 py-2 rounded-lg font-medium">
             Subscribe
           </button>
         </div>

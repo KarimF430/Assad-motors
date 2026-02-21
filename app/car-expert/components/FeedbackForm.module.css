@@ -66,7 +66,7 @@
 .input:focus,
 .textarea:focus {
     outline: none;
-    border-color: #ea580c;
+    border-color: #291e6a;
     background: white;
     box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
 }
@@ -100,7 +100,7 @@
     justify-content: center;
     gap: 10px;
     padding: 16px 24px;
-    background: linear-gradient(135deg, #dc2626 0%, #f97316 100%);
+    background: linear-gradient(135deg, #dc2626 0%, #291e6a 100%);
     color: white;
     border: none;
     border-radius: 12px;
@@ -115,7 +115,7 @@
 .submitBtn:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(220, 38, 38, 0.45);
-    background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+    background: linear-gradient(135deg, #ef4444 0%, #291e6a 100%);
 }
 
 .submitBtn:disabled {
@@ -186,6 +186,6 @@
 }
 
 .resetBtn:hover {
-    background: #ea580c;
+    background: #291e6a;
     color: #ffffff;
 }

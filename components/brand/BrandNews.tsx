@@ -93,7 +93,7 @@ export default async function BrandNews({ brandSlug, brandName }: BrandNewsProps
         <h2 className="text-xl sm:text-2xl font-bold text-gray-900">{brandName} News</h2>
         <Link
           href="/news"
-          className="flex items-center text-red-600 hover:text-orange-600 font-medium text-sm sm:text-base"
+          className="flex items-center text-red-600 hover:text-[#1c144a] font-medium text-sm sm:text-base"
         >
           <span className="hidden sm:inline">View All News</span>
           <span className="sm:hidden">View All</span>

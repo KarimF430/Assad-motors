@@ -58,7 +58,7 @@ export default function TopCarCard({ car, bodyTypeLabel }: { car: Car; bodyTypeL
                             </span>
                         )}
                         {car.isPopular && !car.isNew && (
-                            <span className="absolute top-1 left-1 sm:top-2 sm:left-2 bg-orange-600 text-white text-[10px] sm:text-xs font-bold px-1.5 py-0.5 sm:px-2 sm:py-1 rounded z-10">
+                            <span className="absolute top-1 left-1 sm:top-2 sm:left-2 bg-[#1c144a] text-white text-[10px] sm:text-xs font-bold px-1.5 py-0.5 sm:px-2 sm:py-1 rounded z-10">
                                 POPULAR
                             </span>
                         )}

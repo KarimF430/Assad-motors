@@ -1664,7 +1664,7 @@ export default function CarModelPage({ model, initialVariants = [], newsSlot }: 
       </div>
 
       {/* Website Feedback Section */}
-      <section className="py-6 sm:py-8 bg-gray-50">
+      <section className="py-3 sm:py-6 bg-gray-50">
         <div className="max-w-2xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
           <div className="bg-white border border-gray-200 rounded-xl p-4 sm:p-6 lg:p-8">
             <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 text-center mb-2 sm:mb-3">

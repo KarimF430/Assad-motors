@@ -51,7 +51,7 @@ export default function AIChatbotPopup() {
             {/* Compact Card */}
             <div className="bg-white rounded-xl shadow-2xl overflow-hidden hover:shadow-3xl transition-shadow duration-300">
                 {/* Video Area */}
-                <div className="relative bg-gradient-to-br from-orange-500 to-red-600 aspect-video group cursor-pointer" onClick={handleNavigate}>
+                <div className="relative bg-gradient-to-br from-[#291e6a] to-red-600 aspect-video group cursor-pointer" onClick={handleNavigate}>
                     {/* Animated Content */}
                     <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                         {animationFrame === 0 ? (
@@ -96,7 +96,7 @@ export default function AIChatbotPopup() {
                 {/* Content */}
                 <div className="p-2.5 bg-white">
                     <div className="flex items-center gap-1.5 mb-2">
-                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center flex-shrink-0">
+                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#291e6a] to-red-600 flex items-center justify-center flex-shrink-0">
                             <Sparkles className="w-3 h-3 text-white" />
                         </div>
                         <p className="text-[10px] font-bold text-gray-900 leading-tight">🤔 Confused About Cars?</p>
@@ -109,7 +109,7 @@ export default function AIChatbotPopup() {
                     {/* CTA */}
                     <button
                         onClick={handleNavigate}
-                        className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-1.5 px-2 rounded-lg text-[10px] transition-all shadow-md hover:shadow-lg transform hover:scale-105 active:scale-95"
+                        className="w-full bg-gradient-to-r from-[#291e6a] to-red-600 hover:from-[#1c144a] hover:to-red-700 text-white font-bold py-1.5 px-2 rounded-lg text-[10px] transition-all shadow-md hover:shadow-lg transform hover:scale-105 active:scale-95"
                     >
                         Try AI Chat Now
                     </button>

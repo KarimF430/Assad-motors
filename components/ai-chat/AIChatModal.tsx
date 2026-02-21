@@ -136,10 +136,10 @@ export default function AIChatModal({ isOpen, onClose }: AIChatModalProps) {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
             <div className="relative w-full max-w-4xl h-[90vh] bg-white rounded-2xl shadow-2xl flex flex-col m-4">
                 {/* Header */}
-                <div className="flex items-center justify-between p-4 border-b bg-gradient-to-r from-orange-500 to-red-500 rounded-t-2xl">
+                <div className="flex items-center justify-between p-4 border-b bg-gradient-to-r from-[#291e6a] to-red-500 rounded-t-2xl">
                     <div className="flex items-center gap-3">
                         <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                            <Sparkles className="h-5 w-5 text-orange-500" />
+                            <Sparkles className="h-5 w-5 text-[#291e6a]" />
                         </div>
                         <div>
                             <h2 className="text-lg font-bold text-white">AI Car Assistant</h2>
@@ -162,7 +162,7 @@ export default function AIChatModal({ isOpen, onClose }: AIChatModalProps) {
                             <div className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                                 <div
                                     className={`max-w-[80%] rounded-2xl px-4 py-3 ${message.role === 'user'
-                                            ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white'
+                                            ? 'bg-gradient-to-r from-[#291e6a] to-red-500 text-white'
                                             : 'bg-gray-100 text-gray-900'
                                         }`}
                                 >
@@ -177,7 +177,7 @@ export default function AIChatModal({ isOpen, onClose }: AIChatModalProps) {
                                         <button
                                             key={idx}
                                             onClick={() => handleQuickReply(reply)}
-                                            className="px-4 py-2 bg-white border-2 border-orange-500 text-orange-600 rounded-full hover:bg-orange-50 transition-colors text-sm font-medium"
+                                            className="px-4 py-2 bg-white border-2 border-[#291e6a] text-[#1c144a] rounded-full hover:bg-[#f0eef5] transition-colors text-sm font-medium"
                                         >
                                             {reply}
                                         </button>
@@ -191,7 +191,7 @@ export default function AIChatModal({ isOpen, onClose }: AIChatModalProps) {
                                     {message.cars.map((car) => (
                                         <div
                                             key={car.id}
-                                            className="bg-white border-2 border-gray-200 rounded-xl p-4 hover:border-orange-500 transition-colors cursor-pointer"
+                                            className="bg-white border-2 border-gray-200 rounded-xl p-4 hover:border-[#291e6a] transition-colors cursor-pointer"
                                         >
                                             <div className="flex gap-4">
                                                 <img
@@ -206,7 +206,7 @@ export default function AIChatModal({ isOpen, onClose }: AIChatModalProps) {
                                                             <p className="text-sm text-gray-600">₹{(car.price / 100000).toFixed(2)} Lakh</p>
                                                         </div>
                                                         <div className="text-right">
-                                                            <div className="text-2xl font-bold text-orange-600">{car.matchScore}%</div>
+                                                            <div className="text-2xl font-bold text-[#1c144a]">{car.matchScore}%</div>
                                                             <div className="text-xs text-gray-500">Match</div>
                                                         </div>
                                                     </div>
@@ -219,7 +219,7 @@ export default function AIChatModal({ isOpen, onClose }: AIChatModalProps) {
                                                         ))}
                                                     </div>
                                                     <div className="mt-3 flex gap-2">
-                                                        <button className="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors text-sm font-medium">
+                                                        <button className="px-4 py-2 bg-[#291e6a] text-white rounded-lg hover:bg-[#1c144a] transition-colors text-sm font-medium">
                                                             View Details
                                                         </button>
                                                         <button className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm font-medium">
@@ -256,7 +256,7 @@ export default function AIChatModal({ isOpen, onClose }: AIChatModalProps) {
                     <div className="flex gap-2">
                         <button
                             onClick={handleVoiceInput}
-                            className="p-3 bg-white border-2 border-gray-200 rounded-xl hover:border-orange-500 transition-colors"
+                            className="p-3 bg-white border-2 border-gray-200 rounded-xl hover:border-[#291e6a] transition-colors"
                         >
                             <Mic className="h-5 w-5 text-gray-600" />
                         </button>
@@ -266,12 +266,12 @@ export default function AIChatModal({ isOpen, onClose }: AIChatModalProps) {
                             onChange={(e) => setInput(e.target.value)}
                             onKeyPress={(e) => e.key === 'Enter' && handleSend()}
                             placeholder="Type your message..."
-                            className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none"
+                            className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#291e6a] focus:outline-none"
                         />
                         <button
                             onClick={() => handleSend()}
                             disabled={!input.trim()}
-                            className="px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="px-6 py-3 bg-gradient-to-r from-[#291e6a] to-red-500 text-white rounded-xl hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                             <Send className="h-5 w-5" />
                         </button>

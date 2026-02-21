@@ -246,10 +246,10 @@ export default function SearchClient({ trendingSearches, initialQuery = '' }: Se
                                                 whileTap={{ scale: 0.98 }}
                                                 className="flex items-center gap-4 w-full text-left group"
                                             >
-                                                <div className="w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center">
-                                                    <TrendingUp className="w-4 h-4 text-orange-500" />
+                                                <div className="w-8 h-8 rounded-full bg-[#f0eef5] flex items-center justify-center">
+                                                    <TrendingUp className="w-4 h-4 text-[#291e6a]" />
                                                 </div>
-                                                <span className="text-base text-gray-700 font-medium group-hover:text-orange-600 transition-colors">{item.term}</span>
+                                                <span className="text-base text-gray-700 font-medium group-hover:text-[#1c144a] transition-colors">{item.term}</span>
                                             </motion.div>
                                         </Link>
                                     ))}

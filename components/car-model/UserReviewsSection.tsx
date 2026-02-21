@@ -206,7 +206,7 @@ export default function UserReviewsSection({
                   <span className="w-4 text-gray-700">{rating}★</span>
                   <div className="flex-1 mx-3 bg-gray-200 rounded-full h-2">
                     <div
-                      className="bg-orange-400 h-2 rounded-full"
+                      className="bg-[#291e6a] h-2 rounded-full"
                       style={{ width: `${getRatingPercentage(ratingBreakdown[rating as keyof typeof ratingBreakdown])}%` }}
                     ></div>
                   </div>
@@ -258,8 +258,8 @@ export default function UserReviewsSection({
               {/* Review Header */}
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center">
-                  <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3">
-                    <User className="w-4 h-4 text-orange-600" />
+                  <div className="w-8 h-8 bg-[#e8e6f0] rounded-full flex items-center justify-center mr-3">
+                    <User className="w-4 h-4 text-[#1c144a]" />
                   </div>
                   <div>
                     <div className="flex items-center">
@@ -285,7 +285,7 @@ export default function UserReviewsSection({
                     <button
                       key={idx}
                       onClick={() => setSelectedImage(img)}
-                      className="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border border-gray-200 hover:border-orange-400 transition-colors"
+                      className="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border border-gray-200 hover:border-[#291e6a] transition-colors"
                     >
                       <img src={img} alt={`Review image ${idx + 1}`} className="w-full h-full object-cover" />
                     </button>
@@ -360,12 +360,12 @@ export default function UserReviewsSection({
                       }}
                       onFocus={() => setReplyingTo(review.id)}
                       placeholder="Write a comment..."
-                      className="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                      className="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#291e6a] focus:border-transparent"
                     />
                     <button
                       onClick={() => handleReply(review.id)}
                       disabled={!replyText.trim()}
-                      className="px-3 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 disabled:bg-gray-300 transition-colors"
+                      className="px-3 py-2 bg-[#291e6a] text-white rounded-lg hover:bg-[#1c144a] disabled:bg-gray-300 transition-colors"
                     >
                       <Send className="w-4 h-4" />
                     </button>

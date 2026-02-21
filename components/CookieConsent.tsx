@@ -70,7 +70,7 @@ export default function CookieConsent() {
                 {/* Gradient accent bar at top */}
                 <div style={{
                     height: 4,
-                    background: 'linear-gradient(to right, #dc2626, #f97316)',
+                    background: 'linear-gradient(to right, #dc2626, #291e6a)',
                 }} />
 
                 <div style={{ padding: '1.25rem 1.25rem 1.25rem' }}>
@@ -81,7 +81,7 @@ export default function CookieConsent() {
                                 width: 32,
                                 height: 32,
                                 borderRadius: '8px',
-                                background: 'linear-gradient(135deg, #dc2626, #f97316)',
+                                background: 'linear-gradient(135deg, #dc2626, #291e6a)',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
@@ -112,10 +112,10 @@ export default function CookieConsent() {
 
                     {/* Body text */}
                     <p style={{ margin: '0 0 1rem', fontSize: '0.8125rem', lineHeight: '1.55', color: '#6b7280' }}>
-                        gadizone uses cookies to improve your experience and serve personalised ads via Google AdSense.{' '}
+                        Assad Motors uses cookies to improve your experience and personalise content.{' '}
                         <Link
                             href="/privacy-policy"
-                            style={{ color: '#ea580c', textDecoration: 'underline', fontWeight: 500 }}
+                            style={{ color: '#291e6a', textDecoration: 'underline', fontWeight: 500 }}
                         >
                             Privacy Policy
                         </Link>
@@ -127,7 +127,7 @@ export default function CookieConsent() {
                             onClick={() => dismiss(true)}
                             style={{
                                 flex: 1,
-                                background: 'linear-gradient(to right, #dc2626, #ea580c)',
+                                background: 'linear-gradient(to right, #dc2626, #291e6a)',
                                 color: '#fff',
                                 border: 'none',
                                 borderRadius: '10px',

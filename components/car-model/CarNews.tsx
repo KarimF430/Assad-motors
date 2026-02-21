@@ -81,7 +81,7 @@ export default function CarNews({ carData }: CarNewsProps) {
         </h2>
         <Link 
           href="/news"
-          className="text-orange-500 hover:text-orange-600 font-medium text-sm flex items-center gap-1"
+          className="text-[#291e6a] hover:text-[#1c144a] font-medium text-sm flex items-center gap-1"
         >
           View All News
           <ArrowRight className="h-4 w-4" />
@@ -96,7 +96,7 @@ export default function CarNews({ carData }: CarNewsProps) {
             onClick={() => setSelectedCategory(category)}
             className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
               selectedCategory === category
-                ? 'bg-orange-500 text-white'
+                ? 'bg-[#291e6a] text-white'
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
           >
@@ -124,7 +124,7 @@ export default function CarNews({ carData }: CarNewsProps) {
             </div>
             <div className="flex flex-col justify-center">
               <div className="mb-3">
-                <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs font-medium">
+                <span className="bg-[#e8e6f0] text-[#291e6a] px-2 py-1 rounded-full text-xs font-medium">
                   {filteredNews[0].category}
                 </span>
               </div>
@@ -146,7 +146,7 @@ export default function CarNews({ carData }: CarNewsProps) {
               </div>
               <Link
                 href={`/news/${filteredNews[0].id}`}
-                className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-medium inline-flex items-center gap-2 w-fit"
+                className="bg-[#291e6a] hover:bg-[#1c144a] text-white px-6 py-2 rounded-lg font-medium inline-flex items-center gap-2 w-fit"
               >
                 Read Full Story
                 <ArrowRight className="h-4 w-4" />
@@ -173,12 +173,12 @@ export default function CarNews({ carData }: CarNewsProps) {
                     Trending
                   </div>
                 )}
-                <div className="absolute top-2 right-2 bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs font-medium">
+                <div className="absolute top-2 right-2 bg-[#e8e6f0] text-[#291e6a] px-2 py-1 rounded-full text-xs font-medium">
                   {article.category}
                 </div>
               </div>
               <div className="p-4">
-                <h3 className="font-semibold mb-2 line-clamp-2 group-hover:text-orange-600 transition-colors">
+                <h3 className="font-semibold mb-2 line-clamp-2 group-hover:text-[#1c144a] transition-colors">
                   {article.title}
                 </h3>
                 <p className="text-gray-600 text-sm mb-3 line-clamp-2">
@@ -201,7 +201,7 @@ export default function CarNews({ carData }: CarNewsProps) {
       </div>
 
       {/* Newsletter Signup */}
-      <div className="mt-8 bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-lg p-6">
+      <div className="mt-8 bg-gradient-to-r from-[#f0eef5] to-red-50 border border-[#6b5fc7] rounded-lg p-6">
         <div className="text-center">
           <h3 className="font-semibold text-lg mb-2">Stay Updated with Car News</h3>
           <p className="text-gray-600 mb-4">
@@ -211,9 +211,9 @@ export default function CarNews({ carData }: CarNewsProps) {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#291e6a]"
             />
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-medium">
+            <button className="bg-[#291e6a] hover:bg-[#1c144a] text-white px-6 py-2 rounded-lg font-medium">
               Subscribe
             </button>
           </div>

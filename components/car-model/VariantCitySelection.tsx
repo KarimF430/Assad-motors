@@ -45,7 +45,7 @@ export default function VariantCitySelection({ carData }: VariantCitySelectionPr
             </label>
             <button
               onClick={() => setShowVariantDropdown(!showVariantDropdown)}
-              className="w-full p-3 border border-gray-200 rounded-lg text-left flex items-center justify-between hover:border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors bg-gray-50"
+              className="w-full p-3 border border-gray-200 rounded-lg text-left flex items-center justify-between hover:border-gray-300 focus:ring-2 focus:ring-[#291e6a] focus:border-[#291e6a] transition-colors bg-gray-50"
             >
               <div>
                 <div className="font-medium text-gray-900">{selectedVariantData.name}</div>
@@ -64,7 +64,7 @@ export default function VariantCitySelection({ carData }: VariantCitySelectionPr
                       setShowVariantDropdown(false)
                     }}
                     className={`w-full p-3 text-left hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0 ${
-                      selectedVariant === variant.name ? 'bg-orange-50 text-orange-700' : ''
+                      selectedVariant === variant.name ? 'bg-[#f0eef5] text-[#1c144a]' : ''
                     }`}
                   >
                     <div className="flex justify-between items-start">
@@ -90,7 +90,7 @@ export default function VariantCitySelection({ carData }: VariantCitySelectionPr
             </label>
             <button
               onClick={() => setShowCityDropdown(!showCityDropdown)}
-              className="w-full p-3 border border-gray-200 rounded-lg text-left flex items-center justify-between hover:border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors bg-gray-50"
+              className="w-full p-3 border border-gray-200 rounded-lg text-left flex items-center justify-between hover:border-gray-300 focus:ring-2 focus:ring-[#291e6a] focus:border-[#291e6a] transition-colors bg-gray-50"
             >
               <span className="font-medium text-gray-900">{selectedCity}</span>
               <ChevronDown className={`h-4 w-4 text-gray-500 transition-transform ${showCityDropdown ? 'rotate-180' : ''}`} />
@@ -106,7 +106,7 @@ export default function VariantCitySelection({ carData }: VariantCitySelectionPr
                       setShowCityDropdown(false)
                     }}
                     className={`w-full p-3 text-left hover:bg-gray-50 transition-colors ${
-                      selectedCity === city ? 'bg-orange-50 text-orange-700' : ''
+                      selectedCity === city ? 'bg-[#f0eef5] text-[#1c144a]' : ''
                     }`}
                   >
                     {city}

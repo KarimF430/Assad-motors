@@ -50,14 +50,14 @@ export default function PricingSection({ carData }: PricingSectionProps) {
             </p>
           </div>
 
-          <div className="bg-orange-50 border border-orange-200 rounded-lg p-3 sm:p-4">
+          <div className="bg-[#f0eef5] border border-[#6b5fc7] rounded-lg p-3 sm:p-4">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm sm:text-base font-medium text-orange-800">Starting EMI</span>
-              <span className="text-lg sm:text-xl font-bold text-orange-800">
+              <span className="text-sm sm:text-base font-medium text-[#291e6a]">Starting EMI</span>
+              <span className="text-lg sm:text-xl font-bold text-[#291e6a]">
                 ₹{Math.round(displayStartPrice * 0.012).toLocaleString()}
               </span>
             </div>
-            <p className="text-xs sm:text-sm text-orange-700">
+            <p className="text-xs sm:text-sm text-[#1c144a]">
               *EMI calculated for 5 years at 10.5% interest rate
             </p>
           </div>
@@ -65,7 +65,7 @@ export default function PricingSection({ carData }: PricingSectionProps) {
 
         {/* Action Buttons */}
         <div className="space-y-3">
-          <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm sm:text-base">
+          <button className="w-full bg-[#291e6a] hover:bg-[#1c144a] text-white font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm sm:text-base">
             Get On Road Price
             <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
           </button>

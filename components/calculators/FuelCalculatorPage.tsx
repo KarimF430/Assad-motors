@@ -69,7 +69,7 @@ export default function FuelCalculatorPage() {
                                         key={f.id}
                                         onClick={() => setFuelType(f.id)}
                                         className={`py-2.5 px-3 rounded-lg text-sm font-medium transition-all ${fuelType === f.id
-                                            ? 'bg-orange-600 text-white'
+                                            ? 'bg-[#1c144a] text-white'
                                             : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                             }`}
                                     >
@@ -88,7 +88,7 @@ export default function FuelCalculatorPage() {
                                     value={distance}
                                     onChange={(e) => setDistance(e.target.value)}
                                     placeholder="Enter distance in kilometers"
-                                    className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-orange-500 text-sm"
+                                    className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#291e6a] text-sm"
                                 />
                             </div>
 
@@ -101,7 +101,7 @@ export default function FuelCalculatorPage() {
                                     value={mileage}
                                     onChange={(e) => setMileage(e.target.value)}
                                     placeholder="Enter your vehicle's mileage"
-                                    className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-orange-500 text-sm"
+                                    className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#291e6a] text-sm"
                                 />
                             </div>
 
@@ -114,7 +114,7 @@ export default function FuelCalculatorPage() {
                                     value={fuelPrice}
                                     onChange={(e) => setFuelPrice(e.target.value)}
                                     step="0.01"
-                                    className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-orange-500 text-sm"
+                                    className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#291e6a] text-sm"
                                 />
                                 <p className="text-xs text-gray-500 mt-1">Price auto-filled based on current rates. You can edit if needed.</p>
                             </div>
@@ -125,7 +125,7 @@ export default function FuelCalculatorPage() {
                             <button
                                 onClick={calculate}
                                 disabled={!distance || !mileage || !fuelPrice}
-                                className="flex-1 bg-orange-600 hover:bg-orange-700 disabled:bg-gray-300 text-white font-semibold py-3 rounded transition-colors"
+                                className="flex-1 bg-[#1c144a] hover:bg-[#1c144a] disabled:bg-gray-300 text-white font-semibold py-3 rounded transition-colors"
                             >
                                 Calculate
                             </button>
@@ -136,7 +136,7 @@ export default function FuelCalculatorPage() {
 
                         {/* Result */}
                         {result && (
-                            <div className="p-4 bg-orange-50 border-t border-orange-100">
+                            <div className="p-4 bg-[#f0eef5] border-t border-[#e8e6f0]">
                                 <h3 className="text-sm font-semibold text-gray-900 mb-3">Estimated Fuel Cost</h3>
                                 <div className="grid grid-cols-2 gap-3">
                                     <div className="bg-white rounded-lg p-3 border border-gray-100">
@@ -145,7 +145,7 @@ export default function FuelCalculatorPage() {
                                     </div>
                                     <div className="bg-white rounded-lg p-3 border border-gray-100">
                                         <p className="text-xs text-gray-500">Total Cost</p>
-                                        <p className="text-lg font-bold text-orange-600">₹{result.totalCost.toFixed(0)}</p>
+                                        <p className="text-lg font-bold text-[#1c144a]">₹{result.totalCost.toFixed(0)}</p>
                                     </div>
                                 </div>
                             </div>
@@ -170,8 +170,8 @@ export default function FuelCalculatorPage() {
                         <section className="mb-8">
                             <h3 className="text-xl font-bold text-gray-900 mb-3">How to Calculate Fuel Cost Manually?</h3>
                             <p className="text-gray-700 mb-3">The formula to calculate fuel cost is straightforward:</p>
-                            <div className="bg-orange-50 p-4 rounded-lg border border-orange-100 mb-4">
-                                <p className="font-mono text-orange-800 font-medium">Fuel Cost = (Distance / Mileage) × Fuel Price</p>
+                            <div className="bg-[#f0eef5] p-4 rounded-lg border border-[#e8e6f0] mb-4">
+                                <p className="font-mono text-[#291e6a] font-medium">Fuel Cost = (Distance / Mileage) × Fuel Price</p>
                             </div>
                             <ul className="list-disc list-inside space-y-2 text-gray-700 ml-2">
                                 <li><strong>Distance:</strong> The total kilometers you plan to travel.</li>
@@ -243,7 +243,7 @@ export default function FuelCalculatorPage() {
                             <h3 className="text-xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h3>
                             <div className="space-y-4">
                                 <details className="group border-b border-gray-100 pb-4">
-                                    <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-orange-600">
+                                    <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-[#1c144a]">
                                         <span>Does using AC affect fuel consumption?</span>
                                         <span className="transition group-open:rotate-180">
                                             <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
@@ -252,7 +252,7 @@ export default function FuelCalculatorPage() {
                                     <p className="text-gray-600 mt-3 text-sm">Yes, using the air conditioner can increase fuel consumption by 10% to 20%, especially in city traffic. However, at highway speeds, open windows can create drag that might use more fuel than the AC.</p>
                                 </details>
                                 <details className="group border-b border-gray-100 pb-4">
-                                    <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-orange-600">
+                                    <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-[#1c144a]">
                                         <span>Which speed is most fuel efficient?</span>
                                         <span className="transition group-open:rotate-180">
                                             <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
@@ -261,7 +261,7 @@ export default function FuelCalculatorPage() {
                                     <p className="text-gray-600 mt-3 text-sm">For most cars, the sweet spot for fuel efficiency is between 50 km/h and 80 km/h in top gear. Driving significantly faster increases wind resistance, while driving slower usually requires lower gears, consuming more fuel.</p>
                                 </details>
                                 <details className="group border-b border-gray-100 pb-4">
-                                    <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-orange-600">
+                                    <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-[#1c144a]">
                                         <span>How to calculate mileage manually?</span>
                                         <span className="transition group-open:rotate-180">
                                             <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
@@ -275,13 +275,13 @@ export default function FuelCalculatorPage() {
                         <div className="mt-8 pt-6 border-t border-gray-100">
                             <h3 className="text-base font-semibold text-gray-900 mb-3">Explore More Tools</h3>
                             <div className="flex flex-wrap gap-4">
-                                <Link href="/emi-calculator" className="text-sm font-medium text-orange-600 hover:text-orange-700 flex items-center gap-1">
+                                <Link href="/emi-calculator" className="text-sm font-medium text-[#1c144a] hover:text-[#1c144a] flex items-center gap-1">
                                     Car EMI Calculator <ArrowLeft className="w-3 h-3 rotate-180" />
                                 </Link>
-                                <Link href="/compare" className="text-sm font-medium text-orange-600 hover:text-orange-700 flex items-center gap-1">
+                                <Link href="/compare" className="text-sm font-medium text-[#1c144a] hover:text-[#1c144a] flex items-center gap-1">
                                     Compare Cars <ArrowLeft className="w-3 h-3 rotate-180" />
                                 </Link>
-                                <Link href="/location" className="text-sm font-medium text-orange-600 hover:text-orange-700 flex items-center gap-1">
+                                <Link href="/location" className="text-sm font-medium text-[#1c144a] hover:text-[#1c144a] flex items-center gap-1">
                                     Check On-Road Price <ArrowLeft className="w-3 h-3 rotate-180" />
                                 </Link>
                             </div>

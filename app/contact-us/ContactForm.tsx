@@ -43,7 +43,7 @@ export default function ContactForm() {
             <PageContainer maxWidth="lg">
                 <PageSection spacing="normal">
                     <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 md:p-10">
-                        <Link href="/" className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 mb-6">
+                        <Link href="/" className="inline-flex items-center gap-2 text-[#1c144a] hover:text-[#1c144a] mb-6">
                             <ArrowLeft className="w-4 h-4" />
                             Back to Home
                         </Link>
@@ -60,13 +60,13 @@ export default function ContactForm() {
                                 <p className="text-gray-600 mb-2">Your message has been pre-filled. Just hit Send in your email app.</p>
                                 <p className="text-sm text-gray-500 mb-6">
                                     If it didn&apos;t open, email us directly at{' '}
-                                    <a href="mailto:Karim0beldaar@gmail.com" className="text-orange-600 hover:underline">
+                                    <a href="mailto:Karim0beldaar@gmail.com" className="text-[#1c144a] hover:underline">
                                         Karim0beldaar@gmail.com
                                     </a>
                                 </p>
                                 <button
                                     onClick={() => { setSubmitted(false); setFormData({ name: '', email: '', phone: '', subject: '', message: '' }) }}
-                                    className="text-orange-600 hover:text-orange-700 font-medium"
+                                    className="text-[#1c144a] hover:text-[#1c144a] font-medium"
                                 >
                                     Send another message
                                 </button>
@@ -77,11 +77,11 @@ export default function ContactForm() {
                                 <div className="lg:col-span-1 space-y-4">
                                     <div className="bg-gray-50 rounded-lg p-4">
                                         <h2 className="font-semibold text-gray-900 mb-1 leading-6">Email</h2>
-                                        <a href="mailto:Karim0beldaar@gmail.com" className="text-orange-600 text-sm hover:underline">Karim0beldaar@gmail.com</a>
+                                        <a href="mailto:Karim0beldaar@gmail.com" className="text-[#1c144a] text-sm hover:underline">Karim0beldaar@gmail.com</a>
                                     </div>
                                     <div className="bg-gray-50 rounded-lg p-4">
                                         <h2 className="font-semibold text-gray-900 mb-1 leading-6">Phone</h2>
-                                        <a href="tel:+919945210466" className="text-orange-600 text-sm hover:underline">+91 99452 10466</a>
+                                        <a href="tel:+919945210466" className="text-[#1c144a] text-sm hover:underline">+91 99452 10466</a>
                                     </div>
                                     <div className="bg-gray-50 rounded-lg p-4">
                                         <h2 className="font-semibold text-gray-900 mb-1 leading-6">Location</h2>
@@ -99,12 +99,12 @@ export default function ContactForm() {
                                         <div>
                                             <label className="block text-xs font-medium text-gray-700 mb-1">YOUR NAME *</label>
                                             <input type="text" name="name" value={formData.name} onChange={handleChange} required
-                                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-orange-500 text-sm" placeholder="Full name" />
+                                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#291e6a] text-sm" placeholder="Full name" />
                                         </div>
                                         <div>
                                             <label className="block text-xs font-medium text-gray-700 mb-1">EMAIL *</label>
                                             <input type="email" name="email" value={formData.email} onChange={handleChange} required
-                                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-orange-500 text-sm" placeholder="you@example.com" />
+                                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#291e6a] text-sm" placeholder="you@example.com" />
                                         </div>
                                     </div>
 
@@ -112,12 +112,12 @@ export default function ContactForm() {
                                         <div>
                                             <label className="block text-xs font-medium text-gray-700 mb-1">PHONE</label>
                                             <input type="tel" name="phone" value={formData.phone} onChange={handleChange}
-                                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-orange-500 text-sm" placeholder="+91 99452 10466" />
+                                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#291e6a] text-sm" placeholder="+91 99452 10466" />
                                         </div>
                                         <div>
                                             <label className="block text-xs font-medium text-gray-700 mb-1">SUBJECT *</label>
                                             <select name="subject" value={formData.subject} onChange={handleChange} required
-                                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-orange-500 text-sm">
+                                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#291e6a] text-sm">
                                                 <option value="">Select subject</option>
                                                 <option value="general">General Inquiry</option>
                                                 <option value="support">Technical Support</option>
@@ -131,7 +131,7 @@ export default function ContactForm() {
                                     <div>
                                         <label className="block text-xs font-medium text-gray-700 mb-1">MESSAGE *</label>
                                         <textarea name="message" value={formData.message} onChange={handleChange} required rows={5}
-                                            className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-orange-500 text-sm resize-none" placeholder="How can we help?" />
+                                            className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#291e6a] text-sm resize-none" placeholder="How can we help?" />
                                     </div>
 
                                     {error && (
@@ -139,7 +139,7 @@ export default function ContactForm() {
                                     )}
 
                                     <button type="submit" disabled={isSubmitting}
-                                        className="w-full bg-orange-600 hover:bg-orange-700 disabled:bg-gray-300 text-white font-semibold py-3 rounded transition-colors"
+                                        className="w-full bg-[#1c144a] hover:bg-[#1c144a] disabled:bg-gray-300 text-white font-semibold py-3 rounded transition-colors"
                                     >
                                         {isSubmitting ? 'Opening email...' : 'Send Message'}
                                     </button>

@@ -30,7 +30,7 @@ export default function QuickActions() {
       title: 'Find Dealers',
       description: 'Locate nearby dealers',
       href: '/dealers',
-      color: 'bg-orange-500',
+      color: 'bg-[#291e6a]',
     },
     {
       icon: TrendingUp,

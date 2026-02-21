@@ -73,7 +73,7 @@ export default function ProsAndCons({ carName, data }: ProsAndConsProps) {
           <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-5">
             <div className="flex items-center mb-5">
               <div className="flex items-center justify-center w-8 h-8 mr-3">
-                <ThumbsDown className="w-6 h-6 text-orange-400" strokeWidth={1.5} />
+                <ThumbsDown className="w-6 h-6 text-[#291e6a]" strokeWidth={1.5} />
               </div>
               <h3 className="text-lg font-bold text-gray-900">Cons</h3>
             </div>

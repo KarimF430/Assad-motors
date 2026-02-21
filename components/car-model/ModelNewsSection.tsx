@@ -44,7 +44,7 @@ export default function ModelNewsSection({ carName, newsArticles }: ModelNewsSec
         }
       case 'Featured':
         return {
-          badge: 'bg-gradient-to-r from-orange-500 to-red-500 text-white',
+          badge: 'bg-gradient-to-r from-[#291e6a] to-red-500 text-white',
           gradient: 'from-blue-400 via-purple-500 to-pink-500'
         }
       case 'News':
@@ -68,7 +68,7 @@ export default function ModelNewsSection({ carName, newsArticles }: ModelNewsSec
           <h2 className="text-2xl font-bold text-gray-800">
             {carName} News
           </h2>
-          <button className="text-orange-500 hover:text-orange-600 font-medium flex items-center transition-colors">
+          <button className="text-[#291e6a] hover:text-[#1c144a] font-medium flex items-center transition-colors">
             View All News
             <ChevronRight className="w-4 h-4 ml-1" />
           </button>

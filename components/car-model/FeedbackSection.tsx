@@ -41,7 +41,7 @@ export default function FeedbackSection() {
                 value={feedback}
                 onChange={(e) => setFeedback(e.target.value)}
                 placeholder="Tell us what you think about this car page..."
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#291e6a] focus:border-transparent resize-none"
                 required
               />
             </div>
@@ -57,7 +57,7 @@ export default function FeedbackSection() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Enter your name"
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#291e6a] focus:border-transparent"
                 required
               />
             </div>
@@ -73,7 +73,7 @@ export default function FeedbackSection() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#291e6a] focus:border-transparent"
                 required
               />
             </div>
@@ -81,7 +81,7 @@ export default function FeedbackSection() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-orange-600 hover:bg-orange-700 text-white font-medium py-3 px-4 rounded-lg text-sm transition-colors flex items-center justify-center"
+              className="w-full bg-[#1c144a] hover:bg-[#1c144a] text-white font-medium py-3 px-4 rounded-lg text-sm transition-colors flex items-center justify-center"
             >
               <Send className="w-4 h-4 mr-2" />
               Submit Feedback

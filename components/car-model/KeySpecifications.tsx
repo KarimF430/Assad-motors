@@ -48,9 +48,9 @@ export default function KeySpecifications({ specifications, carName }: KeySpecif
       icon: <Gauge className="h-6 w-6" />,
       label: 'Torque',
       value: specifications.torque || 'N/A',
-      bgColor: 'bg-orange-50',
-      iconColor: 'text-orange-600',
-      borderColor: 'border-orange-200'
+      bgColor: 'bg-[#f0eef5]',
+      iconColor: 'text-[#1c144a]',
+      borderColor: 'border-[#6b5fc7]'
     },
     {
       icon: <Users className="h-6 w-6" />,

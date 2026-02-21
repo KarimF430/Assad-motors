@@ -69,7 +69,7 @@ export default function BrandUpcomingCars({ brandId, brandName }: BrandUpcomingC
   }
 
   return (
-    <div className="py-6 sm:py-8 bg-white">
+    <div className="py-3 sm:py-6 bg-white">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
         <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8">{brandName} Upcoming Cars</h2>
 

@@ -101,7 +101,7 @@ export default function EmbeddedEMICalculator({
                         <p className="text-xs text-gray-500 mt-1">Monthly EMI</p>
                     </div>
                     <div className="text-right">
-                        <span className="inline-flex items-center px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-sm font-medium">
+                        <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#e8e6f0] text-[#1c144a] text-sm font-medium">
                             EMI For {tenure} Years
                         </span>
                     </div>
@@ -112,11 +112,11 @@ export default function EmbeddedEMICalculator({
             <div className="p-5 border-b border-gray-100">
                 <div className="flex items-center justify-between mb-4">
                     <label className="text-sm font-semibold text-gray-900">
-                        Down Payment: <span className="text-orange-600 font-bold">{formatCurrency(downPayment)}</span>
+                        Down Payment: <span className="text-[#1c144a] font-bold">{formatCurrency(downPayment)}</span>
                     </label>
                     <button
                         onClick={() => setShowDownPayment(!showDownPayment)}
-                        className="text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors"
+                        className="text-sm font-medium text-[#1c144a] hover:text-[#1c144a] transition-colors"
                     >
                         {showDownPayment ? 'Hide' : 'Show'}
                     </button>
@@ -134,7 +134,7 @@ export default function EmbeddedEMICalculator({
                             max={carPrice}
                             value={downPayment}
                             onChange={(e) => setDownPayment(Number(e.target.value))}
-                            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-orange-500"
+                            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#291e6a]"
                         />
                         <input
                             type="text"
@@ -144,10 +144,10 @@ export default function EmbeddedEMICalculator({
                                 const val = e.target.value.replace(/[^0-9]/g, '')
                                 setDownPayment(val ? Number(val) : 0)
                             }}
-                            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm font-medium bg-gray-50"
+                            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#291e6a] focus:border-transparent text-sm font-medium bg-gray-50"
                         />
                         <p className="text-sm text-gray-600">
-                            Your loan amount will be: <span className="text-orange-600 font-semibold">{formatCurrency(loanAmount)}</span>
+                            Your loan amount will be: <span className="text-[#1c144a] font-semibold">{formatCurrency(loanAmount)}</span>
                         </p>
                     </div>
                 )}
@@ -162,7 +162,7 @@ export default function EmbeddedEMICalculator({
                         <Info className="w-4 h-4 text-gray-400" />
                         <button
                             onClick={() => setShowInterest(!showInterest)}
-                            className="text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors"
+                            className="text-sm font-medium text-[#1c144a] hover:text-[#1c144a] transition-colors"
                         >
                             {showInterest ? 'Hide' : 'Show'}
                         </button>
@@ -182,7 +182,7 @@ export default function EmbeddedEMICalculator({
                             max={7}
                             value={tenure}
                             onChange={(e) => setTenure(Number(e.target.value))}
-                            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-orange-500"
+                            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#291e6a]"
                         />
                     </div>
                     <div>
@@ -197,7 +197,7 @@ export default function EmbeddedEMICalculator({
                             step={0.5}
                             value={interestRate}
                             onChange={(e) => setInterestRate(Number(e.target.value))}
-                            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-orange-500"
+                            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#291e6a]"
                         />
                     </div>
                 </div>
@@ -215,12 +215,12 @@ export default function EmbeddedEMICalculator({
                                 const num = val ? Math.min(7, Math.max(1, Number(val))) : 1
                                 setTenure(num)
                             }}
-                            className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm text-center font-medium bg-gray-50"
+                            className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#291e6a] focus:border-transparent text-sm text-center font-medium bg-gray-50"
                         />
                     </div>
                     <div>
                         <label className="block text-xs text-gray-500 font-medium mb-2">Months</label>
-                        <div className="px-3 py-2.5 border-2 border-orange-200 rounded-lg bg-orange-50 text-sm text-center text-orange-700 font-bold">
+                        <div className="px-3 py-2.5 border-2 border-[#6b5fc7] rounded-lg bg-[#f0eef5] text-sm text-center text-[#1c144a] font-bold">
                             {tenureMonths}
                         </div>
                     </div>
@@ -235,7 +235,7 @@ export default function EmbeddedEMICalculator({
                                 const num = val ? Math.min(20, Math.max(5, Number(val))) : 8
                                 setInterestRate(num)
                             }}
-                            className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm text-center font-medium bg-gray-50"
+                            className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#291e6a] focus:border-transparent text-sm text-center font-medium bg-gray-50"
                         />
                     </div>
                 </div>
@@ -259,7 +259,7 @@ export default function EmbeddedEMICalculator({
                                 <tr key={i} className="hover:bg-gray-50 transition-colors">
                                     <td className="py-3 text-gray-900 font-medium">{row.months}</td>
                                     <td className="py-3 text-right text-gray-700">{formatCurrency(row.principal)}</td>
-                                    <td className="py-3 text-right text-orange-600">{formatCurrency(row.interest)}</td>
+                                    <td className="py-3 text-right text-[#1c144a]">{formatCurrency(row.interest)}</td>
                                     <td className="py-3 text-right text-gray-900 font-medium">{formatCurrency(row.balance)}</td>
                                 </tr>
                             ))}
@@ -273,7 +273,7 @@ export default function EmbeddedEMICalculator({
                 <div className="flex flex-wrap gap-4 text-sm">
                     <div className="flex items-center gap-2">
                         <span className="text-gray-500">Total Interest:</span>
-                        <span className="font-semibold text-orange-600">{formatCurrency(emiCalculation.totalInterest)}</span>
+                        <span className="font-semibold text-[#1c144a]">{formatCurrency(emiCalculation.totalInterest)}</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <span className="text-gray-500">Total Amount:</span>

@@ -48,7 +48,7 @@ export default function SimilarCars({ carData }: SimilarCarsProps) {
     'Safety': 'bg-green-100 text-green-700',
     'Spacious': 'bg-blue-100 text-blue-700',
     'Performance': 'bg-red-100 text-red-700',
-    'Affordable': 'bg-orange-100 text-orange-700'
+    'Affordable': 'bg-[#e8e6f0] text-[#1c144a]'
   }
 
   // Don't render if no similar cars
@@ -154,7 +154,7 @@ export default function SimilarCars({ carData }: SimilarCarsProps) {
                     <span className="text-xs text-gray-600">{car.seating} Seater</span>
                   </div>
                   <div className="flex items-center space-x-1">
-                    <Zap className="h-4 w-4 text-orange-600" />
+                    <Zap className="h-4 w-4 text-[#1c144a]" />
                     <span className="text-xs text-gray-600">{car.fuelType}</span>
                   </div>
                 </div>

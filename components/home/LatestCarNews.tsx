@@ -69,7 +69,7 @@ export default function LatestCarNews({ initialNews = [] }: { initialNews?: News
       case 'comparison':
         return 'bg-purple-100 text-purple-800'
       case 'guide':
-        return 'bg-orange-100 text-orange-800'
+        return 'bg-[#e8e6f0] text-[#291e6a]'
       default:
         return 'bg-gray-100 text-gray-800'
     }
@@ -92,7 +92,7 @@ export default function LatestCarNews({ initialNews = [] }: { initialNews?: News
         <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Latest Car News</h2>
         <Link
           href="/news"
-          className="flex items-center text-red-600 hover:text-orange-600 font-medium text-sm sm:text-base"
+          className="flex items-center text-red-600 hover:text-[#1c144a] font-medium text-sm sm:text-base"
         >
           <span className="hidden sm:inline">View All News</span>
           <span className="sm:hidden">View All</span>

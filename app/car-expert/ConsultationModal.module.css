@@ -95,7 +95,7 @@
 
 .progressFill {
     height: 100%;
-    background: linear-gradient(90deg, #dc2626, #f97316);
+    background: linear-gradient(90deg, #dc2626, #291e6a);
     transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -192,12 +192,12 @@
 .select:focus,
 .textarea:focus {
     outline: none;
-    border-color: #ea580c;
+    border-color: #291e6a;
     box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.1);
 }
 
 .input:focus+.inputIcon {
-    color: #ea580c;
+    color: #291e6a;
 }
 
 .required {
@@ -236,7 +236,7 @@
 
 .chipSelected {
     background: #fef2f2;
-    border-color: #ea580c;
+    border-color: #291e6a;
     color: #dc2626;
     font-weight: 600;
     box-shadow: 0 2px 4px rgba(234, 88, 12, 0.1);
@@ -285,7 +285,7 @@
 .nextBtn,
 .submitBtn {
     padding: 12px 32px;
-    background: linear-gradient(135deg, #dc2626 0%, #f97316 100%);
+    background: linear-gradient(135deg, #dc2626 0%, #291e6a 100%);
     border: none;
     border-radius: 12px;
     color: #ffffff;

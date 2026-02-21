@@ -53,7 +53,7 @@ export default function Ad3DCarousel({
             subtitle: 'Starting @ ₹2099',
             description: 'Protect your car with comprehensive coverage. Cashless claims.',
             image: 'https://images.unsplash.com/photo-1450101499121-e5b934472494?w=1200&h=600&fit=crop',
-            gradient: 'from-orange-600 via-amber-600 to-yellow-600',
+            gradient: 'from-[#1c144a] via-amber-600 to-yellow-600',
             cta: 'Get Quote',
             link: '/insurance',
             badge: 'SAVE 40%'

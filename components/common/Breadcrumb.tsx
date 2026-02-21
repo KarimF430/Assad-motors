@@ -34,7 +34,7 @@ export default function Breadcrumb({ items, className = '' }: BreadcrumbProps) {
                     >
                         <Link
                             href="/"
-                            className="text-gray-500 hover:text-orange-600 transition-colors flex items-center gap-1"
+                            className="text-gray-500 hover:text-[#1c144a] transition-colors flex items-center gap-1"
                             itemProp="item"
                         >
                             <Home className="w-3.5 h-3.5" />
@@ -56,7 +56,7 @@ export default function Breadcrumb({ items, className = '' }: BreadcrumbProps) {
                             {item.href ? (
                                 <Link
                                     href={item.href}
-                                    className="text-gray-500 hover:text-orange-600 transition-colors"
+                                    className="text-gray-500 hover:text-[#1c144a] transition-colors"
                                     itemProp="item"
                                 >
                                     <span itemProp="name">{item.label}</span>

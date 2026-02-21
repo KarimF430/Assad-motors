@@ -55,7 +55,7 @@ export default function BrandCarItem({ car, brandSlug }: BrandCarItemProps) {
                 {/* Car Image */}
                 <div className="relative flex-shrink-0 w-32 h-24 sm:w-40 sm:h-28">
                     {car.isPopular && (
-                        <span className="absolute top-0 left-0 px-2 py-1 bg-orange-500 text-white text-xs font-bold rounded z-10">
+                        <span className="absolute top-0 left-0 px-2 py-1 bg-[#291e6a] text-white text-xs font-bold rounded z-10">
                             POPULAR
                         </span>
                     )}
@@ -82,7 +82,7 @@ export default function BrandCarItem({ car, brandSlug }: BrandCarItemProps) {
                             </div>
                             <Link
                                 href={rateReviewUrl}
-                                className="text-sm font-medium text-orange-500 hover:text-orange-600 hover:underline z-10"
+                                className="text-sm font-medium text-[#291e6a] hover:text-[#1c144a] hover:underline z-10"
                             >
                                 Rate & Review
                             </Link>

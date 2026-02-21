@@ -153,11 +153,11 @@ export default function AdminPanel() {
 
                     <Link href="/admin/reviews" className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg transition-all group">
                         <div className="flex items-center space-x-4">
-                            <div className="p-3 bg-orange-50 rounded-lg group-hover:bg-orange-100 transition-colors">
-                                <MessageSquare className="h-6 w-6 text-orange-600" />
+                            <div className="p-3 bg-[#f0eef5] rounded-lg group-hover:bg-[#e8e6f0] transition-colors">
+                                <MessageSquare className="h-6 w-6 text-[#1c144a]" />
                             </div>
                             <div>
-                                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">Reviews Management</h3>
+                                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-[#1c144a] transition-colors">Reviews Management</h3>
                                 <p className="text-sm text-gray-500">Approve, reject & delete reviews</p>
                             </div>
                         </div>
@@ -258,7 +258,7 @@ export default function AdminPanel() {
                                     <tr key={user.id} className="hover:bg-gray-50 transition-colors">
                                         <td className="px-6 py-4 whitespace-nowrap">
                                             <div className="flex items-center">
-                                                <div className="flex-shrink-0 h-10 w-10 rounded-full bg-gradient-to-r from-red-400 to-orange-400 flex items-center justify-center text-white font-semibold">
+                                                <div className="flex-shrink-0 h-10 w-10 rounded-full bg-gradient-to-r from-red-400 to-[#291e6a] flex items-center justify-center text-white font-semibold">
                                                     {user.firstName?.[0]?.toUpperCase() || 'U'}
                                                 </div>
                                                 <div className="ml-3">

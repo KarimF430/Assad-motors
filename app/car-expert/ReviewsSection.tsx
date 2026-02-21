@@ -71,7 +71,7 @@ export default function ReviewsSection({ onBookCall }: ReviewsSectionProps) {
                                 width: 64,
                                 height: 64,
                                 borderRadius: '50%',
-                                background: 'linear-gradient(135deg, #dc2626, #ea580c)',
+                                background: 'linear-gradient(135deg, #dc2626, #291e6a)',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',

@@ -294,7 +294,7 @@ export default function EMICalculatorPage() {
                 </div>
                 <button
                   onClick={() => { setShowCarSearch(!showCarSearch); setSelectionStep('search') }}
-                  className="flex items-center gap-2 px-3 py-2 text-sm text-orange-600 border border-orange-200 rounded-lg hover:bg-orange-50 transition-colors"
+                  className="flex items-center gap-2 px-3 py-2 text-sm text-[#1c144a] border border-[#6b5fc7] rounded-lg hover:bg-[#f0eef5] transition-colors"
                 >
                   <Pencil className="w-4 h-4" />
                   Change
@@ -314,7 +314,7 @@ export default function EMICalculatorPage() {
                           value={searchQuery}
                           onChange={(e) => setSearchQuery(e.target.value)}
                           placeholder="Search car brand or model..."
-                          className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-orange-500 text-sm"
+                          className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#291e6a] text-sm"
                           autoFocus
                         />
                       </div>
@@ -340,7 +340,7 @@ export default function EMICalculatorPage() {
                     </>
                   ) : (
                     <>
-                      <button onClick={() => { setSelectionStep('search'); setSelectedModel(null) }} className="flex items-center gap-2 text-sm text-gray-600 hover:text-orange-600 mb-3">
+                      <button onClick={() => { setSelectionStep('search'); setSelectedModel(null) }} className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#1c144a] mb-3">
                         <ArrowLeft className="w-4 h-4" /> Back
                       </button>
                       <div className="bg-gray-50 rounded p-3 mb-3">
@@ -349,7 +349,7 @@ export default function EMICalculatorPage() {
                       </div>
                       {loadingVariants ? (
                         <div className="text-center py-4">
-                          <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-orange-500 mx-auto"></div>
+                          <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-[#291e6a] mx-auto"></div>
                         </div>
                       ) : (
                         <div className="max-h-48 overflow-y-auto space-y-1">
@@ -363,7 +363,7 @@ export default function EMICalculatorPage() {
                                 <p className="font-medium text-gray-900 text-sm">{v.name}</p>
                                 {(v.transmission || v.fuelType) && <p className="text-xs text-gray-500">{[v.fuelType, v.transmission].filter(Boolean).join(' • ')}</p>}
                               </div>
-                              <p className="font-semibold text-orange-600 text-sm">{formatCurrency(v.price)}</p>
+                              <p className="font-semibold text-[#1c144a] text-sm">{formatCurrency(v.price)}</p>
                             </button>
                           ))}
                         </div>
@@ -382,7 +382,7 @@ export default function EMICalculatorPage() {
                   <p className="text-xs text-gray-500 mt-1">Monthly EMI</p>
                 </div>
                 <div className="text-right">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-sm font-medium">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#e8e6f0] text-[#1c144a] text-sm font-medium">
                     EMI For {tenure} Years
                   </span>
                 </div>
@@ -393,9 +393,9 @@ export default function EMICalculatorPage() {
             <div className="p-5 border-b border-gray-100">
               <div className="flex items-center justify-between mb-4">
                 <label className="text-sm font-semibold text-gray-900">
-                  Down Payment: <span className="text-orange-600 font-bold">{formatCurrency(downPayment)}</span>
+                  Down Payment: <span className="text-[#1c144a] font-bold">{formatCurrency(downPayment)}</span>
                 </label>
-                <button onClick={() => setShowDownPayment(!showDownPayment)} className="text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors">
+                <button onClick={() => setShowDownPayment(!showDownPayment)} className="text-sm font-medium text-[#1c144a] hover:text-[#1c144a] transition-colors">
                   {showDownPayment ? 'Hide' : 'Show'}
                 </button>
               </div>
@@ -412,7 +412,7 @@ export default function EMICalculatorPage() {
                     max={carPrice}
                     value={downPayment}
                     onChange={(e) => setDownPayment(Number(e.target.value))}
-                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-orange-500"
+                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#291e6a]"
                   />
                   <input
                     type="text"
@@ -422,10 +422,10 @@ export default function EMICalculatorPage() {
                       const val = e.target.value.replace(/[^0-9]/g, '')
                       setDownPayment(val ? Number(val) : 0)
                     }}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm font-medium bg-gray-50"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#291e6a] focus:border-transparent text-sm font-medium bg-gray-50"
                   />
                   <p className="text-sm text-gray-600">
-                    Your loan amount will be: <span className="text-orange-600 font-semibold">{formatCurrency(loanAmount)}</span>
+                    Your loan amount will be: <span className="text-[#1c144a] font-semibold">{formatCurrency(loanAmount)}</span>
                   </p>
                 </div>
               )}
@@ -438,7 +438,7 @@ export default function EMICalculatorPage() {
                 <div className="flex items-center space-x-1">
                   <span className="text-sm text-gray-900">Interest</span>
                   <Info className="w-4 h-4 text-gray-400" />
-                  <button onClick={() => setShowInterest(!showInterest)} className="text-sm text-orange-600 hover:text-orange-700 ml-2">
+                  <button onClick={() => setShowInterest(!showInterest)} className="text-sm text-[#1c144a] hover:text-[#1c144a] ml-2">
                     {showInterest ? 'Hide' : 'Show'}
                   </button>
                 </div>
@@ -456,7 +456,7 @@ export default function EMICalculatorPage() {
                     max={7}
                     value={tenure}
                     onChange={(e) => setTenure(Number(e.target.value))}
-                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-orange-500"
+                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#291e6a]"
                   />
                 </div>
                 <div>
@@ -471,7 +471,7 @@ export default function EMICalculatorPage() {
                     step={0.5}
                     value={interestRate}
                     onChange={(e) => setInterestRate(Number(e.target.value))}
-                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-orange-500"
+                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#291e6a]"
                   />
                 </div>
               </div>
@@ -489,12 +489,12 @@ export default function EMICalculatorPage() {
                       const num = val ? Math.min(7, Math.max(1, Number(val))) : 1
                       setTenure(num)
                     }}
-                    className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm text-center font-medium bg-gray-50"
+                    className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#291e6a] focus:border-transparent text-sm text-center font-medium bg-gray-50"
                   />
                 </div>
                 <div>
                   <label className="block text-xs text-gray-500 font-medium mb-2">Months</label>
-                  <div className="px-3 py-2.5 border-2 border-orange-200 rounded-lg bg-orange-50 text-sm text-center text-orange-700 font-bold">
+                  <div className="px-3 py-2.5 border-2 border-[#6b5fc7] rounded-lg bg-[#f0eef5] text-sm text-center text-[#1c144a] font-bold">
                     {tenureMonths}
                   </div>
                 </div>
@@ -509,7 +509,7 @@ export default function EMICalculatorPage() {
                       const num = val ? Math.min(20, Math.max(5, Number(val))) : 8
                       setInterestRate(num)
                     }}
-                    className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm text-center font-medium bg-gray-50"
+                    className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#291e6a] focus:border-transparent text-sm text-center font-medium bg-gray-50"
                   />
                 </div>
               </div>
@@ -534,7 +534,7 @@ export default function EMICalculatorPage() {
                     <tr key={i} className="hover:bg-gray-50 transition-colors">
                       <td className="py-3 text-gray-900 font-medium">{row.months}</td>
                       <td className="py-3 text-right text-gray-700">{formatCurrency(row.principal)}</td>
-                      <td className="py-3 text-right text-orange-600">{formatCurrency(row.interest)}</td>
+                      <td className="py-3 text-right text-[#1c144a]">{formatCurrency(row.interest)}</td>
                       <td className="py-3 text-right text-gray-900 font-medium">{formatCurrency(row.balance)}</td>
                     </tr>
                   ))}
@@ -547,7 +547,7 @@ export default function EMICalculatorPage() {
               <div className="flex flex-wrap gap-4 text-sm">
                 <div className="flex items-center gap-2">
                   <span className="text-gray-500">Total Interest:</span>
-                  <span className="font-semibold text-orange-600">{formatCurrency(emiCalculation.totalInterest)}</span>
+                  <span className="font-semibold text-[#1c144a]">{formatCurrency(emiCalculation.totalInterest)}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-gray-500">Total Amount:</span>
@@ -567,7 +567,7 @@ export default function EMICalculatorPage() {
                 <div>
                   <label className="block text-xs font-medium text-gray-700 mb-1">FULL NAME</label>
                   <div className="flex space-x-2">
-                    <select className="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-orange-500 text-sm">
+                    <select className="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#291e6a] text-sm">
                       <option>Mr</option>
                       <option>Mrs</option>
                       <option>Ms</option>
@@ -575,7 +575,7 @@ export default function EMICalculatorPage() {
                     <input
                       type="text"
                       placeholder="Full Name as per PAN card"
-                      className="flex-1 px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-orange-500 text-sm"
+                      className="flex-1 px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[#291e6a] text-sm"
                     />
                   </div>
                 </div>
@@ -588,7 +588,7 @@ export default function EMICalculatorPage() {
                       type="tel"
                       placeholder="Mobile Number"
                       maxLength={10}
-                      className="flex-1 px-3 py-2 border border-gray-300 rounded-r focus:outline-none focus:ring-1 focus:ring-orange-500 text-sm"
+                      className="flex-1 px-3 py-2 border border-gray-300 rounded-r focus:outline-none focus:ring-1 focus:ring-[#291e6a] text-sm"
                     />
                   </div>
                   <p className="text-xs text-gray-500 mt-1">An OTP will be sent to you for verification</p>
@@ -598,11 +598,11 @@ export default function EMICalculatorPage() {
 
             {/* Get Loan Offers Button - FIXED: Orange theme instead of teal */}
             <div className="p-4">
-              <button className="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 rounded transition-colors">
+              <button className="w-full bg-[#1c144a] hover:bg-[#1c144a] text-white font-semibold py-3 rounded transition-colors">
                 Get Eligible Loan Offers
               </button>
               <p className="text-xs text-gray-500 text-center mt-3 leading-relaxed">
-                By proceeding ahead you agree to gadizone <Link href="/visitor-agreement" className="text-orange-600 hover:underline">Visitor Agreement</Link>, <Link href="/privacy-policy" className="text-orange-600 hover:underline">Privacy Policy</Link> and <Link href="/terms-and-conditions" className="text-orange-600 hover:underline">Terms and Conditions</Link>. This site is protected by reCAPTCHA and Google <Link href="/google-terms" className="text-orange-600 hover:underline">terms of service</Link> apply.
+                By proceeding ahead you agree to gadizone <Link href="/visitor-agreement" className="text-[#1c144a] hover:underline">Visitor Agreement</Link>, <Link href="/privacy-policy" className="text-[#1c144a] hover:underline">Privacy Policy</Link> and <Link href="/terms-and-conditions" className="text-[#1c144a] hover:underline">Terms and Conditions</Link>. This site is protected by reCAPTCHA and Google <Link href="/google-terms" className="text-[#1c144a] hover:underline">terms of service</Link> apply.
               </p>
             </div>
 
@@ -647,19 +647,19 @@ export default function EMICalculatorPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Benefits of Using an EMI Calculator</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-start gap-2">
-                    <div className="min-w-1.5 h-1.5 rounded-full bg-orange-500 mt-2"></div>
+                    <div className="min-w-1.5 h-1.5 rounded-full bg-[#291e6a] mt-2"></div>
                     <p><strong className="text-gray-900">Financial Planning:</strong> Gives you a clear picture of your monthly outflow, helping you budget for other expenses.</p>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="min-w-1.5 h-1.5 rounded-full bg-orange-500 mt-2"></div>
+                    <div className="min-w-1.5 h-1.5 rounded-full bg-[#291e6a] mt-2"></div>
                     <p><strong className="text-gray-900">Compare Options:</strong> You can experiment with different loan amounts, tenures, and interest rates to find the combination that works best for you.</p>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="min-w-1.5 h-1.5 rounded-full bg-orange-500 mt-2"></div>
+                    <div className="min-w-1.5 h-1.5 rounded-full bg-[#291e6a] mt-2"></div>
                     <p><strong className="text-gray-900">Negotiation Tool:</strong> Knowing the exact EMI and interest breakdown helps you negotiate better terms with car dealers and banks.</p>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="min-w-1.5 h-1.5 rounded-full bg-orange-500 mt-2"></div>
+                    <div className="min-w-1.5 h-1.5 rounded-full bg-[#291e6a] mt-2"></div>
                     <p><strong className="text-gray-900">Avoid Payment Shocks:</strong> Helps you ensure you don't commit to an EMI that strains your monthly finances.</p>
                   </li>
                 </ul>
@@ -669,7 +669,7 @@ export default function EMICalculatorPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h3>
                 <div className="space-y-4">
                   <details className="group border-b border-gray-200 pb-4">
-                    <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-orange-600">
+                    <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-[#1c144a]">
                       <span>How is car loan EMI calculated?</span>
                       <span className="transition group-open:rotate-180">
                         <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
@@ -678,7 +678,7 @@ export default function EMICalculatorPage() {
                     <p className="text-gray-600 mt-3 text-sm">The formula used is: <strong>E = [P x R x (1+R)^N] / [(1+R)^N-1]</strong><br />Where E is EMI, P is Principal Loan Amount, R is monthly interest rate, and N is loan tenure in months.</p>
                   </details>
                   <details className="group border-b border-gray-200 pb-4">
-                    <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-orange-600">
+                    <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-[#1c144a]">
                       <span>Can I pay off my car loan early?</span>
                       <span className="transition group-open:rotate-180">
                         <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
@@ -687,7 +687,7 @@ export default function EMICalculatorPage() {
                     <p className="text-gray-600 mt-3 text-sm">Yes, most banks allow prepayment or foreclosure of car loans. However, many lenders charge a foreclosure fee (usually 3-5% of the outstanding principal) if you close the loan before the tenure ends. Some banks offer zero foreclosure charges after a specific period (e.g., 2 years).</p>
                   </details>
                   <details className="group border-b border-gray-200 pb-4">
-                    <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-orange-600">
+                    <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-[#1c144a]">
                       <span>Is a down payment mandatory?</span>
                       <span className="transition group-open:rotate-180">
                         <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
@@ -696,7 +696,7 @@ export default function EMICalculatorPage() {
                     <p className="text-gray-600 mt-3 text-sm">While some banks offer 100% financing on the ex-showroom price for eligible customers, you typically still need to pay for registration, insurance, and accessories as a down payment. Making a larger down payment (20% or more) is recommended to reduce your interest burden.</p>
                   </details>
                   <details className="group border-b border-gray-200 pb-4">
-                    <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-orange-600">
+                    <summary className="flex justify-between items-center font-medium cursor-pointer list-none text-gray-800 hover:text-[#1c144a]">
                       <span>Fixed vs Floating Interest Rate: Which is better?</span>
                       <span className="transition group-open:rotate-180">
                         <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
@@ -710,11 +710,11 @@ export default function EMICalculatorPage() {
               <div className="mt-8 pt-6 border-t border-gray-200">
                 <h3 className="text-base font-semibold text-gray-900 mb-3">Explore More Tools</h3>
                 <div className="flex flex-wrap gap-4">
-                  <Link href="/fuel-cost-calculator" className="text-sm font-medium text-orange-600 hover:text-orange-700 flex items-center gap-1">
+                  <Link href="/fuel-cost-calculator" className="text-sm font-medium text-[#1c144a] hover:text-[#1c144a] flex items-center gap-1">
                     Fuel Cost Calculator <ArrowLeft className="w-3 h-3 rotate-180" />
                   </Link>
 
-                  <Link href="/location" className="text-sm font-medium text-orange-600 hover:text-orange-700 flex items-center gap-1">
+                  <Link href="/location" className="text-sm font-medium text-[#1c144a] hover:text-[#1c144a] flex items-center gap-1">
                     Check On-Road Price <ArrowLeft className="w-3 h-3 rotate-180" />
                   </Link>
                 </div>

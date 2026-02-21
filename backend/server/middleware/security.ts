@@ -59,6 +59,16 @@ const GOOD_BOTS = [
 export const botDetector = (req: Request, res: Response, next: NextFunction) => {
     const userAgent = req.get('User-Agent')?.toLowerCase() || '';
 
+    // Allow requests with no User-Agent (internal service-to-service, SSR)
+    if (!userAgent) {
+        return next();
+    }
+
+    // Allow Node.js / Next.js SSR requests
+    if (userAgent.includes('node') || userAgent.includes('next') || userAgent.includes('undici')) {
+        return next();
+    }
+
     // Check for bad bots
     const isBadBot = BAD_BOT_SIGNATURES.some(sig => userAgent.includes(sig));
     const isGoodBot = GOOD_BOTS.some(sig => userAgent.includes(sig));

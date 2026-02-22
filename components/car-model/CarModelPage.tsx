@@ -8,7 +8,6 @@ import dynamic from 'next/dynamic'
 import { renderTextWithCarLinks, useCarModelsData } from '@/lib/faq-hyperlinks'
 import PageSection from '../common/PageSection'
 import VariantCard from './VariantCard'
-import Footer from '../Footer'
 import { truncateCarName } from '@/lib/text-utils'
 import { formatPrice, formatPriceRange } from '@/utils/priceFormatter'
 import Breadcrumbs from '../common/Breadcrumbs'
@@ -986,62 +985,57 @@ export default function CarModelPage({ model, initialVariants = [], newsSlot }: 
             {/* Left Column: Images (Desktop: col-span-7) */}
             <div className="md:col-span-7">
               {/* Hero Car Image with Gallery - Scrollable */}
-              <div className="relative group cursor-pointer" onClick={() => {
-                const message = `I am interested in this car: ${model?.brand || ''} ${model?.name || ''} (ID: ${model?.id || 'N/A'})`;
-                const whatsappUrl = `https://wa.me/919945210466?text=${encodeURIComponent(message)}`;
-                window.open(whatsappUrl, '_blank');
-              }}>
-                <div id="model-gallery" className="aspect-[16/10] bg-gray-100 rounded-2xl overflow-x-auto snap-x snap-mandatory scrollbar-hide flex" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
-                  {/* Hero Image */}
-                  {model?.heroImage && (
-                    <div className="w-full h-full flex-shrink-0 snap-center relative">
-                      <OptimizedImage
-                        ref={mainCarImageRef as any}
-                        src={model.heroImage}
-                        alt={`${model?.brand || 'Car'} ${model?.name || 'Model'}`}
-                        fill
-                        className="object-contain rounded-2xl"
-                        priority={true}
-                      />
+              {(() => {
+                const galleryImagesList = (model?.gallery || []).map(url => ({ src: url, alt: `${model?.name} gallery` }));
+                const colorImagesList = (model?.colorImages || []).map(img => ({ src: img.url, alt: img.caption, caption: img.caption }));
+                const allImages = [
+                  ...(model?.heroImage ? [{ src: model.heroImage, alt: `${model?.brand} ${model?.name}` }] : []),
+                  ...galleryImagesList,
+                  ...colorImagesList
+                ];
+
+                return (
+                  <div className="relative group cursor-pointer" onClick={() => openGalleryModal(allImages)}>
+                    <div id="model-gallery" className="aspect-[16/10] bg-gray-100 rounded-2xl overflow-x-auto snap-x snap-mandatory scrollbar-hide flex" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+                      {allImages.map((img, idx) => (
+                        <div key={idx} className="w-full h-full flex-shrink-0 snap-center relative">
+                          <OptimizedImage
+                            src={img.src}
+                            alt={img.alt}
+                            fill
+                            className="object-contain rounded-2xl"
+                            priority={idx === 0}
+                          />
+                        </div>
+                      ))}
                     </div>
-                  )}
-                  {/* Gallery Images */}
-                  {model?.gallery?.map((imgUrl: string, index: number) => (
-                    <div key={index} className="w-full h-full flex-shrink-0 snap-center relative">
-                      <OptimizedImage
-                        src={imgUrl}
-                        alt={`${model?.name} gallery ${index + 1}`}
-                        fill
-                        className="w-full h-full object-cover rounded-2xl"
-                      />
+
+
+
+                    {/* Image Count Badge */}
+                    <div className="absolute top-4 left-4 bg-black/60 text-white px-3 py-1.5 rounded-lg text-sm font-medium flex items-center gap-2">
+                      <Camera className="w-4 h-4" />
+                      <span>{allImages.length} Images</span>
                     </div>
-                  ))}
-                </div>
 
-
-
-                {/* Image Count Badge */}
-                <div className="absolute top-4 left-4 bg-black/60 text-white px-3 py-1.5 rounded-lg text-sm font-medium flex items-center gap-2">
-                  <Camera className="w-4 h-4" />
-                  <span>{1 + (model?.gallery?.length || 0) + (model?.colorImages?.length || 0)} Images</span>
-                </div>
-
-                {/* Gallery Navigation Arrow */}
-                {model?.gallery && model.gallery.length > 0 && (
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation(); // Prevent gallery page navigation
-                      const gallery = document.getElementById('model-gallery');
-                      if (gallery) {
-                        gallery.scrollBy({ left: gallery.clientWidth, behavior: 'smooth' });
-                      }
-                    }}
-                    className="absolute bottom-4 right-4 bg-white rounded-full p-3 hover:bg-gray-50 transition-colors shadow-lg"
-                  >
-                    <ChevronRight className="w-6 h-6 text-gray-600" />
-                  </button>
-                )}
-              </div>
+                    {/* Gallery Navigation Arrow */}
+                    {allImages.length > 1 && (
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation(); // Prevent gallery modal from opening
+                          const gallery = document.getElementById('model-gallery');
+                          if (gallery) {
+                            gallery.scrollBy({ left: gallery.clientWidth, behavior: 'smooth' });
+                          }
+                        }}
+                        className="absolute bottom-4 right-4 bg-white rounded-full p-3 hover:bg-gray-50 transition-colors shadow-lg"
+                      >
+                        <ChevronRight className="w-6 h-6 text-gray-600" />
+                      </button>
+                    )}
+                  </div>
+                );
+              })()}
             </div>
 
             {/* Right Column: Details (Desktop: col-span-5) */}
@@ -1736,7 +1730,6 @@ export default function CarModelPage({ model, initialVariants = [], newsSlot }: 
           { label: model?.name || 'Model' }
         ]}
       />
-      <Footer />
 
       {/* Image Gallery Modal for Highlights and Colors */}
       <ImageGalleryModal

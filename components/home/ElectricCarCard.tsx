@@ -37,7 +37,7 @@ export default function ElectricCarCard({ car, index, onClick }: ElectricCarCard
     }, [])
 
     // Get on-road price
-    
+
 
     const displayPrice = car.startingPrice
     const priceLabel = 'Price'
@@ -107,7 +107,7 @@ export default function ElectricCarCard({ car, index, onClick }: ElectricCarCard
             {/* Car Info */}
             <div className="p-4 sm:p-5">
                 <h3 className="font-bold text-gray-900 mb-2 text-base sm:text-lg truncate" title={`${car.brandName} ${car.name}`}>
-                    {car.brandName} {car.name}
+                    <span className="mr-1">2021</span> {car.brandName} {car.name}
                 </h3>
 
                 <div className="flex flex-col mb-3 sm:mb-4">

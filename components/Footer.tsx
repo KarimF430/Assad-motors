@@ -130,9 +130,6 @@ export default function Footer() {
               © {new Date().getFullYear()} Assad Motors. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
-              <Link href="/privacy-policy" className="text-gray-400 hover:text-red-400 transition-colors">
-                Privacy Policy
-              </Link>
               <Link href="/about-us" className="text-gray-400 hover:text-[#291e6a] transition-colors">
                 About Us
               </Link>

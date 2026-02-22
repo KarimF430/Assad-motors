@@ -45,8 +45,8 @@ const Ad3DCarousel = dynamic(() => import('@/components/ads/Ad3DCarousel'), {
   loading: () => <div className="h-48 bg-gray-100 rounded-lg animate-pulse" />
 })
 
-const AIChatbotPopup = dynamic(() => import('@/components/ads/AIChatbotPopup'), {
-  loading: () => null
+const HomeFAQ = dynamic(() => import('@/components/home/HomeFAQ'), {
+  loading: () => <div className="h-96 bg-white rounded-lg animate-pulse" />
 })
 
 const Footer = dynamic(() => import('@/components/Footer'), {
@@ -392,6 +392,10 @@ export default async function HomePage() {
           </div>
         </PageSection>
 
+        <PageSection background="white">
+          <HomeFAQ />
+        </PageSection>
+
         {news.length > 0 && (
           <PageSection background="white">
             <LatestCarNews initialNews={news} />
@@ -404,9 +408,7 @@ export default async function HomePage() {
       </main >
 
       <Footer />
-
-      {/* AI Chatbot Popup Ad */}
-      <AIChatbotPopup />
+      {/* AI Chatbot Popup Ad - REMOVED */}
     </div >
   )
 }

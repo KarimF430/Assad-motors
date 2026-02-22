@@ -29,7 +29,7 @@ const modelSchema = new mongoose.Schema({
 
   // Popularity & Rankings
   isPopular: { type: Boolean, default: false },
-  isNew: { type: Boolean, default: false },
+  isRecent: { type: Boolean, default: false },
   popularRank: { type: Number, default: null },
   newRank: { type: Number, default: null },
   topRank: { type: Number, default: null }, // Ranking for Top Cars section (1-10)
@@ -117,7 +117,7 @@ modelSchema.index({ id: 1 }, { unique: true });
 modelSchema.index({ brandId: 1, status: 1 });
 modelSchema.index({ name: 1 });
 modelSchema.index({ isPopular: 1, popularRank: 1 });
-modelSchema.index({ isNew: 1, newRank: 1 });
+modelSchema.index({ isRecent: 1, newRank: 1 });
 modelSchema.index({ bodyType: 1, status: 1 });
 modelSchema.index({ brandId: 1, status: 1, name: 1 }); // Sort models within brand
 modelSchema.index({ status: 1, launchDate: -1 }); // New launches
@@ -131,7 +131,7 @@ const upcomingCarSchema = new mongoose.Schema({
 
   // Popularity & Rankings
   isPopular: { type: Boolean, default: false },
-  isNew: { type: Boolean, default: false },
+  isRecent: { type: Boolean, default: false },
   popularRank: { type: Number, default: null },
   newRank: { type: Number, default: null },
 
@@ -220,7 +220,7 @@ upcomingCarSchema.index({ id: 1 }, { unique: true });
 upcomingCarSchema.index({ brandId: 1, status: 1 });
 upcomingCarSchema.index({ name: 1 });
 upcomingCarSchema.index({ isPopular: 1, popularRank: 1 });
-upcomingCarSchema.index({ isNew: 1, newRank: 1 });
+upcomingCarSchema.index({ isRecent: 1, newRank: 1 });
 upcomingCarSchema.index({ bodyType: 1, status: 1 });
 upcomingCarSchema.index({ brandId: 1, status: 1, name: 1 });
 upcomingCarSchema.index({ status: 1, expectedLaunchDate: 1 }); // Upcoming launches

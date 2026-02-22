@@ -204,19 +204,19 @@ export default function BrandCarsListing({ brand }: BrandCarsListingProps) {
 
   if (priceFilter) {
     const [min, max] = priceFilter.split('-').map(p => parseInt(p) * 100000)
-    filteredCars = filteredCars.filter(car => 
+    filteredCars = filteredCars.filter(car =>
       car.startingPrice >= min && (max ? car.startingPrice <= max : true)
     )
   }
 
   if (fuelFilter) {
-    filteredCars = filteredCars.filter(car => 
+    filteredCars = filteredCars.filter(car =>
       car.fuelType.toLowerCase().includes(fuelFilter.toLowerCase())
     )
   }
 
   if (bodyTypeFilter) {
-    filteredCars = filteredCars.filter(car => 
+    filteredCars = filteredCars.filter(car =>
       car.bodyType.toLowerCase() === bodyTypeFilter.toLowerCase()
     )
   }
@@ -241,9 +241,8 @@ export default function BrandCarsListing({ brand }: BrandCarsListingProps) {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
         key={i}
-        className={`h-4 w-4 ${
-          i < Math.floor(rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'
-        }`}
+        className={`h-4 w-4 ${i < Math.floor(rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'
+          }`}
       />
     ))
   }
@@ -294,7 +293,7 @@ export default function BrandCarsListing({ brand }: BrandCarsListingProps) {
                 </p>
               </div>
             </div>
-            
+
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 text-center">
               <div>
                 <p className="text-2xl font-bold text-primary-600">{displayBrandInfo.totalModels}</p>
@@ -418,9 +417,8 @@ export default function BrandCarsListing({ brand }: BrandCarsListingProps) {
           {sortedCars.map((car) => (
             <div
               key={car.id}
-              className={`bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow duration-200 ${
-                viewMode === 'list' ? 'flex items-center p-4' : 'overflow-hidden'
-              }`}
+              className={`bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow duration-200 ${viewMode === 'list' ? 'flex items-center p-4' : 'overflow-hidden'
+                }`}
             >
               {viewMode === 'grid' ? (
                 <>
@@ -438,9 +436,9 @@ export default function BrandCarsListing({ brand }: BrandCarsListingProps) {
 
                   <div className="p-4">
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                      {car.brand} {car.name}
+                      <span className="mr-1">2021</span> {car.brand} {car.name}
                     </h3>
-                    
+
                     <div className="flex items-center space-x-1 mb-2">
                       {renderStars(car.rating)}
                       <span className="text-sm text-gray-600 ml-2">
@@ -489,12 +487,12 @@ export default function BrandCarsListing({ brand }: BrandCarsListingProps) {
                   <div className="w-32 h-24 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-gray-500 text-xs">Car Image</span>
                   </div>
-                  
+
                   <div className="flex-1 ml-4">
                     <div className="flex items-start justify-between">
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900">
-                          {car.brand} {car.name}
+                          <span className="mr-1">2021</span> {car.brand} {car.name}
                         </h3>
                         <div className="flex items-center space-x-1 mt-1">
                           {renderStars(car.rating)}
@@ -508,7 +506,7 @@ export default function BrandCarsListing({ brand }: BrandCarsListingProps) {
                           <span>{car.seating} Seater</span>
                         </div>
                       </div>
-                      
+
                       <div className="text-right">
                         <p className="text-xl font-bold text-primary-600">
                           {car.priceRange}

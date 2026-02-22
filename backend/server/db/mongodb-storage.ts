@@ -38,7 +38,7 @@ function mapModel(doc: any): Model {
     brandId: doc.brandId,
     name: doc.name,
     isPopular: doc.isPopular || false,
-    isNew: doc.isNew || false,
+    isNew: doc.isRecent || false,
     popularRank: doc.popularRank || null,
     newRank: doc.newRank || null,
     topRank: doc.topRank || null,
@@ -75,7 +75,7 @@ function mapUpcomingCar(doc: any): UpcomingCar {
     brandId: doc.brandId,
     name: doc.name,
     isPopular: doc.isPopular || false,
-    isNew: doc.isNew || false,
+    isNew: doc.isRecent || false,
     popularRank: doc.popularRank || null,
     newRank: doc.newRank || null,
     bodyType: doc.bodyType || null,
@@ -503,8 +503,10 @@ export class MongoDBStorage implements IStorage {
         throw new Error(`Model "${model.name}" already exists for brand "${brand.name}".`);
       }
 
+      const { isNew, ...modelData } = model;
       const newModel = await MongoModel.create({
-        ...model,
+        ...modelData,
+        isRecent: isNew,
         id,
         createdAt: new Date()
       });
@@ -518,9 +520,14 @@ export class MongoDBStorage implements IStorage {
 
   async updateModel(id: string, model: Partial<InsertModel>): Promise<Model | undefined> {
     try {
+      const updateData: any = { ...model };
+      if (updateData.isNew !== undefined) {
+        updateData.isRecent = updateData.isNew;
+        delete updateData.isNew;
+      }
       const updatedModel = await MongoModel.findOneAndUpdate(
         { id },
-        { $set: model },
+        { $set: updateData },
         { new: true }
       ).lean();
       return updatedModel ? mapModel(updatedModel) : undefined;
@@ -703,8 +710,10 @@ export class MongoDBStorage implements IStorage {
         throw new Error(`Upcoming car "${car.name}" already exists for brand "${brand.name}".`);
       }
 
+      const { isNew, ...carData } = car;
       const newUpcomingCar = await MongoUpcomingCar.create({
-        ...car,
+        ...carData,
+        isRecent: isNew,
         id,
         createdAt: new Date()
       });
@@ -718,9 +727,14 @@ export class MongoDBStorage implements IStorage {
 
   async updateUpcomingCar(id: string, car: Partial<InsertUpcomingCar>): Promise<UpcomingCar | undefined> {
     try {
+      const updateData: any = { ...car };
+      if (updateData.isNew !== undefined) {
+        updateData.isRecent = updateData.isNew;
+        delete updateData.isNew;
+      }
       const updatedUpcomingCar = await MongoUpcomingCar.findOneAndUpdate(
         { id },
-        { $set: car },
+        { $set: updateData },
         { new: true }
       ).lean();
       return updatedUpcomingCar ? mapUpcomingCar(updatedUpcomingCar) : undefined;

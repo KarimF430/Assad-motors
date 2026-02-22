@@ -152,6 +152,10 @@ export default function CarCard({ car, index, onClick }: CarCardProps) {
       <div className="p-4 flex flex-col justify-between" style={{ minHeight: '180px' }}>
         <div>
           <h3 className="font-bold text-gray-900 mb-1 text-base sm:text-lg truncate" title={`${car.brandName} ${car.name} ${variantText}`}>
+            {(() => {
+              const yearMatch = car.launchDate?.match(/\d{4}/);
+              return yearMatch ? <span className="mr-1">{yearMatch[0]}</span> : null;
+            })()}
             {car.brandName} {car.name} <span className="font-medium text-gray-500 text-sm ml-1">{variantText}</span>
           </h3>
 

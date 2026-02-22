@@ -986,7 +986,11 @@ export default function CarModelPage({ model, initialVariants = [], newsSlot }: 
             {/* Left Column: Images (Desktop: col-span-7) */}
             <div className="md:col-span-7">
               {/* Hero Car Image with Gallery - Scrollable */}
-              <div className="relative group cursor-pointer" onClick={() => router.push(`/${model.brandSlug}-cars/${model.slug}/images`)}>
+              <div className="relative group cursor-pointer" onClick={() => {
+                const message = `I am interested in this car: ${model?.brand || ''} ${model?.name || ''} (ID: ${model?.id || 'N/A'})`;
+                const whatsappUrl = `https://wa.me/919945210466?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+              }}>
                 <div id="model-gallery" className="aspect-[16/10] bg-gray-100 rounded-2xl overflow-x-auto snap-x snap-mandatory scrollbar-hide flex" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
                   {/* Hero Image */}
                   {model?.heroImage && (
@@ -1091,15 +1095,14 @@ export default function CarModelPage({ model, initialVariants = [], newsSlot }: 
                 {/* Call To Action Button placed right after price */}
                 <button
                   onClick={() => {
-                    const brandSlug = model.brand?.toLowerCase().replace(/\s+/g, '-') || ''
-                    const modelSlug = model.name?.toLowerCase().replace(/\s+/g, '-') || ''
-                    const citySlug = "andheri-mumbai".replace(/\s+/g, '-')
-                    router.push(`/${brandSlug}-cars/${modelSlug}/price-in-${citySlug}`)
+                    const message = `I am interested in booking this car: ${model?.brand || ''} ${model?.name || ''} (ID: ${model?.id || 'N/A'})`;
+                    const whatsappUrl = `https://wa.me/919945210466?text=${encodeURIComponent(message)}`;
+                    window.open(whatsappUrl, '_blank');
                   }}
                   className="w-full bg-[#e21a22] text-white hover:bg-[#c9151e] focus:ring-2 focus:ring-offset-2 focus:ring-[#e21a22] font-bold text-[15px] sm:text-[16px] py-3.5 rounded-[12px] transition-all flex justify-center items-center gap-2 shadow-sm mt-1 mb-2"
                 >
                   Book This Car
-                  <ArrowRight className="w-4 h-4" />
+                  <MessageCircle className="w-4 h-4" />
                 </button>
 
                 {/* Key Specs Row (Fuel, Transmission, Km driven) */}
@@ -1121,7 +1124,7 @@ export default function CarModelPage({ model, initialVariants = [], newsSlot }: 
                   <div className="flex flex-col gap-1 items-center justify-center py-3 bg-[#f8f9fa] border border-gray-100 rounded-[14px]">
                     <TrendingUp className="w-5 h-5 text-[#291e6a] mb-0.5" />
                     <span className="text-[13px] font-bold text-[#1c144a] text-center px-1 truncate w-full">
-                      60K km
+                      60,000 km
                     </span>
                     <span className="text-[11px] text-gray-500 font-medium tracking-wide pb-0.5">DRIVEN</span>
                   </div>
@@ -1253,7 +1256,7 @@ export default function CarModelPage({ model, initialVariants = [], newsSlot }: 
                     : 'border-transparent text-gray-500 hover:text-gray-700'
                     }`}
                 >
-                  Key & Features
+                  Key Highlights
                 </button>
                 <button
                   onClick={() => handleHighlightTabChange('spaceComfort')}
@@ -1743,7 +1746,11 @@ export default function CarModelPage({ model, initialVariants = [], newsSlot }: 
         onClose={() => setGalleryModalOpen(false)}
         carName={`${model?.brand || 'Car'} ${model?.name || 'Model'}`}
       />
-      <TestDriveBottomBar onBookTestDrive={() => setIsLeadModalOpen(true)} />
+      <TestDriveBottomBar onBookTestDrive={() => {
+        const message = `I want to book a test drive for: ${model?.brand || ''} ${model?.name || ''} (ID: ${model?.id || 'N/A'})`;
+        const whatsappUrl = `https://wa.me/919945210466?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+      }} />
       <LeadFormModal
         isOpen={isLeadModalOpen}
         onClose={() => setIsLeadModalOpen(false)}

@@ -602,7 +602,7 @@ export default function EMICalculatorPage() {
                 Get Eligible Loan Offers
               </button>
               <p className="text-xs text-gray-500 text-center mt-3 leading-relaxed">
-                By proceeding ahead you agree to gadizone <Link href="/visitor-agreement" className="text-[#1c144a] hover:underline">Visitor Agreement</Link>, <Link href="/privacy-policy" className="text-[#1c144a] hover:underline">Privacy Policy</Link> and <Link href="/terms-and-conditions" className="text-[#1c144a] hover:underline">Terms and Conditions</Link>. This site is protected by reCAPTCHA and Google <Link href="/google-terms" className="text-[#1c144a] hover:underline">terms of service</Link> apply.
+                By proceeding ahead you agree to gadizone <Link href="/visitor-agreement" className="text-[#1c144a] hover:underline">Visitor Agreement</Link> and <Link href="/terms-and-conditions" className="text-[#1c144a] hover:underline">Terms and Conditions</Link>. This site is protected by reCAPTCHA and Google <Link href="/google-terms" className="text-[#1c144a] hover:underline">terms of service</Link> apply.
               </p>
             </div>
 

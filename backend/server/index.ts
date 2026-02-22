@@ -305,8 +305,12 @@ app.post('/api/monitoring/vitals', (req, res) => {
 
     // Initialize Redis for sessions
     try {
-      await connectRedis();
-      console.log('✅ Redis connected successfully');
+      const redisClient = await connectRedis();
+      if (redisClient) {
+        console.log('✅ Redis connected successfully');
+      } else {
+        console.log('ℹ️  Running without Redis (not configured or unavailable)');
+      }
     } catch (e) {
       console.error('❌ Redis connection failed:', e);
     }

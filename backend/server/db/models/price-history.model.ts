@@ -10,14 +10,12 @@ const priceHistorySchema = new mongoose.Schema({
     variantId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Variant',
-        required: true,
-        index: true
+        required: true
     },
     modelId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Model',
-        required: true,
-        index: true
+        required: true
     },
     brandId: {
         type: mongoose.Schema.Types.ObjectId,
@@ -54,8 +52,7 @@ const priceHistorySchema = new mongoose.Schema({
     },
     changedAt: {
         type: Date,
-        default: Date.now,
-        index: true
+        default: Date.now
     }
 }, {
     timestamps: true

@@ -71,6 +71,10 @@ export default function TopCarCard({ car, bodyTypeLabel }: { car: Car; bodyTypeL
                             <div className="flex items-start justify-between mb-1 sm:mb-2">
                                 <div className="flex-1 pr-1 sm:pr-2 min-w-0">
                                     <h3 className="text-base sm:text-xl md:text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors leading-tight truncate">
+                                        {(() => {
+                                            const yearMatch = car.launchDate?.match(/\d{4}/);
+                                            return yearMatch ? <span className="mr-1 text-gray-900">{yearMatch[0]}</span> : null;
+                                        })()}
                                         <span className="text-gray-600 font-semibold">{car.brandName} </span>
                                         {car.name}
                                     </h3>

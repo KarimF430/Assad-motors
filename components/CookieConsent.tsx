@@ -112,13 +112,7 @@ export default function CookieConsent() {
 
                     {/* Body text */}
                     <p style={{ margin: '0 0 1rem', fontSize: '0.8125rem', lineHeight: '1.55', color: '#6b7280' }}>
-                        Assad Motors uses cookies to improve your experience and personalise content.{' '}
-                        <Link
-                            href="/privacy-policy"
-                            style={{ color: '#291e6a', textDecoration: 'underline', fontWeight: 500 }}
-                        >
-                            Privacy Policy
-                        </Link>
+                        Assad Motors uses cookies to improve your experience and personalise content.
                     </p>
 
                     {/* Buttons */}

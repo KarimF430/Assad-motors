@@ -114,6 +114,10 @@ function BrandCarCard({ car, index }: { car: Car; index: number }) {
       <div className="p-3 sm:p-4 flex flex-col justify-between flex-1">
         <div>
           <h3 className="font-bold text-gray-900 mb-1 text-sm sm:text-base truncate" title={`${car.brandName} ${car.name} ${variantText}`}>
+            {(() => {
+              const yearMatch = car.launchDate?.match(/\d{4}/);
+              return yearMatch ? <span className="mr-1">{yearMatch[0]}</span> : null;
+            })()}
             {car.brandName} {car.name} <span className="font-medium text-gray-500 text-xs sm:text-sm ml-1">{variantText}</span>
           </h3>
 

@@ -31,7 +31,7 @@ export default function VisitorAgreementPage() {
                             <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">1. Acceptance of Terms</h2>
                             <p className="text-gray-700 leading-relaxed mb-4">
                                 By visiting, browsing, or using gadizone (the "Website"), you acknowledge that you have read, understood,
-                                and agree to be bound by this Visitor Agreement, our Privacy Policy, and our Terms and Conditions.
+                                and agree to be bound by this Visitor Agreement and our Terms and Conditions.
                                 If you do not agree to these terms, please do not use our Website.
                             </p>
 

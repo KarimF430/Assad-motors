@@ -120,7 +120,7 @@ async function buildModelIndexes(db: any) {
     { key: { brandId: 1, status: 1 }, background: true },
     { key: { name: 1 }, background: true },
     { key: { isPopular: 1, popularRank: 1 }, background: true },
-    { key: { isNew: 1, newRank: 1 }, background: true },
+    { key: { isRecent: 1, newRank: 1 }, background: true },
     { key: { bodyType: 1, status: 1 }, background: true },
     { key: { name: 'text', description: 'text' }, background: true }
   ]);

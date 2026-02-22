@@ -72,6 +72,10 @@ export default function BudgetCarCard({ car, budgetLabel }: { car: Car; budgetLa
                             <div className="flex items-start justify-between mb-0.5 sm:mb-1">
                                 <div className="flex-1 pr-1 sm:pr-2 min-w-0">
                                     <h3 className="text-base sm:text-xl md:text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors leading-tight">
+                                        {(() => {
+                                            const yearMatch = car.launchDate?.match(/\d{4}/);
+                                            return yearMatch ? <span className="mr-1">{yearMatch[0]}</span> : null;
+                                        })()}
                                         <span className="truncate block">{car.brandName} {car.name}</span>
                                     </h3>
                                 </div>

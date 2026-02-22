@@ -1,8 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { Search, Mic } from 'lucide-react'
+import { Search, Mic, CarFront, ArrowRight } from 'lucide-react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 export default function HeroSection() {
   const [searchQuery, setSearchQuery] = useState('')
@@ -36,7 +37,7 @@ export default function HeroSection() {
         <div className="max-w-2xl mx-auto">
           <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-4 sm:p-6 lg:p-8">
             {/* Search Input */}
-            <div className="relative mb-4 sm:mb-6">
+            <div className="relative mb-6">
               <input
                 type="text"
                 value={searchQuery}
@@ -61,11 +62,22 @@ export default function HeroSection() {
             {/* Search Button */}
             <button
               onClick={handleSearchClick}
-              className="w-full bg-[#291e6a] hover:bg-[#1c144a] text-white font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-xl sm:rounded-2xl transition-all duration-200 flex items-center justify-center space-x-2 sm:space-x-3 text-base sm:text-lg hover:shadow-xl"
+              className="w-full bg-[#291e6a] hover:bg-[#1c144a] text-white font-bold py-3.5 px-6 sm:py-4 rounded-2xl transition-all duration-200 flex items-center justify-center space-x-3 text-lg hover:shadow-lg mb-4"
             >
-              <Search className="h-5 w-5 sm:h-6 sm:w-6" />
+              <Search className="h-6 w-6" />
               <span>Search Cars</span>
             </button>
+
+            {/* Sell Your Car CTA - Integrated into Card */}
+            <Link
+              href="/sell-your-car"
+              className="w-full flex items-center justify-center gap-3 bg-white py-3.5 rounded-2xl border-2 border-[#291e6a] hover:bg-gray-50 transition-all duration-300 group"
+            >
+              <CarFront className="w-6 h-6 text-[#291e6a]" />
+              <span className="text-xl font-black text-[#1c144a] tracking-tight">
+                Want to Sell Your Car?
+              </span>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,0 +1,35 @@
+{
+  "afternoon": {
+    "timestamp": "2026-02-22T07:30:00.978Z",
+    "summary": {
+      "totalAPICalls": 3,
+      "successfulCalls": 3,
+      "failedCalls": 0,
+      "tokensUsed": 0
+    },
+    "data": {
+      "cars": {
+        "count": 0,
+        "data": [],
+        "tokensUsed": 0,
+        "error": "fetch failed",
+        "fetchTime": "2026-02-22T07:30:01.150Z"
+      },
+      "brands": {
+        "count": 0,
+        "data": [],
+        "tokensUsed": 0,
+        "error": "fetch failed",
+        "fetchTime": "2026-02-22T07:30:01.155Z"
+      },
+      "news": {
+        "count": 0,
+        "data": [],
+        "tokensUsed": 0,
+        "error": "fetch failed",
+        "fetchTime": "2026-02-22T07:30:01.172Z"
+      }
+    }
+  },
+  "lastUpdated": "2026-02-22T07:30:01.181Z"
+}

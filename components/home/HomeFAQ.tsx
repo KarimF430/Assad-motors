@@ -1,39 +1,52 @@
 'use client'
 
 import React, { useState } from 'react'
-import { ChevronDown, Car, ShieldCheck, HelpCircle, ArrowRight } from 'lucide-react'
+import { ChevronDown, Car, ShieldCheck, HelpCircle, ArrowRight, MessageCircle, Sparkles, Zap } from 'lucide-react'
 
-const usedCarFaqs = [
+const allFaqs = [
     {
-        question: "What are the benefits of buying a used car?",
-        answer: "Used cars offer exceptional value by allowing you to own a higher-segment vehicle at a fraction of the original cost. You benefit from significantly lower depreciation rates and lower insurance premiums compared to new cars."
+        category: "Buying Guide",
+        icon: <Car className="w-5 h-5" />,
+        items: [
+            {
+                question: "Is buying a used car actually worth it?",
+                answer: "Absolutely! Think of it as a smart shortcut to a premium lifestyle. You can drive a high-end luxury car for the price of a basic new one, all while skipping the steep 'first-year' depreciation that hurts new car owners the most."
+            },
+            {
+                question: "How do I know I'm not buying someone else's trouble?",
+                answer: "Peace of mind is everything. We deep-dive into the car's past for you—checking every service record and verify legal status on the Parivahan portal. At Assad Motors, we only pick cars we'd be proud to drive ourselves."
+            },
+            {
+                question: "What's the 'paperwork' headache truly like?",
+                answer: "We keep it simple. All you really need are the basics (RC, Insurance, Service History). We handle the complex RTO transfers (Form 29/30) so you can focus on the excitement of your new drive, not the legal fine print."
+            },
+            {
+                question: "How do you ensure the car hasn't been in a major accident?",
+                answer: "Every car in our collection undergoes a structural integrity check. We look for signs of chassis damage, repainting, and panel misalignment to ensure you get a car that is safe and genuine."
+            }
+        ]
     },
     {
-        question: "How do I verify the vehicle's history?",
-        answer: "Every car should be verified through comprehensive service records and the Parivahan portal. We recommend checking for past insurance claims and ensuring the Registration Certificate (RC) is clear of any hypothecation or legal issues."
-    },
-    {
-        question: "What documents are essential for the purchase?",
-        answer: "The critical documents include the original Registration Certificate (RC), valid Insurance, PUC Certificate, and a complete Service History. For transfer, Form 29 and 30 are required to initiated the RTO process."
-    },
-    {
-        question: "Is financing available for pre-owned cars?",
-        answer: "Absolutely. We partner with leading financial institutions to offer customized loan options with competitive interest rates and flexible tenures, making premium car ownership accessible."
-    },
-    {
-        question: "How do I check for past accidental damage?",
-        answer: "A professional inspection is key. Look for inconsistent panel gaps, paint thickness variations, and signs of structural repair in the engine bay or under the boot floor. At Assad Motors, we do this for you."
-    }
-]
-
-const assadMotorsFaqs = [
-    {
-        question: "Why trust Assad Motors for my next car?",
-        answer: "Assad Motors stands for quality and transparency. Each vehicle in our curated collection undergoes a rigorous multi-point quality check, ensuring that only the finest pre-owned cars reach our showroom."
-    },
-    {
-        question: "Do you offer any post-purchase protection?",
-        answer: "Yes, we provide comprehensive warranty packages on our certified vehicles and offer clear, transparent documentation. Our commitment to you continues long after you drive off our lot."
+        category: "The Assad Promise",
+        icon: <ShieldCheck className="w-5 h-5" />,
+        items: [
+            {
+                question: "Why should I pick Assad Motors over a local dealer?",
+                answer: "Because we treat every car like it's going to our own family. Every single vehicle undergoes a rigorous multi-point health check. We don't just sell cars; we curate a collection of the finest pre-owned machines in India."
+            },
+            {
+                question: "What happens after I drive away?",
+                answer: "Our relationship doesn't end at the showroom door. We offer comprehensive warranty packages and ongoing support. If you ever have a question or a concern, we're just a phone call away. You're part of the Assad family now."
+            },
+            {
+                question: "Do you offer financing options for used cars?",
+                answer: "Yes, we have tie-ups with leading banks and NBFCs to provide competitive interest rates and flexible EMIs, making your dream car purchase smooth and affordable."
+            },
+            {
+                question: "Can I trade in my current car when buying one from Assad Motors?",
+                answer: "Absolutely! We offer the best exchange values in the market. You can bring your current car for a quick valuation and use that as a down payment for your next luxury upgrade."
+            }
+        ]
     }
 ]
 
@@ -42,26 +55,26 @@ function FaqItem({ question, answer, index }: { question: string; answer: string
 
     return (
         <div
-            className={`group border-b border-gray-100 last:border-0 transition-all duration-300 ${isOpen ? 'bg-gray-50/50' : 'hover:bg-gray-50/30'}`}
+            className="group border-b border-gray-100 last:border-0 transition-all duration-300"
         >
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-full py-5 sm:py-6 flex items-start gap-4 text-left px-4 sm:px-6 transition-all duration-300"
+                className="w-full py-6 sm:py-8 flex items-center gap-4 text-left px-6 sm:px-10 transition-all duration-300"
             >
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#291e6a]/5 flex items-center justify-center text-[#291e6a] text-xs font-bold mt-0.5 group-hover:bg-[#291e6a] group-hover:text-white transition-all duration-300">
-                    {index + 1}
-                </span>
-                <span className="flex-grow text-[15px] sm:text-lg font-semibold text-[#1c144a] leading-snug group-hover:text-[#291e6a]">
+                <div className={`flex-shrink-0 w-10 h-10 rounded-2xl flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-[#291e6a] text-white shadow-lg' : 'bg-gray-100 text-gray-400 group-hover:bg-gray-200 group-hover:text-gray-600'}`}>
+                    <HelpCircle className="w-5 h-5" />
+                </div>
+                <span className={`flex-grow text-lg sm:text-xl font-bold tracking-tight transition-colors duration-300 ${isOpen ? 'text-[#1c144a]' : 'text-gray-700 group-hover:text-[#291e6a]'}`}>
                     {question}
                 </span>
-                <div className={`flex-shrink-0 w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center transition-transform duration-300 ${isOpen ? 'rotate-180 bg-[#291e6a] border-[#291e6a]' : ''}`}>
-                    <ChevronDown className={`w-4 h-4 transition-colors ${isOpen ? 'text-white' : 'text-gray-400'}`} />
+                <div className={`flex-shrink-0 w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center transition-all duration-300 ${isOpen ? 'rotate-180 bg-white border-transparent shadow-sm' : 'bg-transparent text-gray-300'}`}>
+                    <ChevronDown className={`w-5 h-5 ${isOpen ? 'text-[#291e6a]' : ''}`} />
                 </div>
             </button>
 
             <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                <div className="pb-6 px-4 sm:px-[72px] pr-4 sm:pr-12">
-                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed border-l-2 border-[#e21a22] pl-4 py-1">
+                <div className="pb-8 px-6 sm:px-[90px] pr-6 sm:pr-16">
+                    <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-medium">
                         {answer}
                     </p>
                 </div>
@@ -72,87 +85,48 @@ function FaqItem({ question, answer, index }: { question: string; answer: string
 
 export default function HomeFAQ() {
     return (
-        <div className="py-12 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Premium Header */}
-            <div className="flex flex-col items-center text-center mb-16 sm:mb-24">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#291e6a]/5 text-[#291e6a] text-xs sm:text-sm font-bold tracking-wider uppercase mb-6">
-                    <HelpCircle className="w-4 h-4" />
-                    <span>Knowledge Center</span>
+        <div className="py-16 sm:py-24 max-w-4xl mx-auto px-4 sm:px-6">
+            {/* Humanized Header */}
+            <div className="flex flex-col items-center text-center mb-16 sm:mb-20">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-50 text-[#e21a22] text-xs sm:text-sm font-bold tracking-wide uppercase mb-8 shadow-sm">
+                    <Sparkles className="w-4 h-4" />
+                    <span>Your Car Journey, Simplified</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1c144a] mb-6 tracking-tight leading-tight">
-                    Have Questions? <span className="text-[#e21a22]">We Have Answers.</span>
+                <h2 className="text-3xl sm:text-5xl font-black text-[#1c144a] mb-6 tracking-tight leading-[1.1]">
+                    Everything You Need <br />
+                    <span className="text-[#e21a22]">To Know.</span>
                 </h2>
-                <p className="text-gray-500 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
-                    Navigate your used car journey with confidence. Explore our expert guide and discover the Assad Motors difference.
+                <p className="text-gray-500 max-w-xl mx-auto text-lg sm:text-xl leading-relaxed font-medium">
+                    Buying a car is a big decision. We're here to make it as transparent and human as possible.
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-                {/* Left Column: Used Car FAQs (Desktop: col-span-7) */}
-                <div className="lg:col-span-7 space-y-8">
-                    <div className="flex items-center gap-4 mb-2">
-                        <div className="p-3 bg-gray-900 rounded-2xl shadow-lg ring-4 ring-gray-50">
-                            <Car className="w-6 h-6 text-white" />
-                        </div>
-                        <div>
-                            <h3 className="text-xl sm:text-2xl font-bold text-[#1c144a]">Used Car Buying Guide</h3>
-                            <p className="text-sm text-gray-500">Expert tips for a secure purchase</p>
-                        </div>
-                    </div>
-
-                    <div className="bg-white rounded-[32px] shadow-xl shadow-gray-200/50 border border-gray-100 overflow-hidden">
-                        {usedCarFaqs.map((faq, index) => (
-                            <FaqItem key={index} index={index} {...faq} />
-                        ))}
-                    </div>
-                </div>
-
-                {/* Right Column: Trust & CTA (Desktop: col-span-5) */}
-                <div className="lg:col-span-5 space-y-8 h-full flex flex-col">
-                    <div className="flex items-center gap-4 mb-2">
-                        <div className="p-3 bg-[#e21a22] rounded-2xl shadow-lg shadow-red-200/50 ring-4 ring-red-50">
-                            <ShieldCheck className="w-6 h-6 text-white" />
-                        </div>
-                        <div>
-                            <h3 className="text-xl sm:text-2xl font-bold text-[#1c144a]">The Assad Promise</h3>
-                            <p className="text-sm text-gray-500">Why thousands choose us</p>
-                        </div>
-                    </div>
-
-                    <div className="bg-white rounded-[32px] shadow-xl shadow-gray-200/50 border border-gray-100 overflow-hidden mb-8">
-                        {assadMotorsFaqs.map((faq, index) => (
-                            <FaqItem key={index} index={usedCarFaqs.length + index} {...faq} />
-                        ))}
-                    </div>
-
-                    {/* High-Impact CTA Card */}
-                    <div className="relative group flex-grow rounded-[32px] bg-[#1c144a] p-8 sm:p-10 overflow-hidden flex flex-col justify-center">
-                        {/* Decorative Elements */}
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/10 rounded-full blur-3xl -mr-20 -mt-20 group-hover:bg-red-600/20 transition-all duration-500"></div>
-                        <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#291e6a]/20 rounded-full blur-3xl -ml-20 -mb-20"></div>
-
-                        <div className="relative z-10">
-                            <h4 className="text-2xl sm:text-3xl font-extrabold text-white mb-6 leading-tight">
-                                Still Need <br />Personal Assistance?
-                            </h4>
-                            <p className="text-blue-100/70 mb-8 max-w-xs leading-relaxed">
-                                Connect with our expert consultants for a personalized car buying experience.
-                            </p>
-
-                            <button
-                                onClick={() => window.open('https://wa.me/919945210466', '_blank')}
-                                className="inline-flex items-center gap-3 bg-[#e21a22] hover:bg-[#c9151e] text-white px-8 py-4 rounded-2xl font-bold transition-all duration-300 shadow-xl shadow-red-900/20 group-hover:translate-x-1"
-                            >
-                                <span>Chat on WhatsApp</span>
-                                <ArrowRight className="w-5 h-5" />
-                            </button>
+            {/* Combined Single Column FAQ List */}
+            <div className="space-y-12">
+                {allFaqs.map((category, catIndex) => (
+                    <div key={catIndex} className="space-y-6">
+                        <div className="flex items-center gap-3 px-2">
+                            <div className="p-2 bg-[#291e6a]/5 rounded-lg text-[#291e6a]">
+                                {category.icon}
+                            </div>
+                            <h3 className="text-xl font-extrabold text-[#1c144a] uppercase tracking-widest text-sm">{category.category}</h3>
                         </div>
 
-                        {/* Background Icon */}
-                        <Car className="absolute bottom-[-20%] right-[-10%] w-64 h-64 text-white/[0.03] rotate-[-15deg]" />
+                        <div className="border-t border-gray-100">
+                            {category.items.map((item, index) => (
+                                <FaqItem key={index} index={index} {...item} />
+                            ))}
+                        </div>
                     </div>
-                </div>
+                ))}
             </div>
+
+
+            {/* Mobile friendly note */}
+            <p className="text-center mt-12 text-gray-400 text-sm font-medium">
+                Prefer a direct call? <a href="tel:+919945210466" className="text-[#1c144a] underline">+91 99452 10466</a>
+            </p>
         </div>
     )
 }
+

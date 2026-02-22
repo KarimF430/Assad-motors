@@ -1,0 +1,285 @@
+.container {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.formWrapper {
+    position: relative;
+    z-index: 10;
+    margin-top: 40px;
+}
+
+.formHeader {
+    padding: 0 0 40px;
+    text-align: center;
+}
+
+.formHeader h2 {
+    font-size: 36px;
+    font-weight: 900;
+    color: #1c144a;
+    margin-bottom: 12px;
+    letter-spacing: -0.03em;
+}
+
+.formHeader p {
+    font-size: 16px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.formBody {
+    padding: 20px 0 48px;
+}
+
+.section {
+    margin-bottom: 56px;
+}
+
+.section:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.sectionHeader {
+    margin-bottom: 32px;
+}
+
+.sectionHeader h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1c144a;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.inputGroup label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+}
+
+.inputGroup input,
+.inputGroup select {
+    padding: 14px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 15px;
+    background: #ffffff;
+    width: 100%;
+    color: #1e293b;
+    transition: all 0.2s;
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus {
+    outline: none;
+    border-color: #291e6a;
+    box-shadow: 0 0 0 4px rgba(41, 30, 106, 0.05);
+}
+
+.tileGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 16px;
+}
+
+.tileItem {
+    position: relative;
+}
+
+.tileItem input {
+    position: absolute;
+    opacity: 0;
+}
+
+.tileLabel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tileItem input:checked+.tileLabel {
+    background: #291e6a;
+    border-color: #291e6a;
+    color: #ffffff;
+}
+
+.uploadGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.uploadCard {
+    padding: 24px;
+    border: 2px dashed #e2e8f0;
+    border-radius: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.uploadCard:hover {
+    border-color: #291e6a;
+    background: #f8fafc;
+}
+
+.uploadCard h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1c144a;
+    margin: 12px 0 4px;
+}
+
+.uploadCard p {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.previewScroll {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.previewThumb {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.otpWrapper {
+    display: flex;
+    gap: 8px;
+    align-items: stretch;
+}
+
+.otpWrapper input {
+    flex-grow: 1;
+    width: auto !important;
+    /* Allow flex to take over */
+}
+
+.sendOtpBtn {
+    padding: 0 16px;
+    background: #f1f5f9;
+    color: #1c144a;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 12px;
+    white-space: nowrap;
+    transition: all 0.2s;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sendOtpBtn:hover {
+    background: #e2e8f0;
+}
+
+.submitSection {
+    margin-top: 48px;
+    text-align: center;
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 18px;
+    background: #291e6a;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.2s;
+}
+
+.submitBtn:hover {
+    background: #1c144a;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(28, 20, 74, 0.15);
+}
+
+.submitBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.trustBadge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 640px) {
+
+    .grid,
+    .uploadGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .otpWrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .otpWrapper input {
+        width: 100% !important;
+    }
+
+    .sendOtpBtn {
+        padding: 14px;
+        width: 100%;
+    }
+}

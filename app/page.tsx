@@ -49,10 +49,6 @@ const HomeFAQ = dynamic(() => import('@/components/home/HomeFAQ'), {
   loading: () => <div className="h-96 bg-white rounded-lg animate-pulse" />
 })
 
-const Footer = dynamic(() => import('@/components/Footer'), {
-  loading: () => <div className="h-96 bg-gray-900 animate-pulse" />
-})
-
 
 export const metadata: Metadata = staticPageSEO.home
 export const revalidate = 3600 // Revalidate every hour
@@ -407,7 +403,6 @@ export default async function HomePage() {
         </PageSection>
       </main >
 
-      <Footer />
       {/* AI Chatbot Popup Ad - REMOVED */}
     </div >
   )

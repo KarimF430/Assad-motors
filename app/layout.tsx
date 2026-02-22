@@ -10,6 +10,7 @@ import { WebVitalsReporter } from '@/components/WebVitalsReporter'
 import { CartProvider } from './context/CartContext'
 import CookieConsent from '@/components/CookieConsent'
 import FloatingWhatsApp from '@/components/FloatingWhatsApp'
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -274,6 +275,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <WebVitalsReporter />
                 <Header />
                 {children}
+                <Footer />
                 <CookieConsent />
                 <FloatingWhatsApp />
               </CartProvider>

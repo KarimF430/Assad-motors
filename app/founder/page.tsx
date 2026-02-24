@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, ChevronRight, Target, Zap, Users, Lightbulb, CheckCircle, Mail, Phone, ArrowLeft, Brain, Sparkles } from 'lucide-react'
 import PageContainer, { PageSection } from '@/components/layout/PageContainer'
-import Footer from '@/components/Footer'
+
 import Breadcrumb from '@/components/common/Breadcrumb'
 
 export default function FounderPage() {
@@ -28,12 +28,12 @@ export default function FounderPage() {
                                 {/* Content Side */}
                                 <div className="flex-1 order-2 lg:order-1">
                                     <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 leading-tight">
-                                        Me & <span className="text-[#1c144a]">Gadizone</span>
+                                        Me & <span className="text-[#1c144a]">Assad Motors</span>
                                     </h1>
 
                                     {/* Intro Quote - Model Page Style */}
                                     <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6">
-                                        Gadizone exists because I saw a clear gap between how cars are sold online and how people actually make decisions.
+                                        Assad Motors exists because I saw a clear gap between how cars are sold online and how people actually make decisions.
                                     </p>
 
                                     {/* Key Stats - Matching Model Page Spec Pills */}
@@ -104,7 +104,7 @@ export default function FounderPage() {
                                 I come from a builder's mindset — <span className="font-semibold text-gray-800">product-first, user-first, and system-driven</span>. While working hands-on across product thinking, full-stack development, data structuring, and UX, I repeatedly noticed the same issue in the automotive space: users aren't confused because they lack information, they're confused because information is <span className="font-semibold text-gray-800">poorly organised, biased, and overwhelming</span>.
                             </p>
                             <p className="text-[#1c144a] font-bold text-lg mt-4">
-                                I built Gadizone to solve that.
+                                I built Assad Motors to solve that.
                             </p>
                         </div>
                     </PageSection>
@@ -118,7 +118,7 @@ export default function FounderPage() {
                                     <h3 className="text-lg font-bold text-gray-900">A Decision Platform</h3>
                                 </div>
                                 <p className="text-gray-600 text-sm leading-relaxed">
-                                    Instead of creating another car listing or content-heavy website, I designed Gadizone as a <span className="font-semibold text-gray-800">decision platform</span> — one that helps users think clearly, compare logically, and arrive at confident choices without sales pressure or manipulation.
+                                    Instead of creating another car listing or content-heavy website, I designed Assad Motors as a <span className="font-semibold text-gray-800">decision platform</span> — one that helps users think clearly, compare logically, and arrive at confident choices without sales pressure or manipulation.
                                 </p>
                             </div>
                             <div className="bg-white rounded-2xl shadow-lg shadow-gray-100/50 border border-gray-100 p-6">
@@ -127,7 +127,7 @@ export default function FounderPage() {
                                     <h3 className="text-lg font-bold text-gray-900">Built from Ground Up</h3>
                                 </div>
                                 <p className="text-gray-600 text-sm leading-relaxed">
-                                    I built Gadizone independently. From ideation to execution, every part of the platform reflects direct involvement: <span className="font-semibold text-gray-800">information architecture, comparison logic, user journeys, performance, and scalability</span>.
+                                    I built Assad Motors independently. From ideation to execution, every part of the platform reflects direct involvement: <span className="font-semibold text-gray-800">information architecture, comparison logic, user journeys, performance, and scalability</span>.
                                 </p>
                             </div>
                         </div>
@@ -156,19 +156,19 @@ export default function FounderPage() {
                                 <h3 className="text-xl font-bold text-gray-900">Bridging Disciplines</h3>
                             </div>
                             <p className="text-gray-600 leading-relaxed text-base">
-                                My background allows me to bridge multiple disciplines: I <span className="font-semibold text-gray-800">think like a product manager</span>, <span className="font-semibold text-gray-800">build like an engineer</span>, and <span className="font-semibold text-gray-800">evaluate like a user</span>. This combination shaped Gadizone into a system where data, content, and experience work together instead of competing for attention.
+                                My background allows me to bridge multiple disciplines: I <span className="font-semibold text-gray-800">think like a product manager</span>, <span className="font-semibold text-gray-800">build like an engineer</span>, and <span className="font-semibold text-gray-800">evaluate like a user</span>. This combination shaped Assad Motors into a system where data, content, and experience work together instead of competing for attention.
                             </p>
                         </div>
                     </PageSection>
 
-                    {/* Section 5: What Gadizone Solves - Dark Highlight Card */}
+                    {/* Section 5: What Assad Motors Solves - Dark Highlight Card */}
                     <PageSection spacing="tight" className="pb-10">
                         <div className="bg-gray-900 rounded-2xl p-6 md:p-8 relative overflow-hidden">
                             <div className="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-[#291e6a] rounded-full opacity-10 blur-3xl"></div>
                             <div className="relative z-10">
                                 <div className="flex items-center gap-3 mb-4">
                                     <Sparkles className="w-6 h-6 text-[#291e6a]" />
-                                    <h3 className="text-lg font-bold text-[#291e6a] uppercase tracking-wider">What Gadizone Solves</h3>
+                                    <h3 className="text-lg font-bold text-[#291e6a] uppercase tracking-wider">What Assad Motors Solves</h3>
                                 </div>
                                 <p className="text-xl md:text-2xl font-semibold text-white leading-relaxed mb-4">
                                     Decision paralysis.
@@ -190,7 +190,7 @@ export default function FounderPage() {
                                 <h3 className="text-xl font-bold text-gray-900">The Long-Term Vision</h3>
                             </div>
                             <p className="text-gray-600 leading-relaxed text-base">
-                                Gadizone reflects how I build products: <span className="font-semibold text-gray-800">quietly, intentionally, and with long-term vision</span>. It is designed as a foundation — not just for car discovery today, but for future AI-assisted consultation and intelligent decision systems that scale responsibly.
+                                Assad Motors reflects how I build products: <span className="font-semibold text-gray-800">quietly, intentionally, and with long-term vision</span>. It is designed as a foundation — not just for car discovery today, but for future AI-assisted consultation and intelligent decision systems that scale responsibly.
                             </p>
                         </div>
                     </PageSection>
@@ -199,7 +199,7 @@ export default function FounderPage() {
                     <PageSection spacing="tight" className="pb-16">
                         <div className="bg-gradient-to-br from-[#f0eef5] to-[#e8e6f0]/50 rounded-2xl p-6 md:p-8 border border-[#e8e6f0]">
                             <p className="text-lg md:text-xl font-semibold text-gray-900 leading-relaxed mb-3">
-                                For me, Gadizone is not just a project.
+                                For me, Assad Motors is not just a project.
                             </p>
                             <p className="text-gray-700 leading-relaxed">
                                 It is proof of how thoughtful product design, grounded execution, and user-centric thinking can fix real problems — and a starting point for building <span className="font-semibold text-gray-900">clarity-first digital platforms at scale</span>.
@@ -208,7 +208,7 @@ export default function FounderPage() {
                                 <div className="h-12 w-12 rounded-full bg-[#1c144a] flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-[#1c144a]/30">HK</div>
                                 <div>
                                     <div className="font-bold text-gray-900">Haji Karim</div>
-                                    <div className="text-[#1c144a] text-sm font-medium">Founder, Gadizone</div>
+                                    <div className="text-[#1c144a] text-sm font-medium">Founder, Assad Motors</div>
                                 </div>
                             </div>
                         </div>
@@ -216,7 +216,7 @@ export default function FounderPage() {
                 </PageContainer>
             </div>
             <Breadcrumb items={[{ label: 'Founder' }]} />
-            <Footer />
+            
         </>
     )
 }

@@ -23,13 +23,13 @@ export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps)
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://www.gadizone.com"
+        "item": "https://www.assadmotors.com"
       },
       ...items.map((item, index) => ({
         "@type": "ListItem",
         "position": index + 2,
         "name": item.label,
-        ...(item.href && { "item": `https://www.gadizone.com${item.href}` })
+        ...(item.href && { "item": `https://www.assadmotors.com${item.href}` })
       }))
     ]
   }

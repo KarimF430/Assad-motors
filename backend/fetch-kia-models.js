@@ -6,7 +6,7 @@ const Model = mongoose.model('Model', modelSchema);
 
 async function fetchKiaModels() {
     try {
-        const mongoUri = process.env.MONGODB_URI || "mongodb://localhost:27017/gadizone";
+        const mongoUri = process.env.MONGODB_URI || "mongodb://localhost:27017/assadmotors";
         await mongoose.connect(mongoUri);
         console.log('Connected to MongoDB\n');
 

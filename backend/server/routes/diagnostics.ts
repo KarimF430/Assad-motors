@@ -13,9 +13,9 @@ const redis = getRedisClient();
  */
 router.get('/', async (req, res) => {
     const isProd = process.env.NODE_ENV === 'production' || !!process.env.RENDER;
-    const isGadizoneDomain = isProd && (
-        process.env.FRONTEND_URL?.includes('gadizone.com') ||
-        process.env.BACKEND_URL?.includes('gadizone.com')
+    const isAssad MotorsDomain = isProd && (
+        process.env.FRONTEND_URL?.includes('assadmotors.com') ||
+        process.env.BACKEND_URL?.includes('assadmotors.com')
     );
 
     // Check Redis Cache Connection
@@ -46,8 +46,8 @@ router.get('/', async (req, res) => {
         domainConfig: {
             FRONTEND_URL: process.env.FRONTEND_URL || '(not set)',
             BACKEND_URL: process.env.BACKEND_URL || '(not set)',
-            isGadizoneDomain,
-            expectedCookieDomain: isGadizoneDomain ? '.gadizone.com' : '(not set - defaults to host)',
+            isAssad MotorsDomain,
+            expectedCookieDomain: isAssad MotorsDomain ? '.assadmotors.com' : '(not set - defaults to host)',
         },
 
         redis: {

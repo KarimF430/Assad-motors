@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import PageSection from '@/components/common/PageSection'
-import Footer from '@/components/Footer'
+
 import Ad3DCarousel from '@/components/ads/Ad3DCarousel'
 import BudgetCarsClient from './BudgetCarsClient'
 
@@ -93,7 +93,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const budgetInfo = budgetRanges[budget] || budgetRanges['under-8']
 
     return {
-        title: `${budgetInfo.title} in India - Prices, Specs & Reviews | gadizone`,
+        title: `${budgetInfo.title} in India - Prices, Specs & Reviews | assadmotors`,
         description: `Find the best cars ${budgetInfo.label.toLowerCase()} in India. Compare prices, specifications, features, and expert reviews.`,
         keywords: `cars ${budgetInfo.label.toLowerCase()}, budget cars, best cars under ${budgetInfo.lakhValue}, car prices India`,
         openGraph: {
@@ -127,7 +127,7 @@ async function getBudgetCarsData(budgetSlug: string) {
         // Fetch budget cars using optimized endpoint
         const [budgetRes, modelsRes, brandsRes] = await Promise.all([
             fetch(`${backendUrl}/api/cars-by-budget/${budgetSlug}?page=1&limit=100`, { next: { revalidate: 3600 } }),
-            fetch(`${backendUrl}/api/models-with-pricing?limit=20`, { next: { revalidate: 3600 } }),
+            fetch(`${backendUrl}/api/models-with-pricing?limit=200`, { next: { revalidate: 3600 } }),
             fetch(`${backendUrl}/api/brands`, { next: { revalidate: 3600 } })
         ])
 
@@ -190,10 +190,10 @@ async function getBudgetCarsData(budgetSlug: string) {
         const topCarName = cars.length > 0 ? `${cars[0].brandName} ${cars[0].name}` : null
         const dynamicDescription = generateDynamicDescription(cars, lakhValue, topCarName)
 
-        return { cars, popularCars, newLaunchedCars, dynamicDescription }
+        return { cars, popularCars, newLaunchedCars, dynamicDescription, allCars: processedCars }
     } catch (error) {
         console.error('Error fetching budget cars data:', error)
-        return { cars: [], popularCars: [], newLaunchedCars: [], dynamicDescription: '' }
+        return { cars: [], popularCars: [], newLaunchedCars: [], dynamicDescription: '', allCars: [] }
     }
 }
 
@@ -205,7 +205,7 @@ export default async function BudgetCarsPage({ params }: PageProps) {
         notFound()
     }
 
-    const { cars, popularCars, newLaunchedCars, dynamicDescription } = await getBudgetCarsData(budgetSlug)
+    const { cars, popularCars, newLaunchedCars, dynamicDescription, allCars } = await getBudgetCarsData(budgetSlug)
 
     return (
         <div className="min-h-screen bg-gray-50">
@@ -230,6 +230,8 @@ export default async function BudgetCarsPage({ params }: PageProps) {
                         newLaunchedCars={newLaunchedCars}
                         budgetLabel={budgetInfo.title}
                         budgetDescription={dynamicDescription || ''}
+                        allCars={allCars}
+                        budgetSlug={budgetSlug}
                     />
                 </PageSection>
 
@@ -238,7 +240,7 @@ export default async function BudgetCarsPage({ params }: PageProps) {
                 </div>
             </main>
 
-            <Footer />
+            
         </div>
     )
 }

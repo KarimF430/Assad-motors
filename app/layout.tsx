@@ -23,12 +23,12 @@ export const viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.gadizone.com'),
+  metadataBase: new URL('https://www.assadmotors.com'),
   title: {
     default: 'Assad Motors: New Cars, Used Cars, Buy a Car, Compare Prices in India 2025',
     template: '%s | Assad Motors'
   },
-  description: 'gadizone is India\'s #1 car research platform. Compare new car prices 2025, check on-road price, read expert reviews, find used cars, calculate EMI & get best deals. Trusted by 50,000+ car buyers.',
+  description: 'assadmotors is India\'s #1 car research platform. Compare new car prices 2025, check on-road price, read expert reviews, find used cars, calculate EMI & get best deals. Trusted by 50,000+ car buyers.',
   keywords: [
     // Primary High-Intent Keywords
     'new cars India 2025',
@@ -95,7 +95,7 @@ export const metadata: Metadata = {
     url: 'https://www.assadmotors.com',
     siteName: 'Assad Motors',
     title: 'Assad Motors: New Cars, Used Cars, Buy a Car, Compare Prices in India',
-    description: 'gadizone is India\'s #1 car research platform. Compare prices, read reviews, find dealers & get best on-road price quotes.',
+    description: 'assadmotors is India\'s #1 car research platform. Compare prices, read reviews, find dealers & get best on-road price quotes.',
     images: [
       {
         url: 'https://www.assadmotors.com/logo.png',

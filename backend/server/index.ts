@@ -125,9 +125,9 @@ app.use('/api', botDetector);
 
 // SECURE CORS configuration - MUST come before security middleware
 const allowedOrigins = [
-  'https://gadizone.com',
-  'https://www.gadizone.com',
-  'https://admin.gadizone.com',
+  'https://assadmotors.com',
+  'https://www.assadmotors.com',
+  'https://admin.assadmotors.com',
   'https://killer-whale101.vercel.app',
   'https://killer-whale.onrender.com',
   'http://localhost:3000',
@@ -324,18 +324,18 @@ app.post('/api/monitoring/vitals', (req, res) => {
       throw new Error('🚨 SECURITY CRITICAL: SESSION_SECRET must be set in production environment variables.');
     }
 
-    // Determine if we're using gadizone.com domain
-    const isGadizoneDomain = isProd && (
-      process.env.FRONTEND_URL?.includes('gadizone.com') ||
-      process.env.BACKEND_URL?.includes('gadizone.com')
+    // Determine if we're using assadmotors.com domain
+    const isAssad MotorsDomain = isProd && (
+      process.env.FRONTEND_URL?.includes('assadmotors.com') ||
+      process.env.BACKEND_URL?.includes('assadmotors.com')
     );
 
     console.log('🔧 Session Cookie Configuration:');
     console.log(`   - isProd: ${isProd}`);
-    console.log(`   - isGadizoneDomain: ${isGadizoneDomain}`);
+    console.log(`   - isAssad MotorsDomain: ${isAssad MotorsDomain}`);
 
     const sessionConfig: any = {
-      secret: sessionSecret || "gadizone_secret_key_2024",
+      secret: sessionSecret || "assadmotors_secret_key_2024",
       resave: false,
       saveUninitialized: false,
       cookie: {
@@ -343,7 +343,7 @@ app.post('/api/monitoring/vitals', (req, res) => {
         httpOnly: true,
         maxAge: 30 * 24 * 60 * 60 * 1000,
         sameSite: isProd ? 'none' : 'lax',
-        domain: isGadizoneDomain ? '.gadizone.com' : undefined,
+        domain: isAssad MotorsDomain ? '.assadmotors.com' : undefined,
         path: '/',
       },
       name: 'sid',
@@ -392,7 +392,7 @@ app.post('/api/monitoring/vitals', (req, res) => {
 
     // Initialize MongoDB storage
     const storage = new MongoDBStorage();
-    const mongoUri = process.env.MONGODB_URI || "mongodb://localhost:27017/gadizone";
+    const mongoUri = process.env.MONGODB_URI || "mongodb://localhost:27017/assadmotors";
 
     try {
       await storage.connect(mongoUri);

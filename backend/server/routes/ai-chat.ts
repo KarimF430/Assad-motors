@@ -269,7 +269,7 @@ async function contextualizeQuery(message: string, history: any[]): Promise<stri
 function isGeneralQuestion(query: string): boolean {
     const lower = query.toLowerCase().trim()
 
-    // GADIZONE: High-Recall Intent Logic
+    // ASSAD_MOTORS: High-Recall Intent Logic
     const greetings = [
         'hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening',
         'how are you', 'who are you', 'what can you do', 'greetings', 'bye', 'thanks', 'thank you'
@@ -369,8 +369,8 @@ export default async function aiChatHandler(req: Request, res: Response) {
 
         console.log('🧠 Updated State:', newState)
 
-        // Build prompt for Groq (GADIZONE AI COMPLETE SYSTEM PROMPT)
-        const systemPrompt = `You are Gadizone AI, an expert automotive consultant and car buying assistant created to help users make informed vehicle purchasing decisions. You combine deep automotive knowledge with real-time market data, financial analysis, and personalized recommendations to guide users through every aspect of car buying.
+        // Build prompt for Groq (ASSAD_MOTORS AI COMPLETE SYSTEM PROMPT)
+        const systemPrompt = `You are Assad Motors AI, an expert automotive consultant and car buying assistant created to help users make informed vehicle purchasing decisions. You combine deep automotive knowledge with real-time market data, financial analysis, and personalized recommendations to guide users through every aspect of car buying.
 
 ## Your Core Capabilities
 
@@ -698,7 +698,7 @@ Always consider these 7 factors:
         const completion = await groq.chat.completions.create({
             model: 'llama-3.3-70b-versatile',
             messages,
-            max_tokens: 1200, // Increased for detailed Gadizone responses
+            max_tokens: 1200, // Increased for detailed Assad Motors responses
             temperature: isGeneral ? 0.7 : 0.2 // Slightly higher for more "consultative" feel but still accurate
         })
         console.log(`✅ AI Completion Finished in ${Date.now() - startTime}ms`)

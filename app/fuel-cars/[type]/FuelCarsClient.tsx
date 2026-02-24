@@ -4,16 +4,16 @@ import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { ChevronDown } from 'lucide-react'
 import { BrandCarCard, Car } from '@/components/common/BrandCarCard'
-import TopCarsByBodyType from '@/components/home/TopCarsByBodyType'
+import ExploreFuelCars from '@/components/home/ExploreFuelCars'
 
-interface TopCarsClientProps {
+interface FuelCarsClientProps {
     initialCars: Car[]
     popularCars: Car[]
     newLaunchedCars: Car[]
-    bodyTypeLabel: string
-    bodyTypeDescription: string
+    fuelLabel: string
+    fuelDescription: string
     allCars: any[]
-    bodyTypeSlug: string
+    fuelSlug: string
 }
 
 // Custom Dropdown Component for Filters
@@ -85,17 +85,18 @@ function FilterDropdown({
     );
 }
 
-export default function TopCarsClient({
+
+
+export default function FuelCarsClient({
     initialCars,
     popularCars,
     newLaunchedCars,
-    bodyTypeLabel,
-    bodyTypeDescription,
+    fuelLabel,
+    fuelDescription,
     allCars,
-    bodyTypeSlug
-}: TopCarsClientProps) {
-    // Intelligent filters specifically for Body Type - explicitly omitted Body Type Filter Pill
-    const [selectedFuel, setSelectedFuel] = useState<string[]>([])
+    fuelSlug
+}: FuelCarsClientProps) {
+    // Intelligent filters specifically for Fuel Type - explicitly omitted Fuel Filter Pill
     const [selectedTransmission, setSelectedTransmission] = useState<string[]>([])
     const [selectedPriceRange, setSelectedPriceRange] = useState<string>('')
     const [selectedYear, setSelectedYear] = useState<string>('')
@@ -103,7 +104,6 @@ export default function TopCarsClient({
     const [selectedOwner, setSelectedOwner] = useState<string>('')
     const [isExpanded, setIsExpanded] = useState(false)
 
-    const fuelFilters = ['Petrol', 'Diesel', 'CNG', 'Electric', 'Hybrid']
     const transmissionFilters = ['Manual', 'Automatic']
     const priceRangeOptions = [
         'Under 3 Lakhs',
@@ -130,15 +130,19 @@ export default function TopCarsClient({
         window.scrollTo(0, 0)
     }, [])
 
+    // Parse description
+    let shortText = fuelDescription
+    let extendedText = ''
+    try {
+        const parsed = JSON.parse(fuelDescription)
+        shortText = parsed.short || fuelDescription
+        extendedText = parsed.extended || ''
+    } catch {
+        // Plain text fallback
+    }
+
     // Apply filters
     const filteredCars = initialCars.filter(car => {
-        if (selectedFuel.length > 0) {
-            const hasFuel = selectedFuel.some(fuel =>
-                car.fuelTypes.some(f => f.toLowerCase() === fuel.toLowerCase())
-            )
-            if (!hasFuel) return false
-        }
-
         if (selectedTransmission.length > 0) {
             const hasTransmission = selectedTransmission.some(trans =>
                 car.transmissions.some(t => t.toLowerCase().includes(trans.toLowerCase()))
@@ -170,44 +174,40 @@ export default function TopCarsClient({
         return true
     })
 
-    const toggleFilter = (type: 'fuel' | 'transmission', value: string) => {
-        if (type === 'fuel') {
-            setSelectedFuel(prev =>
-                prev.includes(value) ? prev.filter(f => f !== value) : [...prev, value]
-            )
-        } else {
-            setSelectedTransmission(prev =>
-                prev.includes(value) ? prev.filter(t => t !== value) : [...prev, value]
-            )
-        }
+    const toggleFilter = (type: 'transmission', value: string) => {
+        setSelectedTransmission(prev =>
+            prev.includes(value) ? prev.filter(t => t !== value) : [...prev, value]
+        )
     }
 
     return (
         <>
             <div className="mb-6">
                 <h1 className="text-3xl font-bold text-gray-900 mb-2">
-                    Best {bodyTypeLabel} Cars in India
+                    {fuelLabel.includes('Cars') ? fuelLabel : `${fuelLabel} Cars`} in India {new Date().getFullYear()}
                 </h1>
-                <p className="text-gray-600 mb-6 line-clamp-2">
-                    {bodyTypeDescription}
-                </p>
+                <div className="text-gray-600 mb-6">
+                    <p className={isExpanded ? 'mb-4' : 'line-clamp-2'}>{shortText}</p>
+                    {isExpanded && (
+                        <div
+                            className="mt-4 animate-fadeIn"
+                            dangerouslySetInnerHTML={{ __html: extendedText }}
+                        />
+                    )}
+                    {extendedText && (
+                        <button
+                            onClick={() => setIsExpanded(!isExpanded)}
+                            className="text-red-600 font-medium hover:text-red-700 transition-colors mt-2"
+                        >
+                            {isExpanded ? '...show less' : '...read more'}
+                        </button>
+                    )}
+                </div>
             </div>
 
-            {/* Smart Filters Section (Body Type Filter omitted as it's redundant) */}
+            {/* Smart Filters Section (Fuel Filters omitted intentionally) */}
             <section className="bg-white pb-6 pt-2">
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3 pb-3 border-b border-gray-200">
-                    {fuelFilters.map(fuel => (
-                        <button
-                            key={fuel}
-                            onClick={() => toggleFilter('fuel', fuel)}
-                            className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${selectedFuel.includes(fuel)
-                                ? 'bg-[#291e6a] text-white'
-                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                                }`}
-                        >
-                            {fuel}
-                        </button>
-                    ))}
                     {transmissionFilters.map(trans => (
                         <button
                             key={trans}
@@ -276,11 +276,6 @@ export default function TopCarsClient({
                     ))}
                 </div>
             )}
-
-            {/* Explore Other Body Types */}
-            <section className="mt-12 pt-8 border-t border-gray-100">
-                <TopCarsByBodyType initialCars={allCars as any} excludeBodyType={bodyTypeSlug} />
-            </section>
         </>
     )
 }

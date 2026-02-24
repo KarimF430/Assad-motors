@@ -73,7 +73,7 @@ export default function Login() {
             </div>
           </div>
           <CardTitle className="text-3xl font-bold bg-[#291e6a] bg-clip-text text-transparent">
-            gadizone Admin
+            assadmotors Admin
           </CardTitle>
           <CardDescription className="text-base">
             Sign in to access the admin panel
@@ -95,7 +95,7 @@ export default function Login() {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="admin@gadizone.com"
+                  placeholder="admin@assadmotors.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="pl-10"

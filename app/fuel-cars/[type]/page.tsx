@@ -2,9 +2,9 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
 import PageSection from '@/components/common/PageSection'
-import Footer from '@/components/Footer'
+
 import Ad3DCarousel from '@/components/ads/Ad3DCarousel'
-import BudgetCarsClient from '@/app/cars-by-budget/[budget]/BudgetCarsClient'
+import FuelCarsClient from './FuelCarsClient'
 import Breadcrumb from '@/components/common/Breadcrumb'
 
 export const revalidate = 3600
@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const year = new Date().getFullYear()
 
     return {
-        title: `Best ${fuelLabel} Cars in India ${year} - Price, Mileage & Reviews | gadizone`,
+        title: `Best ${fuelLabel} Cars in India ${year} - Price, Mileage & Reviews | assadmotors`,
         description: `Find the best ${fuelLabel} cars in India. Compare prices, mileage, specs and reviews of top ${fuelLabel} models from Maruti, Tata, Hyundai & more.`,
         keywords: `${fuelLabel} cars, best ${fuelLabel} cars India, ${fuelLabel} car price, ${fuelLabel} mileage cars`,
         openGraph: {
@@ -121,13 +121,8 @@ async function getFuelCarsData(type: string) {
             return acc
         }, {})
 
-        const processedCars = models
-            .filter((model: any) => {
-                if (!activeBrandIds.has(model.brandId)) return false;
-                // Filter by Fuel Type
-                const fuels = model.fuelTypes || []
-                return fuels.some((f: string) => f.toLowerCase() === fuelLabel.toLowerCase())
-            })
+        const allCars = models
+            .filter((model: any) => activeBrandIds.has(model.brandId))
             .map((model: any) => ({
                 id: model.id,
                 name: model.name,
@@ -148,6 +143,11 @@ async function getFuelCarsData(type: string) {
                 variants: model.variantCount || 0
             }))
 
+        const processedCars = allCars.filter((car: any) => {
+            const fuels = car.fuelTypes || []
+            return fuels.some((f: string) => f.toLowerCase() === fuelLabel.toLowerCase())
+        })
+
         const cars = processedCars.sort((a: any, b: any) => (a.startingPrice || 0) - (b.startingPrice || 0))
         const popularCars = cars.filter((c: any) => c.isPopular).slice(0, 10)
         const newLaunchedCars = cars.filter((c: any) => c.isNew).slice(0, 10)
@@ -155,17 +155,17 @@ async function getFuelCarsData(type: string) {
         const topCarName = cars.length > 0 ? `${cars[0].brandName} ${cars[0].name}` : null
         const dynamicDescription = generateDynamicDescription(cars, type, topCarName)
 
-        return { cars, popularCars, newLaunchedCars, dynamicDescription }
+        return { cars, popularCars, newLaunchedCars, dynamicDescription, allCars }
     } catch (error) {
         console.error('Error fetching fuel cars data:', error)
-        return { cars: [], popularCars: [], newLaunchedCars: [], dynamicDescription: '' }
+        return { cars: [], popularCars: [], newLaunchedCars: [], dynamicDescription: '', allCars: [] }
     }
 }
 
 export default async function FuelTypePage({ params }: Props) {
     const { type } = await params
     const fuelLabel = fuelTypeMap[type] || type.charAt(0).toUpperCase() + type.slice(1)
-    const { cars, popularCars, newLaunchedCars, dynamicDescription } = await getFuelCarsData(type)
+    const { cars, popularCars, newLaunchedCars, dynamicDescription, allCars } = await getFuelCarsData(type)
 
     return (
         <div className="min-h-screen bg-gray-50">
@@ -178,12 +178,14 @@ export default async function FuelTypePage({ params }: Props) {
                         <ChevronLeft className="w-5 h-5 mr-1" />
                         Back to Home
                     </Link>
-                    <BudgetCarsClient
+                    <FuelCarsClient
                         initialCars={cars}
                         popularCars={popularCars}
                         newLaunchedCars={newLaunchedCars}
-                        budgetLabel={`${fuelLabel} Cars`}
-                        budgetDescription={dynamicDescription || ''}
+                        fuelLabel={`${fuelLabel} Cars`}
+                        fuelDescription={dynamicDescription || ''}
+                        allCars={allCars}
+                        fuelSlug={type}
                     />
                 </PageSection>
 
@@ -194,7 +196,7 @@ export default async function FuelTypePage({ params }: Props) {
                 </div>
             </main>
             <Breadcrumb items={[{ label: `${fuelLabel} Cars` }]} />
-            <Footer />
+            
         </div>
     )
 }

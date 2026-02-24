@@ -1169,7 +1169,7 @@ export default function PriceBreakupPage({
                   <button
                     onClick={() => {
                       const shareData = {
-                        title: `${brandName} ${modelName} Price - gadizone`,
+                        title: `${brandName} ${modelName} Price - assadmotors`,
                         text: `Check out the on-road price of ${brandName} ${modelName} in ${selectedCity}`,
                         url: window.location.href
                       };

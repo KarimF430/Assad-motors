@@ -2,8 +2,8 @@ import { Metadata } from 'next'
 import PageSection from '@/components/common/PageSection'
 
 export const metadata: Metadata = {
-    title: 'About gadizone — Honest Car Research for Indian Buyers',
-    description: 'gadizone is an independent car research platform built for Indian buyers. We cover prices, specs, expert reviews, and real-world mileage for cars from Maruti Suzuki, Hyundai, Tata, and more.',
+    title: 'About assadmotors — Honest Car Research for Indian Buyers',
+    description: 'assadmotors is an independent car research platform built for Indian buyers. We cover prices, specs, expert reviews, and real-world mileage for cars from Maruti Suzuki, Hyundai, Tata, and more.',
     alternates: {
         canonical: '/about-us',
     },
@@ -16,12 +16,12 @@ export default function AboutUsPage() {
                 <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 md:p-10 my-8">
                     <div className="prose prose-gray max-w-none">
 
-                        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">About gadizone</h1>
+                        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">About assadmotors</h1>
                         <p className="text-gray-500 text-sm mb-8">India&apos;s independent car research platform</p>
 
                         {/* Origin Story */}
                         <p className="text-gray-700 leading-relaxed mb-4">
-                            Buying a car in India is one of the biggest financial decisions most families make — and yet, for years, the information available to buyers was either buried in spec sheets, padded with dealer bias, or written in language that assumed you already knew what a torque figure meant. gadizone was built to fix that.
+                            Buying a car in India is one of the biggest financial decisions most families make — and yet, for years, the information available to buyers was either buried in spec sheets, padded with dealer bias, or written in language that assumed you already knew what a torque figure meant. assadmotors was built to fix that.
                         </p>
                         <p className="text-gray-700 leading-relaxed mb-6">
                             We started with a simple question: <em>what would a genuinely helpful car research platform look like?</em> Not one that pushes you toward a particular dealer or a sponsored model, but one that gives you the same honest, complete picture that a knowledgeable friend in the automotive industry would give you. That&apos;s the standard we hold ourselves to.
@@ -30,7 +30,7 @@ export default function AboutUsPage() {
                         {/* What We Cover */}
                         <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">What We Cover</h2>
                         <p className="text-gray-700 leading-relaxed mb-4">
-                            Right now, gadizone covers cars from three of India&apos;s most popular brands — <strong>Maruti Suzuki</strong>, <strong>Hyundai</strong>, and <strong>Tata Motors</strong> — across 43 models and all their variants. We chose to go deep rather than wide. Instead of listing every car on the market with thin, copy-pasted specs, we focus on giving you genuinely useful information for each model we cover.
+                            Right now, assadmotors covers cars from three of India&apos;s most popular brands — <strong>Maruti Suzuki</strong>, <strong>Hyundai</strong>, and <strong>Tata Motors</strong> — across 43 models and all their variants. We chose to go deep rather than wide. Instead of listing every car on the market with thin, copy-pasted specs, we focus on giving you genuinely useful information for each model we cover.
                         </p>
                         <p className="text-gray-700 leading-relaxed mb-4">
                             For every model, you&apos;ll find:
@@ -47,14 +47,14 @@ export default function AboutUsPage() {
                         {/* Our Approach */}
                         <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Our Editorial Approach</h2>
                         <p className="text-gray-700 leading-relaxed mb-4">
-                            We don&apos;t accept payment for reviews or rankings. Every expert verdict on gadizone is based on publicly available specifications, manufacturer data, and our editorial team&apos;s analysis of the Indian market. If a car has a weak third row, we say so. If a variant&apos;s price premium over the base model isn&apos;t justified by its additional features, we point that out.
+                            We don&apos;t accept payment for reviews or rankings. Every expert verdict on assadmotors is based on publicly available specifications, manufacturer data, and our editorial team&apos;s analysis of the Indian market. If a car has a weak third row, we say so. If a variant&apos;s price premium over the base model isn&apos;t justified by its additional features, we point that out.
                         </p>
                         <p className="text-gray-700 leading-relaxed mb-6">
                             We also try to write for the actual Indian buyer — someone navigating monsoon roads, tight city parking, school runs, and the occasional highway trip. That context matters. A car that&apos;s excellent on European roads might have terrible ground clearance for Indian conditions. We factor that in.
                         </p>
 
                         {/* Car Expert Service */}
-                        <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">The gadizone Car Expert</h2>
+                        <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">The assadmotors Car Expert</h2>
                         <p className="text-gray-700 leading-relaxed mb-4">
                             Beyond research content, we also offer a <strong>Car Expert consultation service</strong> — a one-on-one session with an automotive expert who can help you narrow down your options based on your specific needs, budget, and priorities. This is particularly useful if you&apos;re a first-time buyer, if you&apos;re choosing between very different body types (say, an SUV vs. a sedan), or if you want someone to walk you through the on-road price calculation for your city.
                         </p>
@@ -63,7 +63,7 @@ export default function AboutUsPage() {
                         </p>
 
                         {/* Why Trust Us */}
-                        <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Why Trust gadizone?</h2>
+                        <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Why Trust assadmotors?</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                             <div className="bg-blue-50 rounded-lg p-4 border border-blue-100">
                                 <h3 className="font-semibold text-blue-900 mb-2">No Dealer Bias</h3>
@@ -84,9 +84,9 @@ export default function AboutUsPage() {
                         </div>
 
                         {/* Who We're For */}
-                        <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Who gadizone Is For</h2>
+                        <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Who assadmotors Is For</h2>
                         <p className="text-gray-700 leading-relaxed mb-4">
-                            gadizone is for anyone who wants to make a well-informed car purchase without spending weeks reading forum threads and decoding manufacturer brochures. Specifically:
+                            assadmotors is for anyone who wants to make a well-informed car purchase without spending weeks reading forum threads and decoding manufacturer brochures. Specifically:
                         </p>
                         <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
                             <li><strong>First-time buyers</strong> who need a clear, jargon-free explanation of what different body types, fuel options, and transmission choices actually mean for daily life.</li>
@@ -124,9 +124,9 @@ export default function AboutUsPage() {
                             </div>
                             <div>
                                 <h3 className="font-semibold text-gray-900 text-base mb-0.5">Karim Beldaar</h3>
-                                <p className="text-sm text-[#1c144a] mb-2">Founder, gadizone · Mumbai, India</p>
+                                <p className="text-sm text-[#1c144a] mb-2">Founder, assadmotors · Mumbai, India</p>
                                 <p className="text-gray-700 text-sm leading-relaxed">
-                                    Karim built gadizone after spending months trying to find honest, India-specific car research online and coming up short.
+                                    Karim built assadmotors after spending months trying to find honest, India-specific car research online and coming up short.
                                     With a background in software engineering and a genuine interest in the Indian automotive market, he set out to create
                                     the kind of platform he wished had existed when he was buying his first car — one that explains things clearly,
                                     prices things accurately, and never pushes a particular brand or dealer.
@@ -143,7 +143,7 @@ export default function AboutUsPage() {
 
                         <div className="mt-8 pt-6 border-t border-gray-200">
                             <p className="text-gray-500 text-sm">
-                                gadizone is an independent automotive research platform based in India. We are not affiliated with any car manufacturer or dealership network.
+                                assadmotors is an independent automotive research platform based in India. We are not affiliated with any car manufacturer or dealership network.
                             </p>
                         </div>
 

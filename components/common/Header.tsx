@@ -12,17 +12,17 @@ export default function Header() {
     <header className="bg-white border-b border-gray-200 sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Left side - gadizone Logo */}
+          {/* Left side - assadmotors Logo */}
           <div className="flex items-center gap-1.5">
             <Image
               src="/logo.png?v=2"
-              alt="Gadizone Logo"
+              alt="Assad Motors Logo"
               width={32}
               height={32}
               sizes="32px"
               className="object-contain"
             />
-            <span className="text-2xl font-bold" style={{ color: '#FF6B35' }}>gadizone</span>
+            <span className="text-2xl font-bold" style={{ color: '#FF6B35' }}>assadmotors</span>
           </div>
 
           {/* Right side - Search, Location, Menu */}

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
 export const metadata: Metadata = {
-    title: 'Google Terms of Service | gadizone',
+    title: 'Google Terms of Service | assadmotors',
     description: 'Redirecting to Google Terms of Service',
 }
 

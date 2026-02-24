@@ -158,7 +158,7 @@ export default function FuelCalculatorPage() {
                             <h2 className="text-2xl font-bold text-gray-900 mb-4">Complete Guide to Fuel Cost Calculation</h2>
                             <p className="text-gray-700 leading-relaxed mb-4">
                                 Planning a road trip or budgeting for your daily commute? Understanding your fuel expenses is crucial for managing your monthly budget.
-                                The gadizone Fuel Cost Calculator is a simple yet powerful tool designed to help you estimate exactly how much you'll spend on fuel for any given trip.
+                                The assadmotors Fuel Cost Calculator is a simple yet powerful tool designed to help you estimate exactly how much you'll spend on fuel for any given trip.
                                 Whether you drive a petrol, diesel, or CNG vehicle, our calculator uses the latest fuel prices to provide accurate estimates.
                             </p>
                             <p className="text-gray-700 leading-relaxed">

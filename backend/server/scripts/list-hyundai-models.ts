@@ -11,7 +11,7 @@ const backendEnv = path.resolve(__dirname, '../../.env');
 dotenv.config({ path: backendEnv });
 
 async function listHyundaiModels() {
-    const mongoUri = process.env.MONGODB_URI || "mongodb://localhost:27017/gadizone";
+    const mongoUri = process.env.MONGODB_URI || "mongodb://localhost:27017/assadmotors";
     await mongoose.connect(mongoUri);
 
     try {

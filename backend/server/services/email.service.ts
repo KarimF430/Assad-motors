@@ -56,7 +56,7 @@ try {
 // Email templates with branded design
 export const emailTemplates = {
   verification: (name: string, verificationUrl: string) => ({
-    subject: '🚗 Verify Your gadizone Account',
+    subject: '🚗 Verify Your assadmotors Account',
     html: `
       <!DOCTYPE html>
       <html>
@@ -72,7 +72,7 @@ export const emailTemplates = {
                 <!-- Header -->
                 <tr>
                   <td style="background: linear-gradient(135deg, #dc2626 0%, #ea580c 100%); padding: 40px; text-align: center;">
-                    <h1 style="color: white; margin: 0; font-size: 28px; font-weight: bold;">Welcome to gadizone!</h1>
+                    <h1 style="color: white; margin: 0; font-size: 28px; font-weight: bold;">Welcome to assadmotors!</h1>
                   </td>
                 </tr>
                 <!-- Body -->
@@ -99,7 +99,7 @@ export const emailTemplates = {
                       <strong>Note:</strong> This verification link will expire in 24 hours.
                     </p>
                     <p style="color: #6b7280; font-size: 14px; line-height: 1.5; margin: 16px 0 0 0;">
-                      If you didn't create an account with gadizone, you can safely ignore this email.
+                      If you didn't create an account with assadmotors, you can safely ignore this email.
                     </p>
                   </td>
                 </tr>
@@ -107,7 +107,7 @@ export const emailTemplates = {
                 <tr>
                   <td style="background: #f9fafb; padding: 24px 30px; border-top: 1px solid #e5e7eb;">
                     <p style="color: #6b7280; font-size: 12px; line-height: 1.5; margin: 0; text-align: center;">
-                      © ${new Date().getFullYear()} gadizone. All rights reserved.<br>
+                      © ${new Date().getFullYear()} assadmotors. All rights reserved.<br>
                       Your trusted source for car comparisons and insights.
                     </p>
                   </td>
@@ -122,7 +122,7 @@ export const emailTemplates = {
   }),
 
   welcome: (name: string) => ({
-    subject: '🎉 Welcome to gadizone - Your Account is Active!',
+    subject: '🎉 Welcome to assadmotors - Your Account is Active!',
     html: `
       <!DOCTYPE html>
       <html>
@@ -174,7 +174,7 @@ export const emailTemplates = {
                   <td style="background: #f9fafb; padding: 24px 30px; border-top: 1px solid #e5e7eb;">
                     <p style="color: #6b7280; font-size: 12px; line-height: 1.5; margin: 0; text-align: center;">
                       Happy car hunting!<br>
-                      The gadizone Team
+                      The assadmotors Team
                     </p>
                   </td>
                 </tr>
@@ -188,7 +188,7 @@ export const emailTemplates = {
   }),
 
   passwordReset: (name: string, resetUrl: string) => ({
-    subject: '🔐 Reset Your gadizone Password',
+    subject: '🔐 Reset Your assadmotors Password',
     html: `
       <!DOCTYPE html>
       <html>
@@ -236,7 +236,7 @@ export const emailTemplates = {
                 <tr>
                   <td style="background: #f9fafb; padding: 24px 30px; border-top: 1px solid #e5e7eb;">
                     <p style="color: #6b7280; font-size: 12px; line-height: 1.5; margin: 0; text-align: center;">
-                      © ${new Date().getFullYear()} gadizone. All rights reserved.
+                      © ${new Date().getFullYear()} assadmotors. All rights reserved.
                     </p>
                   </td>
                 </tr>
@@ -250,7 +250,7 @@ export const emailTemplates = {
   }),
 
   otpLogin: (name: string, otp: string) => ({
-    subject: '🔐 Your gadizone Login Code',
+    subject: '🔐 Your assadmotors Login Code',
     html: `
       <!DOCTYPE html>
       <html>
@@ -272,7 +272,7 @@ export const emailTemplates = {
                   <td style="padding: 40px 30px; text-align: center;">
                     <h2 style="color: #111827; margin: 0 0 20px 0; font-size: 24px;">Hi${name ? ` ${name}` : ''},</h2>
                     <p style="color: #4b5563; font-size: 16px; line-height: 1.6; margin: 0 0 32px 0;">
-                      Use the following code to log in to your gadizone account:
+                      Use the following code to log in to your assadmotors account:
                     </p>
                     <!-- OTP Code Display -->
                     <div style="background: #f9fafb; border: 2px dashed #dc2626; border-radius: 12px; padding: 24px; margin: 0 auto 32px auto; max-width: 280px;">
@@ -285,14 +285,14 @@ export const emailTemplates = {
                       </p>
                     </div>
                     <p style="color: #6b7280; font-size: 14px; line-height: 1.5; margin: 0;">
-                      Never share this code with anyone. gadizone will never ask for your code.
+                      Never share this code with anyone. assadmotors will never ask for your code.
                     </p>
                   </td>
                 </tr>
                 <tr>
                   <td style="background: #f9fafb; padding: 24px 30px; border-top: 1px solid #e5e7eb;">
                     <p style="color: #6b7280; font-size: 12px; line-height: 1.5; margin: 0; text-align: center;">
-                      © ${new Date().getFullYear()} gadizone. All rights reserved.
+                      © ${new Date().getFullYear()} assadmotors. All rights reserved.
                     </p>
                   </td>
                 </tr>
@@ -306,7 +306,7 @@ export const emailTemplates = {
   }),
 
   welcomeLogin: (name: string) => ({
-    subject: `👋 Welcome back to gadizone, ${name}!`,
+    subject: `👋 Welcome back to assadmotors, ${name}!`,
     html: `
       <!DOCTYPE html>
       <html>
@@ -328,7 +328,7 @@ export const emailTemplates = {
                   <td style="padding: 40px 30px;">
                     <h2 style="color: #111827; margin: 0 0 20px 0; font-size: 24px;">Hi ${name},</h2>
                     <p style="color: #4b5563; font-size: 16px; line-height: 1.6; margin: 0 0 24px 0;">
-                      You've successfully logged in to your gadizone account. 🎉
+                      You've successfully logged in to your assadmotors account. 🎉
                     </p>
                     <p style="color: #111827; font-size: 18px; font-weight: bold; margin: 0 0 16px 0;">
                       What would you like to explore today?
@@ -357,7 +357,7 @@ export const emailTemplates = {
                   <td style="background: #f9fafb; padding: 24px 30px; border-top: 1px solid #e5e7eb;">
                     <p style="color: #6b7280; font-size: 12px; line-height: 1.5; margin: 0; text-align: center;">
                       Happy car hunting!<br>
-                      The gadizone Team
+                      The assadmotors Team
                     </p>
                   </td>
                 </tr>
@@ -475,7 +475,7 @@ export const emailTemplates = {
                 <tr>
                   <td style="background: #f8f9fa; padding: 20px 40px; border-top: 1px solid #e5e7eb; text-align: center;">
                     <p style="color: #6b7280; font-size: 12px; margin: 0;">
-                      © ${new Date().getFullYear()} gadizone. All rights reserved.<br>
+                      © ${new Date().getFullYear()} assadmotors. All rights reserved.<br>
                       <a href="${process.env.FRONTEND_URL}/unsubscribe" style="color: #6b7280; text-decoration: underline;">Unsubscribe</a>
                     </p>
                   </td>
@@ -591,7 +591,7 @@ export const sendEmail = async (
       await axios.post(
         'https://api.resend.com/emails',
         {
-          from: `gadizone <${from}>`,
+          from: `assadmotors <${from}>`,
           to: [to],
           subject: emailContent.subject,
           html: emailContent.html,
@@ -621,10 +621,10 @@ export const sendEmail = async (
       return { success: false, error: 'Email service not configured' };
     }
 
-    const from = process.env.GMAIL_USER || process.env.SMTP_USER || 'noreply@gadizone.com';
+    const from = process.env.GMAIL_USER || process.env.SMTP_USER || 'noreply@assadmotors.com';
 
     await transporter.sendMail({
-      from: `"gadizone" <${from}>`,
+      from: `"assadmotors" <${from}>`,
       to,
       subject: emailContent.subject,
       html: emailContent.html,

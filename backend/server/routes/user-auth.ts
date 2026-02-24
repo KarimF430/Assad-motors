@@ -431,7 +431,7 @@ router.get('/auth/google/callback', (req, res, next) => {
                         p { color: #666; margin-bottom: 2rem; }
                         .btn {
                             display: inline-block;
-                            background: #EF4444; /* gadizone red */
+                            background: #EF4444; /* assadmotors red */
                             color: white;
                             padding: 12px 24px;
                             border-radius: 6px;
@@ -512,7 +512,7 @@ router.get('/auth/google/callback', (req, res, next) => {
 
                     // Redirect to frontend home page with success indicator
                     // PRIORITIZE process.env.FRONTEND_URL for production correctness
-                    let frontendUrl = process.env.FRONTEND_URL || 'https://www.gadizone.com';
+                    let frontendUrl = process.env.FRONTEND_URL || 'https://www.assadmotors.com';
 
                     // Fallback to localhost in dev only if FRONTEND_URL is explicitly missing
                     if (!process.env.FRONTEND_URL && process.env.NODE_ENV !== 'production') {
@@ -1218,7 +1218,7 @@ router.post('/register-verify-otp', loginLimiter, async (req, res) => {
             };
 
             res.status(201).json({
-                message: 'Account created successfully! Welcome to gadizone.',
+                message: 'Account created successfully! Welcome to assadmotors.',
                 user: userResponse
             });
         });

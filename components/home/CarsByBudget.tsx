@@ -33,6 +33,7 @@ interface BudgetRange {
 
 interface CarsByBudgetProps {
   allCars: Car[]
+  excludeBudget?: string
 }
 
 /**
@@ -44,7 +45,7 @@ interface CarsByBudgetProps {
  * 3. Dynamically updates when new cars are added
  * 4. Full SEO support - all content is server-rendered
  */
-export default function CarsByBudget({ allCars }: CarsByBudgetProps) {
+export default function CarsByBudget({ allCars, excludeBudget }: CarsByBudgetProps) {
   // All possible budget ranges
   const allBudgetRanges: BudgetRange[] = [
     { id: 'under-10', label: 'Under ₹10 Lakh', min: 0, max: 1000000, urlSlug: '10' },
@@ -63,6 +64,9 @@ export default function CarsByBudget({ allCars }: CarsByBudgetProps) {
   // Calculate which budget ranges have cars (memoized for performance)
   const availableBudgetRanges = useMemo(() => {
     return allBudgetRanges.filter(range => {
+      // Exclude the currently viewed budget range
+      if (excludeBudget && range.id === excludeBudget) return false;
+
       // Count cars in this range
       const carsInRange = allCars.filter(car => {
         const price = car.startingPrice
@@ -70,7 +74,7 @@ export default function CarsByBudget({ allCars }: CarsByBudgetProps) {
       })
       return carsInRange.length > 0
     })
-  }, [allCars])
+  }, [allCars, excludeBudget])
 
   // Get the first available range or default to 'under-10'
   const defaultRange = availableBudgetRanges.length > 0 ? availableBudgetRanges[0].id : 'under-10'

@@ -127,7 +127,7 @@ export default function ExpertReviewSection({ model }: ExpertReviewSectionProps)
                 <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
                         <span className="bg-gradient-to-r from-[#291e6a] to-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
-                            GADIZONE VERDICT
+                            ASSAD_MOTORS VERDICT
                         </span>
                         <span className="text-sm text-gray-400 font-medium hidden sm:inline-block">
                             {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}

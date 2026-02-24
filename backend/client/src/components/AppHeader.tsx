@@ -14,7 +14,7 @@ export default function AppHeader() {
           <div className="w-10 h-10 bg-primary-foreground text-primary rounded font-bold flex items-center justify-center text-sm">
             MO
           </div>
-          <h1 className="text-xl font-semibold">gadizone Admin</h1>
+          <h1 className="text-xl font-semibold">assadmotors Admin</h1>
         </div>
       </div>
       <div className="flex items-center gap-4">

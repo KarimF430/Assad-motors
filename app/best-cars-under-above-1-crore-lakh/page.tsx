@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
 import PageSection from '@/components/common/PageSection'
-import Footer from '@/components/Footer'
+
 import Ad3DCarousel from '@/components/ads/Ad3DCarousel'
 import BudgetCarsClient from '@/app/cars-by-budget/[budget]/BudgetCarsClient'
 import Breadcrumb from '@/components/common/Breadcrumb'
@@ -22,7 +22,7 @@ export const revalidate = 3600
 
 
 export const metadata: Metadata = {
-    title: `${BUDGET_INFO.title} in India - Prices, Specs & Reviews | gadizone`,
+    title: `${BUDGET_INFO.title} in India - Prices, Specs & Reviews | assadmotors`,
     description: `Find the best cars ${BUDGET_INFO.label.toLowerCase()} in India. Compare prices, specifications, features, and expert reviews.`,
     keywords: `luxury cars India, cars above 1 crore, premium cars India, best cars above 1 crore, car prices India`,
     openGraph: {
@@ -117,7 +117,7 @@ async function getBudgetCarsData() {
         const topCarName = cars.length > 0 ? `${cars[0].brandName} ${cars[0].name}` : null
         const dynamicDescription = JSON.stringify(budgetEditorials['above-1-crore'] ?? { short: '', extended: '' })
 
-        return { cars, popularCars, newLaunchedCars, dynamicDescription }
+        return { cars, popularCars, newLaunchedCars, dynamicDescription, allCars: processedCars }
     } catch (error) {
         console.error('Error fetching budget cars data:', error)
         return { cars: [], popularCars: [], newLaunchedCars: [], dynamicDescription: '' }
@@ -125,7 +125,7 @@ async function getBudgetCarsData() {
 }
 
 export default async function BestCarsAbove1CrorePage() {
-    const { cars, popularCars, newLaunchedCars, dynamicDescription } = await getBudgetCarsData()
+    const { cars, popularCars, newLaunchedCars, dynamicDescription, allCars } = await getBudgetCarsData()
 
     return (
         <div className="min-h-screen bg-gray-50">
@@ -144,6 +144,8 @@ export default async function BestCarsAbove1CrorePage() {
                         newLaunchedCars={newLaunchedCars}
                         budgetLabel={BUDGET_INFO.title}
                         budgetDescription={dynamicDescription || ''}
+                    allCars={allCars}
+                    budgetSlug={BUDGET_INFO.apiSlug}
                     />
                 </PageSection>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -151,7 +153,7 @@ export default async function BestCarsAbove1CrorePage() {
                 </div>
             </main>
             <Breadcrumb items={[{ label: 'Best Cars Above 1 Crore' }]} />
-            <Footer />
+            
         </div>
     )
 }

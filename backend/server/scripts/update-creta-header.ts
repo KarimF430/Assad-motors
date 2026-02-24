@@ -13,7 +13,7 @@ dotenv.config({ path: backendEnv });
 
 async function updateCretaHeader() {
     console.log('Connecting to MongoDB...');
-    const mongoUri = process.env.MONGODB_URI || "mongodb://localhost:27017/gadizone";
+    const mongoUri = process.env.MONGODB_URI || "mongodb://localhost:27017/assadmotors";
     await mongoose.connect(mongoUri);
 
     try {

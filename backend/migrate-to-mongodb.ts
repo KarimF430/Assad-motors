@@ -12,7 +12,7 @@ async function migrate() {
     console.log('🚀 Starting MongoDB migration...\n');
 
     // Connect to MongoDB
-    const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/gadizone';
+    const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/assadmotors';
     console.log(`📡 Connecting to MongoDB: ${mongoUri}`);
     await mongoose.connect(mongoUri);
     console.log('✅ Connected to MongoDB\n');

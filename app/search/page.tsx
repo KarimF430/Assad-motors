@@ -4,11 +4,11 @@ import SearchClient from './SearchClient'
 
 // Static metadata for SEO
 export const metadata: Metadata = {
-  title: 'Search Cars - Find Your Perfect Car | gadizone',
+  title: 'Search Cars - Find Your Perfect Car | assadmotors',
   description: 'Search for cars by name, brand, or model. Find detailed specifications, prices, reviews, and comparisons for all car models in India.',
   keywords: 'car search, find cars, search cars India, car models, car brands',
   openGraph: {
-    title: 'Search Cars | gadizone',
+    title: 'Search Cars | assadmotors',
     description: 'Search and find your perfect car from thousands of models',
     type: 'website'
   }

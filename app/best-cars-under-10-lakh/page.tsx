@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
 import PageSection from '@/components/common/PageSection'
-import Footer from '@/components/Footer'
+
 import Ad3DCarousel from '@/components/ads/Ad3DCarousel'
 import BudgetCarsClient from '@/app/cars-by-budget/[budget]/BudgetCarsClient'
 import Breadcrumb from '@/components/common/Breadcrumb'
@@ -21,7 +21,7 @@ export const revalidate = 3600
 
 
 export const metadata: Metadata = {
-    title: `${BUDGET_INFO.title} in India ${new Date().getFullYear()} - Price, Mileage & Reviews | gadizone`,
+    title: `${BUDGET_INFO.title} in India ${new Date().getFullYear()} - Price, Mileage & Reviews | assadmotors`,
     description: `Find the best cars ${BUDGET_INFO.label.toLowerCase()} in India ${new Date().getFullYear()}. Compare on-road prices, specs, mileage, features and expert reviews of top models like Maruti Swift, Tata Punch & more.`,
     keywords: `cars ${BUDGET_INFO.label.toLowerCase()}, best cars under ${BUDGET_INFO.lakhValue} ${new Date().getFullYear()}, budget cars India, car prices under ${BUDGET_INFO.lakhValue}`,
     openGraph: {
@@ -124,7 +124,7 @@ async function getBudgetCarsData() {
 
         const dynamicDescription = JSON.stringify(budgetEditorials['10-lakh'] ?? { short: '', extended: '' })
 
-        return { cars, popularCars, newLaunchedCars, dynamicDescription }
+        return { cars, popularCars, newLaunchedCars, dynamicDescription, allCars: processedCars }
     } catch (error) {
         console.error('Error fetching budget cars data:', error)
         return { cars: [], popularCars: [], newLaunchedCars: [], dynamicDescription: '' }
@@ -132,7 +132,7 @@ async function getBudgetCarsData() {
 }
 
 export default async function BestCarsUnder10LakhPage() {
-    const { cars, popularCars, newLaunchedCars, dynamicDescription } = await getBudgetCarsData()
+    const { cars, popularCars, newLaunchedCars, dynamicDescription, allCars } = await getBudgetCarsData()
 
     return (
         <div className="min-h-screen bg-gray-50">
@@ -151,6 +151,8 @@ export default async function BestCarsUnder10LakhPage() {
                         newLaunchedCars={newLaunchedCars}
                         budgetLabel={BUDGET_INFO.title}
                         budgetDescription={dynamicDescription || ''}
+                    allCars={allCars}
+                    budgetSlug={BUDGET_INFO.apiSlug}
                     />
                 </PageSection>
 
@@ -161,7 +163,7 @@ export default async function BestCarsUnder10LakhPage() {
                 </div>
             </main>
             <Breadcrumb items={[{ label: 'Best Cars Under 10 Lakh' }]} />
-            <Footer />
+            
         </div>
     )
 }

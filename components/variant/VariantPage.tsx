@@ -921,7 +921,7 @@ export default function VariantPage({
                     onClick={() => {
                       const shareData = {
                         title: `${currentVariantData?.fullName || 'Car Variant'} - Check it out!`,
-                        text: `Check out the ${currentVariantData?.fullName || 'car'} on gadizone!`,
+                        text: `Check out the ${currentVariantData?.fullName || 'car'} on assadmotors!`,
                         url: window.location.href
                       };
 

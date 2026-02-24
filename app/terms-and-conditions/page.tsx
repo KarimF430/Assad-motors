@@ -2,12 +2,12 @@ import { Metadata } from 'next'
 import PageContainer, { PageSection } from '@/components/layout/PageContainer'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
-import Footer from '@/components/Footer'
+
 import Breadcrumb from '@/components/common/Breadcrumb'
 
 export const metadata: Metadata = {
-    title: 'Terms and Conditions | gadizone',
-    description: 'Terms and Conditions for using gadizone - Your comprehensive automotive research platform.',
+    title: 'Terms and Conditions | assadmotors',
+    description: 'Terms and Conditions for using assadmotors - Your comprehensive automotive research platform.',
 }
 
 export default function TermsAndConditionsPage() {
@@ -27,21 +27,21 @@ export default function TermsAndConditionsPage() {
 
                             <div className="prose prose-gray max-w-none">
                                 <p className="text-gray-700 leading-relaxed mb-6">
-                                    These Terms and Conditions ("Terms") govern your use of the gadizone website and services.
-                                    By accessing or using gadizone, you agree to be bound by these Terms.
+                                    These Terms and Conditions ("Terms") govern your use of the assadmotors website and services.
+                                    By accessing or using assadmotors, you agree to be bound by these Terms.
                                 </p>
 
                                 <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">1. Definitions</h2>
                                 <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-                                    <li><strong>"gadizone"</strong> refers to the website, its owners, and operators</li>
+                                    <li><strong>"assadmotors"</strong> refers to the website, its owners, and operators</li>
                                     <li><strong>"User"</strong> refers to any person who accesses or uses our website</li>
-                                    <li><strong>"Services"</strong> refers to all features and content provided by gadizone</li>
+                                    <li><strong>"Services"</strong> refers to all features and content provided by assadmotors</li>
                                     <li><strong>"Content"</strong> refers to all information, data, text, images, and materials on the website</li>
                                 </ul>
 
                                 <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">2. Services Description</h2>
                                 <p className="text-gray-700 leading-relaxed mb-4">
-                                    gadizone provides an online automotive information platform offering:
+                                    assadmotors provides an online automotive information platform offering:
                                 </p>
                                 <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
                                     <li>Car research, specifications, and pricing information</li>
@@ -55,7 +55,7 @@ export default function TermsAndConditionsPage() {
 
                                 <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">3. User Responsibilities</h2>
                                 <p className="text-gray-700 leading-relaxed mb-4">
-                                    By using gadizone, you agree to:
+                                    By using assadmotors, you agree to:
                                 </p>
                                 <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
                                     <li>Provide accurate and truthful information</li>
@@ -69,7 +69,7 @@ export default function TermsAndConditionsPage() {
 
                                 <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">4. Information Disclaimer</h2>
                                 <p className="text-gray-700 leading-relaxed mb-4">
-                                    The information provided on gadizone is for general informational purposes only:
+                                    The information provided on assadmotors is for general informational purposes only:
                                 </p>
                                 <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
                                     <li>Car prices and specifications are indicative and may vary</li>
@@ -85,16 +85,16 @@ export default function TermsAndConditionsPage() {
                                 </p>
                                 <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
                                     <li>You retain ownership of your content</li>
-                                    <li>You grant gadizone a non-exclusive license to use, display, and distribute your content</li>
+                                    <li>You grant assadmotors a non-exclusive license to use, display, and distribute your content</li>
                                     <li>You are solely responsible for the accuracy and legality of your content</li>
-                                    <li>gadizone reserves the right to remove content that violates these Terms</li>
+                                    <li>assadmotors reserves the right to remove content that violates these Terms</li>
                                     <li>Reviews must be based on genuine ownership or experience</li>
                                 </ul>
 
                                 <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">6. Intellectual Property</h2>
                                 <p className="text-gray-700 leading-relaxed mb-4">
-                                    All content on gadizone, including but not limited to text, graphics, logos, icons, images,
-                                    audio clips, digital downloads, and software, is the property of gadizone or its content
+                                    All content on assadmotors, including but not limited to text, graphics, logos, icons, images,
+                                    audio clips, digital downloads, and software, is the property of assadmotors or its content
                                     suppliers and is protected by intellectual property laws.
                                 </p>
                                 <p className="text-gray-700 leading-relaxed mb-4">
@@ -104,7 +104,7 @@ export default function TermsAndConditionsPage() {
 
                                 <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">7. Third-Party Services</h2>
                                 <p className="text-gray-700 leading-relaxed mb-4">
-                                    gadizone may connect you with third-party services including:
+                                    assadmotors may connect you with third-party services including:
                                 </p>
                                 <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
                                     <li>Car dealers and showrooms</li>
@@ -112,13 +112,13 @@ export default function TermsAndConditionsPage() {
                                     <li>Insurance providers</li>
                                 </ul>
                                 <p className="text-gray-700 leading-relaxed mb-4">
-                                    gadizone is not responsible for the services, products, or practices of these third parties.
+                                    assadmotors is not responsible for the services, products, or practices of these third parties.
                                     Your dealings with them are solely between you and the third party.
                                 </p>
 
                                 <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">8. Limitation of Liability</h2>
                                 <p className="text-gray-700 leading-relaxed mb-4">
-                                    To the fullest extent permitted by law, gadizone shall not be liable for:
+                                    To the fullest extent permitted by law, assadmotors shall not be liable for:
                                 </p>
                                 <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
                                     <li>Any indirect, incidental, special, or consequential damages</li>
@@ -130,14 +130,14 @@ export default function TermsAndConditionsPage() {
 
                                 <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">9. Indemnification</h2>
                                 <p className="text-gray-700 leading-relaxed mb-4">
-                                    You agree to indemnify and hold harmless gadizone in its directors, officers, employees,
+                                    You agree to indemnify and hold harmless assadmotors in its directors, officers, employees,
                                     and agents from any claims, damages, losses, or expenses arising from your use of the
                                     website or violation of these Terms.
                                 </p>
 
                                 <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">10. Termination</h2>
                                 <p className="text-gray-700 leading-relaxed mb-4">
-                                    gadizone reserves the right to suspend or terminate your access to the website at any time,
+                                    assadmotors reserves the right to suspend or terminate your access to the website at any time,
                                     without notice, for any reason, including violation of these Terms.
                                 </p>
 
@@ -150,7 +150,7 @@ export default function TermsAndConditionsPage() {
 
                                 <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">12. Changes to Terms</h2>
                                 <p className="text-gray-700 leading-relaxed mb-4">
-                                    gadizone reserves the right to modify these Terms at any time. Changes will be effective
+                                    assadmotors reserves the right to modify these Terms at any time. Changes will be effective
                                     upon posting. Your continued use of the website after changes constitutes acceptance of
                                     the modified Terms.
                                 </p>
@@ -160,14 +160,14 @@ export default function TermsAndConditionsPage() {
                                     For questions about these Terms, please contact us:
                                 </p>
                                 <p className="text-gray-700 mb-4">
-                                    <strong>Email:</strong> legal@gadizone.com<br />
-                                    <strong>Website:</strong> www.gadizone.com
+                                    <strong>Email:</strong> legal@assadmotors.com<br />
+                                    <strong>Website:</strong> www.assadmotors.com
                                 </p>
                             </div>
 
                             <div className="mt-10 pt-6 border-t border-gray-200">
                                 <p className="text-sm text-gray-500">
-                                    By using gadizone, you acknowledge that you have read, understood, and agree to these Terms and Conditions.
+                                    By using assadmotors, you acknowledge that you have read, understood, and agree to these Terms and Conditions.
                                 </p>
                             </div>
                         </div>
@@ -175,7 +175,7 @@ export default function TermsAndConditionsPage() {
                 </PageContainer>
             </div>
             <Breadcrumb items={[{ label: 'Terms & Conditions' }]} />
-            <Footer />
+            
         </>
     )
 }

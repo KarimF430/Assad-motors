@@ -1,9 +1,9 @@
 import { Metadata } from 'next'
-import Footer from '@/components/Footer'
+
 import Breadcrumb from '@/components/common/Breadcrumb'
 
 export const metadata: Metadata = {
-    title: 'Car Service & Maintenance | gadizone',
+    title: 'Car Service & Maintenance | assadmotors',
     description: 'Book car service appointment online. Find authorized service centers and garages near you.',
 }
 
@@ -20,7 +20,7 @@ export default function ServicePage() {
                 </div>
             </div>
             <Breadcrumb items={[{ label: 'Service' }]} />
-            <Footer />
+            
         </>
     )
 }

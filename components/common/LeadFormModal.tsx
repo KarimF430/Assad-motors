@@ -118,7 +118,7 @@ export default function LeadFormModal({ isOpen, onClose, carName }: LeadFormModa
                             </button>
 
                             <p className="text-xs text-gray-500 text-center mt-3 leading-tight">
-                                By proceeding ahead you agree to Gadizone <a href="/visitor-agreement" target="_blank" className="text-[#1c144a] hover:underline">Visitor Agreement</a>.
+                                By proceeding ahead you agree to Assad Motors <a href="/visitor-agreement" target="_blank" className="text-[#1c144a] hover:underline">Visitor Agreement</a>.
                             </p>
                         </form>
                     </>

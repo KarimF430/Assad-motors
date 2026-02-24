@@ -111,7 +111,7 @@ async function fetchYouTubeVideos(apiKey: string, channelId: string) {
 // Main fetch function - fetches and saves to persistent storage
 export async function fetchAndCacheYouTubeVideos(storage: IStorage): Promise<void> {
     const apiKey = process.env.YOUTUBE_API_KEY;
-    const channelId = process.env.YOUTUBE_CHANNEL_ID || '@gadizone';
+    const channelId = process.env.YOUTUBE_CHANNEL_ID || '@assadmotors';
 
     if (!apiKey) {
         console.error('❌ YouTube API key not configured - skipping scheduled fetch');

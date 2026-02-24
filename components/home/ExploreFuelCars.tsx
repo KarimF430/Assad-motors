@@ -134,7 +134,7 @@ export default function ExploreFuelCars({ initialCars = [], title, fuelType, sho
               {popularCars.length > 0 && (
                 <Link
                   key="view-all-popular"
-                  href="/popular-cars-in-india"
+                  href={`/fuel-cars/${fuelType.toLowerCase()}`}
                   className="flex-shrink-0 w-[220px] sm:w-[240px] bg-gradient-to-br from-[#291e6a] to-red-500 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer"
                 >
                   <div className="h-full flex flex-col items-center justify-center p-6 text-center min-h-[280px] sm:min-h-[300px]">

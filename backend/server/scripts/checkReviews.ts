@@ -6,7 +6,7 @@ import path from 'path';
 // Load env vars
 dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/gadizone";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/assadmotors";
 
 async function checkReviews() {
     try {

@@ -4,7 +4,7 @@ import { getServerSideSitemapIndex } from 'next-sitemap'
 import { NextRequest, NextResponse } from 'next/server'
 import { BACKEND_URL } from '@/lib/config'
 
-const BASE_URL = 'https://www.gadizone.com'
+const BASE_URL = 'https://www.assadmotors.com'
 const EXTERNAL_API_URL = BACKEND_URL
 
 async function fetchData(endpoint: string, cacheTime = 3600) {

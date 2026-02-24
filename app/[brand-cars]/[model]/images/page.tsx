@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: GalleryPageProps): Promise<Me
     const modelName = modelSlug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
 
     return {
-        title: `${brandName} ${modelName} Images & Photo Gallery - All Angles, Colours & Features | gadizone`,
+        title: `${brandName} ${modelName} Images & Photo Gallery - All Angles, Colours & Features | assadmotors`,
         description: `View the complete photo gallery of ${brandName} ${modelName}. Browse exterior, interior, key features, and colour images. Download and share high-quality photos.`,
         keywords: `${brandName} ${modelName} images, ${brandName} ${modelName} photos, ${brandName} ${modelName} gallery, ${modelName} colours, ${modelName} interior images`,
         openGraph: {

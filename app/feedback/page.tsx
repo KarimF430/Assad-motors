@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, Star } from 'lucide-react'
 import PageContainer, { PageSection } from '@/components/layout/PageContainer'
-import Footer from '@/components/Footer'
+
 import Breadcrumb from '@/components/common/Breadcrumb'
 
 export default function FeedbackPage() {
@@ -39,7 +39,7 @@ export default function FeedbackPage() {
                             </Link>
 
                             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Share Your Feedback</h1>
-                            <p className="text-gray-600 mb-8">Help us improve gadizone with your valuable input.</p>
+                            <p className="text-gray-600 mb-8">Help us improve assadmotors with your valuable input.</p>
 
                             {submitted ? (
                                 <div className="text-center py-12">
@@ -134,16 +134,16 @@ export default function FeedbackPage() {
                         <div className="mt-6 bg-white rounded-lg shadow-sm border border-gray-200 p-6">
                             <h2 className="text-lg font-bold text-gray-900 mb-3">Your Voice Matters</h2>
                             <p className="text-sm text-gray-600">
-                                At gadizone, we're constantly working to improve our platform based on user feedback.
+                                At assadmotors, we're constantly working to improve our platform based on user feedback.
                                 Whether it's a bug you've encountered, a feature you'd like to see, or general thoughts about your experience -
-                                your input helps shape the future of gadizone. Every piece of feedback is read and considered by our team.
+                                your input helps shape the future of assadmotors. Every piece of feedback is read and considered by our team.
                             </p>
                         </div>
                     </PageSection>
                 </PageContainer>
             </div>
             <Breadcrumb items={[{ label: 'Feedback' }]} />
-            <Footer />
+            
         </>
     )
 }

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import PageSection from '@/components/common/PageSection'
-import Footer from '@/components/Footer'
+
 import Ad3DCarousel from '@/components/ads/Ad3DCarousel'
 import TopCarsClient from './TopCarsClient'
 
@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const bodyTypeInfo = bodyTypes[bodyType] || bodyTypes['suv']
 
     return {
-        title: `Best ${bodyTypeInfo.label} Cars in India 2025 - Prices & Specs | gadizone`,
+        title: `Best ${bodyTypeInfo.label} Cars in India 2025 - Prices & Specs | assadmotors`,
         description: `${bodyTypeInfo.description} Compare prices, specifications, and reviews of top ${bodyTypeInfo.label} cars.`,
         keywords: `${bodyTypeInfo.label} cars India, best ${bodyTypeInfo.label}, ${bodyTypeInfo.label} prices, top ${bodyTypeInfo.label} 2025`,
         openGraph: {
@@ -78,13 +78,13 @@ const formatLaunchDate = (date: string): string => {
 function autoRankCarsByBodyType(cars: any[]) {
     const bodyTypes = ['SUV', 'Sedan', 'Hatchback', 'MUV', 'Coupe']
     const rankedCars: any[] = []
-    
+
     bodyTypes.forEach(bodyType => {
         // Filter cars for this body type
-        const bodyCars = cars.filter((car: any) => 
+        const bodyCars = cars.filter((car: any) =>
             car.bodyType && car.bodyType.toLowerCase() === bodyType.toLowerCase()
         )
-        
+
         // Sort by popularity first, then by price (descending)
         const sorted = bodyCars.sort((a: any, b: any) => {
             // Prioritize popular cars
@@ -93,7 +93,7 @@ function autoRankCarsByBodyType(cars: any[]) {
             // Then sort by price (higher price = better car, usually)
             return (b.startingPrice || 0) - (a.startingPrice || 0)
         })
-        
+
         // Assign ranks 1-10 for this body type
         sorted.slice(0, 10).forEach((car, index) => {
             rankedCars.push({
@@ -103,7 +103,7 @@ function autoRankCarsByBodyType(cars: any[]) {
             })
         })
     })
-    
+
     return rankedCars
 }
 
@@ -161,17 +161,17 @@ async function getTopCarsData() {
 
         // Auto-rank cars by body type
         const rankedCars = autoRankCarsByBodyType(allCars)
-        
+
         const popularCars = rankedCars.filter((c: any) => c.isPopular).slice(0, 10)
         const newLaunchedCars = rankedCars.filter((c: any) => c.isNew).slice(0, 10)
 
         console.log('[Server] Total ranked cars:', rankedCars.length)
         console.log('[Server] Body types:', rankedCars.map((c: any) => c.bodyTypeCategory).filter((v: any, i: any, a: any) => a.indexOf(v) === i))
 
-        return { cars: rankedCars, popularCars, newLaunchedCars }
+        return { cars: rankedCars, popularCars, newLaunchedCars, allCars }
     } catch (error) {
         console.error('Error fetching top cars data:', error)
-        return { cars: [], popularCars: [], newLaunchedCars: [] }
+        return { cars: [], popularCars: [], newLaunchedCars: [], allCars: [] }
     }
 }
 
@@ -183,7 +183,7 @@ export default async function TopCarsPage({ params }: PageProps) {
         notFound()
     }
 
-    const { cars, popularCars, newLaunchedCars } = await getTopCarsData()
+    const { cars, popularCars, newLaunchedCars, allCars } = await getTopCarsData()
 
     return (
         <div className="min-h-screen bg-gray-50">
@@ -208,6 +208,8 @@ export default async function TopCarsPage({ params }: PageProps) {
                         newLaunchedCars={newLaunchedCars}
                         bodyTypeLabel={bodyTypeInfo.label}
                         bodyTypeDescription={bodyTypeInfo.description}
+                        allCars={allCars}
+                        bodyTypeSlug={bodyTypeSlug}
                     />
                 </PageSection>
 
@@ -216,7 +218,7 @@ export default async function TopCarsPage({ params }: PageProps) {
                 </div>
             </main>
 
-            <Footer />
+            
         </div>
     )
 }

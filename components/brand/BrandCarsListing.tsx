@@ -44,6 +44,7 @@ export default function BrandCarsListing({ brand }: BrandCarsListingProps) {
   const [priceFilter, setPriceFilter] = useState('')
   const [fuelFilter, setFuelFilter] = useState('')
   const [bodyTypeFilter, setBodyTypeFilter] = useState('')
+  const [ownerFilter, setOwnerFilter] = useState('')
 
   const brandName = brand.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())
 
@@ -373,6 +374,18 @@ export default function BrandCarsListing({ brand }: BrandCarsListingProps) {
                 <option value="sedan">Sedan</option>
                 <option value="suv">SUV</option>
                 <option value="mpv">MPV</option>
+              </select>
+
+              <select
+                value={ownerFilter}
+                onChange={(e) => setOwnerFilter(e.target.value)}
+                className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
+              >
+                <option value="">All Owners</option>
+                <option value="1st">1st Owner</option>
+                <option value="2nd">2nd Owner</option>
+                <option value="3rd">3rd Owner</option>
+                <option value="4th+">4th+ Owner</option>
               </select>
             </div>
 

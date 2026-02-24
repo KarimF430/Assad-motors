@@ -8,7 +8,7 @@ import dynamic from 'next/dynamic'
 import PageContainer, { PageSection } from '../layout/PageContainer'
 import analytics from '@/lib/analytics'
 import { AnalyticsEvent } from '@/types/analytics'
-import Footer from '@/components/Footer'
+
 import Breadcrumb from '@/components/common/Breadcrumb'
 
 
@@ -602,7 +602,7 @@ export default function EMICalculatorPage() {
                 Get Eligible Loan Offers
               </button>
               <p className="text-xs text-gray-500 text-center mt-3 leading-relaxed">
-                By proceeding ahead you agree to gadizone <Link href="/visitor-agreement" className="text-[#1c144a] hover:underline">Visitor Agreement</Link> and <Link href="/terms-and-conditions" className="text-[#1c144a] hover:underline">Terms and Conditions</Link>. This site is protected by reCAPTCHA and Google <Link href="/google-terms" className="text-[#1c144a] hover:underline">terms of service</Link> apply.
+                By proceeding ahead you agree to assadmotors <Link href="/visitor-agreement" className="text-[#1c144a] hover:underline">Visitor Agreement</Link> and <Link href="/terms-and-conditions" className="text-[#1c144a] hover:underline">Terms and Conditions</Link>. This site is protected by reCAPTCHA and Google <Link href="/google-terms" className="text-[#1c144a] hover:underline">terms of service</Link> apply.
               </p>
             </div>
 
@@ -612,7 +612,7 @@ export default function EMICalculatorPage() {
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Complete Guide to Car Loan EMI Calculation</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Buying a new car is an exciting milestone, but financial planning is key to a stress-free ownership experience.
-                  The gadizone Car Loan EMI Calculator is designed to help you plan your finances effectively.
+                  The assadmotors Car Loan EMI Calculator is designed to help you plan your finances effectively.
                   By estimating your monthly Equated Monthly Installment (EMI), you can choose a loan amount and tenure that fits your budget comfortably.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
@@ -725,7 +725,6 @@ export default function EMICalculatorPage() {
       </PageContainer>
 
       <Breadcrumb items={[{ label: 'EMI Calculator' }]} />
-      <Footer />
     </div >
   )
 }

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
 import PageSection from '@/components/common/PageSection'
-import Footer from '@/components/Footer'
+
 import Ad3DCarousel from '@/components/ads/Ad3DCarousel'
 import BudgetCarsClient from '@/app/cars-by-budget/[budget]/BudgetCarsClient'
 import Breadcrumb from '@/components/common/Breadcrumb'
@@ -65,7 +65,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const year = new Date().getFullYear()
 
     return {
-        title: `Best ${transLabel} Cars in India ${year} - Price, Specs & Reviews | gadizone`,
+        title: `Best ${transLabel} Cars in India ${year} - Price, Specs & Reviews | assadmotors`,
         description: `Find the best ${transLabel} cars in India. Compare prices, specs and reviews of top ${transLabel} models.`,
         keywords: `${transLabel} cars, best ${transLabel} cars India, ${transLabel} car price`,
         openGraph: {
@@ -149,7 +149,7 @@ async function getTransCarsData(type: string) {
         const topCarName = cars.length > 0 ? `${cars[0].brandName} ${cars[0].name}` : null
         const dynamicDescription = generateDynamicDescription(cars, type, topCarName)
 
-        return { cars, popularCars, newLaunchedCars, dynamicDescription }
+        return { cars, popularCars, newLaunchedCars, dynamicDescription, allCars: processedCars }
     } catch (error) {
         console.error('Error fetching transmission cars data:', error)
         return { cars: [], popularCars: [], newLaunchedCars: [], dynamicDescription: '' }
@@ -159,7 +159,7 @@ async function getTransCarsData(type: string) {
 export default async function TransmissionPage({ params }: Props) {
     const { type } = await params
     const transLabel = transMap[type] || type.charAt(0).toUpperCase() + type.slice(1)
-    const { cars, popularCars, newLaunchedCars, dynamicDescription } = await getTransCarsData(type)
+    const { cars, popularCars, newLaunchedCars, dynamicDescription, allCars } = await getTransCarsData(type)
 
     return (
         <div className="min-h-screen bg-gray-50">
@@ -178,6 +178,8 @@ export default async function TransmissionPage({ params }: Props) {
                         newLaunchedCars={newLaunchedCars}
                         budgetLabel={`${transLabel} Cars`}
                         budgetDescription={dynamicDescription || ''}
+                    allCars={allCars}
+                    budgetSlug={type}
                     />
                 </PageSection>
 
@@ -188,7 +190,7 @@ export default async function TransmissionPage({ params }: Props) {
                 </div>
             </main>
             <Breadcrumb items={[{ label: `${transLabel} Cars` }]} />
-            <Footer />
+            
         </div>
     )
 }

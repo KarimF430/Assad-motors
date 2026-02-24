@@ -821,7 +821,7 @@ export default function CarModelPage({ model, initialVariants = [], newsSlot }: 
     views: '2.5M',
     likes: '45K',
     publishedAt: '2 days ago',
-    channelName: 'gadizone'
+    channelName: 'assadmotors'
   }
 
   const relatedVideos = [
@@ -833,7 +833,7 @@ export default function CarModelPage({ model, initialVariants = [], newsSlot }: 
       views: '1.2M',
       likes: '28K',
       publishedAt: '1 week ago',
-      channelName: 'gadizone'
+      channelName: 'assadmotors'
     },
     {
       id: 'def456',
@@ -843,7 +843,7 @@ export default function CarModelPage({ model, initialVariants = [], newsSlot }: 
       views: '890K',
       likes: '19K',
       publishedAt: '3 days ago',
-      channelName: 'gadizone'
+      channelName: 'assadmotors'
     },
     {
       id: 'ghi789',
@@ -853,7 +853,7 @@ export default function CarModelPage({ model, initialVariants = [], newsSlot }: 
       views: '1.8M',
       likes: '35K',
       publishedAt: '5 days ago',
-      channelName: 'gadizone'
+      channelName: 'assadmotors'
     }
   ]
 
@@ -1052,7 +1052,7 @@ export default function CarModelPage({ model, initialVariants = [], newsSlot }: 
                       onClick={() => {
                         const shareData = {
                           title: `${model?.brand || 'Car'} ${model?.name || 'Model'} - Check it out!`,
-                          text: `Check out the ${model?.brand || ''} ${model?.name || ''} on gadizone!`,
+                          text: `Check out the ${model?.brand || ''} ${model?.name || ''} on assadmotors!`,
                           url: window.location.href
                         };
 

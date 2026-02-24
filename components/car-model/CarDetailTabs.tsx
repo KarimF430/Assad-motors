@@ -38,8 +38,8 @@ export default function CarDetailTabs({ activeTab, onTabChange }: CarDetailTabsP
           <button
             onClick={() => {
               const shareData = {
-                title: document.title || 'gadizone',
-                text: 'Check out this car on gadizone!',
+                title: document.title || 'assadmotors',
+                text: 'Check out this car on assadmotors!',
                 url: window.location.href
               };
 

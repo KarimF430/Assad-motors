@@ -1,18 +1,18 @@
 
-export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.gadizone.com'
+export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.assadmotors.com'
 
 export function generateOrganizationSchema() {
     return {
         '@context': 'https://schema.org',
         '@type': 'Organization',
-        name: 'gadizone',
+        name: 'assadmotors',
         url: BASE_URL,
         logo: `${BASE_URL}/logo.png`,
         sameAs: [
-            'https://facebook.com/gadizone',
-            'https://twitter.com/gadizone',
-            'https://instagram.com/gadizone',
-            'https://youtube.com/gadizone'
+            'https://facebook.com/assadmotors',
+            'https://twitter.com/assadmotors',
+            'https://instagram.com/assadmotors',
+            'https://youtube.com/assadmotors'
         ],
         contactPoint: {
             '@type': 'ContactPoint',
@@ -28,7 +28,7 @@ export function generateWebSiteSchema() {
     return {
         '@context': 'https://schema.org',
         '@type': 'WebSite',
-        name: 'gadizone',
+        name: 'assadmotors',
         url: BASE_URL,
         potentialAction: {
             '@type': 'SearchAction',
@@ -152,7 +152,7 @@ export function generateFinancialProductSchema() {
         "description": "Calculate your monthly car loan payments with our free EMI calculator. Compare interest rates and loan tenures.",
         "brand": {
             "@type": "Brand",
-            "name": "gadizone"
+            "name": "assadmotors"
         },
         "offers": {
             "@type": "Offer",

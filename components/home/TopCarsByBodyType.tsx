@@ -39,7 +39,7 @@ const BODY_TYPES = [
     { id: 'Luxury SUV', label: 'Luxury SUV' }
 ]
 
-export default function TopCarsByBodyType({ initialCars = [] }: { initialCars?: Car[] }) {
+export default function TopCarsByBodyType({ initialCars = [], excludeBodyType }: { initialCars?: Car[], excludeBodyType?: string }) {
     const [selectedBodyType, setSelectedBodyType] = useState('all')
     const scrollRef = useRef<HTMLDivElement>(null)
     const filterRef = useRef<HTMLDivElement>(null)
@@ -47,7 +47,7 @@ export default function TopCarsByBodyType({ initialCars = [] }: { initialCars?: 
     // Filter cars by body type and assign rankings
     const rankedCars = useMemo((): RankedCar[] => {
         let filtered = selectedBodyType === 'all'
-            ? [...initialCars]
+            ? initialCars.filter(car => !excludeBodyType || car.bodyType?.toLowerCase() !== excludeBodyType.toLowerCase())
             : initialCars.filter(car => car.bodyType === selectedBodyType)
 
         // Get cars with explicit topRank (1-10)
@@ -104,7 +104,7 @@ export default function TopCarsByBodyType({ initialCars = [] }: { initialCars?: 
                 className="flex gap-3 sm:gap-6 overflow-x-auto scrollbar-hide mb-6 sm:mb-8 py-4 sm:py-6 px-4 sm:px-8 bg-slate-50 border border-slate-100 rounded-2xl w-full mx-auto justify-start md:justify-center shadow-sm"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-                {BODY_TYPES.map((type) => {
+                {BODY_TYPES.filter(type => !excludeBodyType || type.label.toLowerCase() !== excludeBodyType.toLowerCase() && type.id.toLowerCase() !== excludeBodyType.toLowerCase()).map((type) => {
                     const isActive = selectedBodyType === type.id
                     // Get a representative vehicle image
                     const representativeCar = initialCars.find(c => c.bodyType === type.id && c.isPopular) || initialCars.find(c => c.bodyType === type.id)
@@ -187,7 +187,7 @@ export default function TopCarsByBodyType({ initialCars = [] }: { initialCars?: 
                             {/* View All Card */}
                             {rankedCars.length > 0 && (
                                 <Link
-                                    href={selectedBodyType === 'all' ? '/top-selling-cars-in-india' : `/top-selling-cars-in-india?bodyType=${selectedBodyType}`}
+                                    href={selectedBodyType === 'all' ? '/top-cars/suv' : `/top-cars/${selectedBodyType.toLowerCase().replace(/\s+/g, '-')}`}
                                     className="flex-shrink-0 w-[220px] sm:w-[240px] bg-gradient-to-br from-[#291e6a] to-red-500 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer"
                                 >
                                     <div className="h-full flex flex-col items-center justify-center p-6 text-center min-h-[280px] sm:min-h-[300px]">

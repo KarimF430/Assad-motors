@@ -21,7 +21,7 @@ export default function ContactForm() {
         try {
             // Send via mailto as a reliable fallback — opens the user's email client
             // with the form data pre-filled, ensuring the message actually reaches us
-            const subject = encodeURIComponent(`[gadizone Contact] ${formData.subject || 'General Inquiry'} — from ${formData.name}`)
+            const subject = encodeURIComponent(`[assadmotors Contact] ${formData.subject || 'General Inquiry'} — from ${formData.name}`)
             const body = encodeURIComponent(
                 `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'Not provided'}\n\nMessage:\n${formData.message}`
             )

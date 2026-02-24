@@ -103,7 +103,7 @@ export default function AdSpaces() {
         {/* Banner Ad Space */}
         <div className="mt-8">
           <div className="bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg p-6 text-white text-center">
-            <h3 className="text-xl font-bold mb-2">Partner with gadizone</h3>
+            <h3 className="text-xl font-bold mb-2">Partner with assadmotors</h3>
             <p className="text-gray-300 mb-4">
               Advertise your automotive business to millions of car buyers across India
             </p>

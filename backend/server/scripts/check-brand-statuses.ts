@@ -12,7 +12,7 @@ dotenv.config({ path: backendEnv });
 
 async function checkBrandStatuses() {
     try {
-        const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/gadizone';
+        const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/assadmotors';
         console.log('Connecting to MongoDB...');
         await mongoose.connect(mongoUri);
         console.log('✅ Connected to MongoDB\n');

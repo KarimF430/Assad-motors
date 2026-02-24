@@ -30,7 +30,7 @@ interface ViewTrackingData {
     [carId: string]: CarView
 }
 
-const STORAGE_KEY = 'gadizone_car_views'
+const STORAGE_KEY = 'assadmotors_car_views'
 const VIEW_THRESHOLD = 3 // Auto-add after 3 views
 const TIME_WINDOW_DAYS = 30 // Only count views within last 30 days
 

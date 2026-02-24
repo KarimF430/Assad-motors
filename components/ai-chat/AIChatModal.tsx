@@ -143,7 +143,7 @@ export default function AIChatModal({ isOpen, onClose }: AIChatModalProps) {
                         </div>
                         <div>
                             <h2 className="text-lg font-bold text-white">AI Car Assistant</h2>
-                            <p className="text-xs text-white/80">Powered by gadizone</p>
+                            <p className="text-xs text-white/80">Powered by assadmotors</p>
                         </div>
                     </div>
                     <button

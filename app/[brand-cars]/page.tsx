@@ -11,7 +11,6 @@ import ConsultancyAd from '@/components/home/ConsultancyAd'
 import AdSpaces from '@/components/home/AdSpaces'
 import FeedbackBox from '@/components/brand/FeedbackBox'
 import CarFilters from '@/components/brand/CarFilters'
-import Footer from '@/components/Footer'
 import PageSection from '@/components/common/PageSection'
 import PageHeader from '@/components/common/PageHeader'
 import CarComparison from '@/components/common/CarComparison'
@@ -311,7 +310,6 @@ export default async function BrandPage({ params }: BrandPageProps) {
             </SafeComponent>
           </main>
           <Breadcrumb items={breadcrumbs} />
-          <Footer />
         </div>
       )
     }
@@ -392,7 +390,7 @@ export default async function BrandPage({ params }: BrandPageProps) {
               "@type": "Brand",
               "name": brand.name,
               "description": brand.description,
-              "url": `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.gadizone.com'}/${brand.slug}-cars`,
+              "url": `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.assadmotors.com'}/${brand.slug}-cars`,
               "logo": brand.logo,
               "image": brand.logo
             })
@@ -435,7 +433,6 @@ export default async function BrandPage({ params }: BrandPageProps) {
 
 
         <Breadcrumb items={breadcrumbs} />
-        <Footer />
       </div>
     )
   } catch (error) {

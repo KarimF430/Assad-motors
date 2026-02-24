@@ -152,7 +152,7 @@ export default function createYouTubeRoutes(storage: IStorage): Router {
                 }
 
                 const apiKey = process.env.YOUTUBE_API_KEY;
-                const channelId = process.env.YOUTUBE_CHANNEL_ID || '@gadizone';
+                const channelId = process.env.YOUTUBE_CHANNEL_ID || '@assadmotors';
 
                 if (!apiKey) {
                     console.log('ℹ️ YouTube API key not configured - cannot fetch search results');

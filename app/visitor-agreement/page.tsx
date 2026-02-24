@@ -4,8 +4,8 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 
 export const metadata: Metadata = {
-    title: 'Visitor Agreement | gadizone',
-    description: 'Visitor Agreement for gadizone - Your trusted automotive platform for car research, reviews, and pricing.',
+    title: 'Visitor Agreement | assadmotors',
+    description: 'Visitor Agreement for assadmotors - Your trusted automotive platform for car research, reviews, and pricing.',
 }
 
 export default function VisitorAgreementPage() {
@@ -24,20 +24,20 @@ export default function VisitorAgreementPage() {
 
                         <div className="prose prose-gray max-w-none">
                             <p className="text-gray-700 leading-relaxed mb-6">
-                                Welcome to gadizone! By accessing and using our website, you agree to be bound by this Visitor Agreement.
+                                Welcome to assadmotors! By accessing and using our website, you agree to be bound by this Visitor Agreement.
                                 Please read this agreement carefully before using our services.
                             </p>
 
                             <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">1. Acceptance of Terms</h2>
                             <p className="text-gray-700 leading-relaxed mb-4">
-                                By visiting, browsing, or using gadizone (the "Website"), you acknowledge that you have read, understood,
+                                By visiting, browsing, or using assadmotors (the "Website"), you acknowledge that you have read, understood,
                                 and agree to be bound by this Visitor Agreement and our Terms and Conditions.
                                 If you do not agree to these terms, please do not use our Website.
                             </p>
 
                             <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">2. Website Purpose</h2>
                             <p className="text-gray-700 leading-relaxed mb-4">
-                                gadizone is an automotive information platform that provides:
+                                assadmotors is an automotive information platform that provides:
                             </p>
                             <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
                                 <li>Comprehensive car research and specifications</li>
@@ -51,7 +51,7 @@ export default function VisitorAgreementPage() {
 
                             <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">3. User Conduct</h2>
                             <p className="text-gray-700 leading-relaxed mb-4">
-                                While using gadizone, you agree to:
+                                While using assadmotors, you agree to:
                             </p>
                             <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
                                 <li>Provide accurate information when submitting reviews or inquiries</li>
@@ -63,7 +63,7 @@ export default function VisitorAgreementPage() {
 
                             <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">4. Information Accuracy</h2>
                             <p className="text-gray-700 leading-relaxed mb-4">
-                                While we strive to provide accurate and up-to-date information, gadizone does not guarantee the
+                                While we strive to provide accurate and up-to-date information, assadmotors does not guarantee the
                                 accuracy, completeness, or timeliness of the information on our Website. Car prices, specifications,
                                 and features are subject to change by manufacturers without notice. We recommend verifying all
                                 information with official dealers before making purchase decisions.
@@ -72,20 +72,20 @@ export default function VisitorAgreementPage() {
                             <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">5. Third-Party Links</h2>
                             <p className="text-gray-700 leading-relaxed mb-4">
                                 Our Website may contain links to third-party websites, including dealer websites, manufacturer sites,
-                                and financial institutions. gadizone is not responsible for the content, privacy practices, or
+                                and financial institutions. assadmotors is not responsible for the content, privacy practices, or
                                 services of these external sites.
                             </p>
 
                             <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">6. Intellectual Property</h2>
                             <p className="text-gray-700 leading-relaxed mb-4">
-                                All content on gadizone, including text, graphics, logos, images, and software, is the property
-                                of gadizone or its content suppliers and is protected by intellectual property laws. You may not
+                                All content on assadmotors, including text, graphics, logos, images, and software, is the property
+                                of assadmotors or its content suppliers and is protected by intellectual property laws. You may not
                                 reproduce, distribute, or create derivative works without our express written permission.
                             </p>
 
                             <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">7. Limitation of Liability</h2>
                             <p className="text-gray-700 leading-relaxed mb-4">
-                                gadizone shall not be liable for any direct, indirect, incidental, special, or consequential
+                                assadmotors shall not be liable for any direct, indirect, incidental, special, or consequential
                                 damages resulting from your use of or inability to use our Website, or from any decisions made
                                 based on information provided on our platform.
                             </p>
@@ -102,14 +102,14 @@ export default function VisitorAgreementPage() {
                                 If you have any questions about this Visitor Agreement, please contact us at:
                             </p>
                             <p className="text-gray-700 mb-4">
-                                <strong>Email:</strong> support@gadizone.com<br />
-                                <strong>Website:</strong> www.gadizone.com
+                                <strong>Email:</strong> support@assadmotors.com<br />
+                                <strong>Website:</strong> www.assadmotors.com
                             </p>
                         </div>
 
                         <div className="mt-10 pt-6 border-t border-gray-200">
                             <p className="text-sm text-gray-500">
-                                By using gadizone, you confirm that you have read and agree to this Visitor Agreement.
+                                By using assadmotors, you confirm that you have read and agree to this Visitor Agreement.
                             </p>
                         </div>
                     </div>

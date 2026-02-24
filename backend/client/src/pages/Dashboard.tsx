@@ -94,7 +94,7 @@ export default function Dashboard() {
           <div>
             <h3 className="font-semibold text-green-900 dark:text-green-100">Backend System Ready!</h3>
             <p className="text-sm text-green-700 dark:text-green-300 mt-1">
-              gadizone backend is running successfully on port 5000. All API endpoints are functional and ready for frontend integration.
+              assadmotors backend is running successfully on port 5000. All API endpoints are functional and ready for frontend integration.
             </p>
           </div>
         </div>

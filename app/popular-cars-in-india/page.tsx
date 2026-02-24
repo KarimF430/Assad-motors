@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
 import PageSection from '@/components/common/PageSection'
-import Footer from '@/components/Footer'
+
 import Ad3DCarousel from '@/components/ads/Ad3DCarousel'
 import PopularCarsClient from './PopularCarsClient'
 import Breadcrumb from '@/components/common/Breadcrumb'
@@ -29,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
     }
 
     return {
-        title: `Popular Cars in India 2025 - Prices, Specs & Reviews | gadizone`,
+        title: `Popular Cars in India 2025 - Prices, Specs & Reviews | assadmotors`,
         description,
         keywords: `popular cars India, best cars 2025, favourite cars India, car prices, car reviews`,
         openGraph: {
@@ -207,7 +207,7 @@ export default async function PopularCarsPage() {
                 </main>
             </div>
             <Breadcrumb items={[{ label: 'Popular Cars' }]} />
-            <Footer />
+            
         </>
     )
 }

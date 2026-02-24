@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { BACKEND_URL } from '@/lib/config'
 import { CITY_DATABASE } from '@/lib/city-database'
 
-const BASE_URL = 'https://www.gadizone.com'
+const BASE_URL = 'https://www.assadmotors.com'
 const EXTERNAL_API_URL = BACKEND_URL
 const REL_MODELS_PER_CHUNK = 30
 
